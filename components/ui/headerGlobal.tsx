@@ -5,6 +5,7 @@ import { AiFillHome } from 'react-icons/ai';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function HeaderGlobal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,6 @@ export default function HeaderGlobal() {
   const animacion3 = useAnimation();
   const animacion4 = useAnimation();
   const animacion5 = useAnimation();
-
   const [links, setLinks] = useState([
     { nombre: 'About', href: '/about' },
     { nombre: 'Contact', href: '/contact' },
@@ -51,9 +51,33 @@ export default function HeaderGlobal() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const moveToHome = (e: any) => {
+    setIsOpen(false);
+
+    // Aquí puedes redirigir a la página de inicio, por ejemplo, usando el router
+    window.location.href = '/'; // O usar el router de Next.js
+  };
 
   return (
     <div className="fixed w-full z-50">
+      <motion.div
+        className="absolute left-5 top-4 z-50"
+        whileHover={{
+          scale: 1.8,
+          borderRadius: '60px',
+          backgroundColor: 'transparent',
+          boxShadow: `1px 1px 40px white, 1px 1px 31px white inset `,
+        }}
+        whileTap={{ scale: 2 }}
+      >
+        <motion.button
+          onClick={moveToHome}
+          className="text-white bg-transparent m-4"
+        >
+          <AiFillHome />
+        </motion.button>
+      </motion.div>
+
       {/* Botón de menú hamburguesa */}
       {!isOpen && (
         <motion.div
@@ -77,56 +101,48 @@ export default function HeaderGlobal() {
 
       {/* Menu Drawer */}
       <motion.div
-        animate={isOpen ? { x: 0 } : { x: '-100%' }}
-        className={`fixed top-0 left-0 w-${size} h-full bg-black bg-opacity-80 backdrop-blur-lg p-4 text-white`}
+        initial={{ x: '-100%' }} // Ensure it starts off-screen
+        animate={isOpen ? { x: 0 } : { x: '-100%' }} // Animate to visible or off-screen
+        transition={{ type: 'spring', stiffness: 100 }} // Optional: smooth transition
+        className={`fixed top-0 left-0 w-${size} h-full bg-black bg-opacity-30 backdrop-blur-lg p-4 text-white`}
       >
         <motion.button
-          whileInView={{ scale: [1, 3, 1], rotate: 360 }}
+          whileInView={{ scale: [1, 3, 2], rotate: 360 }}
           className="absolute top-4 right-4 text-white"
           onClick={toggleMenu}
         >
           X
         </motion.button>
 
-        <div className="flex flex-col items-center justify-center h-full">
+        <div className="overflow-hidden h-auto flex flex-wrap w-full items-center">
           {links?.map(({ nombre, href }, i) => (
-            <motion.div
-              key={i}
-              whileHover={{
-                scale: 1.5,
-                rotate: [0, 15, -35, 0],
-                textShadow: '0 1px 4px white',
-              }}
-              className="text-2xl my-4"
+            <div
+              className="flex justify-center w-full mt-10 mb-10"
+              key={`${nombre}${i}`}
             >
-              <a href={href} className="hover:no-underline">
-                {nombre}
-              </a>
-            </motion.div>
+              <motion.div
+                whileHover={{
+                  transition: {
+                    duration: 0.5,
+                  },
+                  scale: 1.5,
+                  rotate: [1, 15, -35, 1],
+                  textShadow: '.1px 1px 2px white, 1px 1px 5px white',
+                }}
+                whileInView={{
+                  y: [50, 0],
+                  rotate: [1, 25, 1],
+                }}
+                className="text-4xl font-bold text-center"
+              >
+                <Link href={href} className="hover:no-underline">
+                  {nombre}
+                </Link>
+              </motion.div>
+            </div>
           ))}
         </div>
       </motion.div>
-
-      {/* Botón Home */}
-      {
-        <motion.div
-          className="absolute left-5 top-4 z-50"
-          whileHover={{
-            scale: 1.7,
-            borderRadius: '60px',
-            backgroundColor: 'transparent',
-            boxShadow: `1px 1px 40px white, 1px 1px 31px white inset`,
-          }}
-          whileTap={{ scale: 2 }}
-        >
-          <motion.a
-            href="/"
-            className="text-white bg-transparent m-4 flex items-center justify-center" // Ajusta según tus necesidades
-          >
-            <AiFillHome />
-          </motion.a>
-        </motion.div>
-      }
     </div>
   );
 }
