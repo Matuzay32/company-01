@@ -108,7 +108,7 @@ export default function HeaderGlobal() {
       </motion.div>
 
       {/* Botón Home */}
-      {!isOpen && (
+      {
         <motion.div
           className="absolute left-5 top-4 z-50"
           whileHover={{
@@ -126,7 +126,7 @@ export default function HeaderGlobal() {
             <AiFillHome />
           </motion.a>
         </motion.div>
-      )}
+      }
     </div>
   );
 }
