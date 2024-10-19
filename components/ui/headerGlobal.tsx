@@ -88,16 +88,16 @@ export default function HeaderGlobal() {
           scale: 1.7,
           borderRadius: '60px',
           backgroundColor: 'transparent',
-          boxShadow: `1px 1px 40px white, 1px 1px 31px white inset `,
+          boxShadow: `1px 1px 40px white, 1px 1px 31px white inset`,
         }}
         whileTap={{ scale: 2 }}
       >
-        <motion.button
-          onClick={toggleMenu}
-          className="text-white bg-transparent m-4"
+        <motion.a
+          href="/"
+          className="text-white bg-transparent m-4 flex items-center justify-center" // Ajusta según tus necesidades
         >
           <AiFillHome />
-        </motion.button>
+        </motion.a>
       </motion.div>
     </div>
   );
