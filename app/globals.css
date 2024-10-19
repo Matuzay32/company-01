@@ -59,7 +59,7 @@
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-900 to-pink-600;
 }
 
 .card-hover {
