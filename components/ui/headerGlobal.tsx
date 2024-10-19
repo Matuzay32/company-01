@@ -31,23 +31,25 @@ export default function HeaderGlobal() {
   return (
     <div className="fixed w-full z-50">
       {/* Botón de menú hamburguesa */}
-      <motion.div
-        className="absolute right-5 top-4 z-50"
-        whileHover={{
-          scale: 1.7,
-          borderRadius: '60px',
-          backgroundColor: 'transparent',
-          boxShadow: `1px 1px 40px white, 1px 1px 31px white inset `,
-        }}
-        whileTap={{ scale: 2 }}
-      >
-        <motion.button
-          onClick={toggleMenu}
-          className="text-white bg-transparent m-4"
+      {!isOpen && (
+        <motion.div
+          className="absolute right-5 top-4 z-50"
+          whileHover={{
+            scale: 1.7,
+            borderRadius: '60px',
+            backgroundColor: 'transparent',
+            boxShadow: `1px 1px 40px white, 1px 1px 31px white inset `,
+          }}
+          whileTap={{ scale: 2 }}
         >
-          <GiHamburgerMenu />
-        </motion.button>
-      </motion.div>
+          <motion.button
+            onClick={toggleMenu}
+            className="text-white bg-transparent m-4"
+          >
+            <GiHamburgerMenu />
+          </motion.button>
+        </motion.div>
+      )}
 
       {/* Menu Drawer */}
       <motion.div
@@ -82,23 +84,25 @@ export default function HeaderGlobal() {
       </motion.div>
 
       {/* Botón Home */}
-      <motion.div
-        className="absolute left-5 top-4 z-50"
-        whileHover={{
-          scale: 1.7,
-          borderRadius: '60px',
-          backgroundColor: 'transparent',
-          boxShadow: `1px 1px 40px white, 1px 1px 31px white inset`,
-        }}
-        whileTap={{ scale: 2 }}
-      >
-        <motion.a
-          href="/"
-          className="text-white bg-transparent m-4 flex items-center justify-center" // Ajusta según tus necesidades
+      {!isOpen && (
+        <motion.div
+          className="absolute left-5 top-4 z-50"
+          whileHover={{
+            scale: 1.7,
+            borderRadius: '60px',
+            backgroundColor: 'transparent',
+            boxShadow: `1px 1px 40px white, 1px 1px 31px white inset`,
+          }}
+          whileTap={{ scale: 2 }}
         >
-          <AiFillHome />
-        </motion.a>
-      </motion.div>
+          <motion.a
+            href="/"
+            className="text-white bg-transparent m-4 flex items-center justify-center" // Ajusta según tus necesidades
+          >
+            <AiFillHome />
+          </motion.a>
+        </motion.div>
+      )}
     </div>
   );
 }
