@@ -117,7 +117,7 @@ export default function Home() {
             icon={FaStar}
             title="Análisis Intuitivo"
             description="Una breve descripción sobre el análisis intuitivo."
-            buttonText="Get Started" // Texto del botón
+            buttonText="Comienze" // Texto del botón
             buttonLink="/signup" // Enlace del botón
           />
         </div>
