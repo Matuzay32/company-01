@@ -89,9 +89,9 @@ const config: Config = {
         },
       },
       animation: {
+        'spin-slow': 'rotate-green 10s linear infinite', // Cambia esto para usar la animación personalizada
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'rotate-green': 'rotate-green 5s linear infinite', // Aplicar la animación de rotación
       },
     },
   },

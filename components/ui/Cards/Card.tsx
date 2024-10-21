@@ -19,9 +19,9 @@ const Card: React.FC<CardProps> = ({ icon: Icon, title }) => {
       data-orientation="horizontal"
       data-radix-collection-item=""
     >
-      <span className="absolute inset-px z-10 grid place-items-center rounded-2xl group-data-[state='active']:bg-black group-data-[state='active']:bg-gradient-to-b group-data-[state='active']:from-white/[3%] group-data-[state='active']:via-white/[1%] group-data-[state='active']:to-black">
+      <span className="absolute inset-px z-10 grid place-items-center rounded-2xl group-data-[state='active']:bg-black group-data-[state='active']:bg-gradient-to-b group-data-[state='active']:from-grw/[3%] group-data-[state='active']:via-white/[1%] group-data-[state='active']:to-black">
         <div className="flex h-full w-full items-center gap-2 px-4 py-2 text-left md:gap-4 md:p-6">
-          <div className="align-center flex h-10 w-10 justify-center rounded-xl border-slate-6 bg-gradient-to-bl from-white/[4%] p-2 text-slate-12 group-data-[state='active']:text-green-9 md:border">
+          <div className="align-center flex h-10 w-10 justify-center rounded-xl border-slate-6 bg-gradient-to-bl from-green/[4%] p-2 text-slate-12 group-data-[state='active']:text-green-9 md:border">
             <Icon className="w-6 h-6" /> {/* Usar el icono como componente */}
           </div>
           <h4 className="font-book font-styling font-display text-base tracking-tight text-slate-12">
@@ -31,7 +31,7 @@ const Card: React.FC<CardProps> = ({ icon: Icon, title }) => {
       </span>
       <span
         aria-hidden="true"
-        className="absolute inset-0 z-0 scale-x-[1.5] blur group-data-[state='active']:before:absolute group-data-[state='active']:before:inset-0 group-data-[state='active']:before:top-1/2 group-data-[state='active']:before:w-[400px] group-data-[state='active']:before:animate-disco-border group-data-[state='active']:before:bg-gradient-conic group-data-[state='active']:before:from-green-11 group-data-[state='active']:before:via-transparent group-data-[state='active']:before:to-transparent"
+        className="absolute inset-0 z-0 scale-x-[1] blur animate-spin-slow group-data-[state='active']:before:absolute group-data-[state='active']:before:inset-0 group-data-[state='active']:before:top-1/2 group-data-[state='active']:before:w-[400px] group-data-[state='active']:before:animate-disco-border group-data-[state='active']:before:bg-gradient-conic group-data-[state='active']:before:from-green-11 group-data-[state='active']:before:via-transparent group-data-[state='active']:before:to-transparent"
       ></span>
     </button>
   );
