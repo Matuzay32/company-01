@@ -68,7 +68,9 @@ export default function Home() {
         </Button>
 
         <div className="grid grid-cols-1 gap-12 md:gap-8 lg:grid-cols-2">
-          <Card icon={FaBeer} title="TESST" />
+          <Card icon={FaBeer} title="Test" color="#FFDA44" />
+          <Card icon={FaBeer} title="TEST GREEN" color="#1818" />
+          <Card icon={FaBeer} title="TEST RED" color="#46ffe0" />
         </div>
       </section>
     </main>

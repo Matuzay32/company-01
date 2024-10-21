@@ -4,9 +4,14 @@ import { IconType } from 'react-icons';
 interface CardProps {
   icon: IconType; // Prop para recibir el icono
   title: string; // Prop para el título
+  color?: string; // Prop opcional para el color
 }
 
-const Card: React.FC<CardProps> = ({ icon: Icon, title }) => {
+const Card: React.FC<CardProps> = ({
+  icon: Icon,
+  title,
+  color = 'green-11',
+}) => {
   return (
     <button
       type="button"
@@ -31,6 +36,7 @@ const Card: React.FC<CardProps> = ({ icon: Icon, title }) => {
       </span>
       <span
         aria-hidden="true"
+        style={{ backgroundColor: color }} // Usar el color proporcionado
         className="absolute inset-0 z-0 scale-[1] blur animate-spin-slow group-data-[state='active']:before:absolute group-data-[state='active']:before:inset-0 group-data-[state='active']:before:top-1/2 group-data-[state='active']:before:w-[600px] group-data-[state='active']:before:h-[100px] group-data-[state='active']:before:animate-disco-border group-data-[state='active']:before:bg-gradient-conic group-data-[state='active']:before:from-green-11 group-data-[state='active']:before:via-transparent group-data-[state='active']:before:to-transparent"
       ></span>
     </button>
