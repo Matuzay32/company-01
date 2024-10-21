@@ -60,6 +60,11 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
+        // Agrega el color verde que necesites aquí
+        green: {
+          DEFAULT: 'hsl(120, 100%, 40%)', // Ajusta el valor según sea necesario
+          11: 'hsl(120, 100%, 25%)', // Un tono más oscuro
+        },
       },
       keyframes: {
         'accordion-down': {
@@ -87,4 +92,5 @@ const config: Config = {
   },
   plugins: [require('tailwindcss-animate')],
 };
+
 export default config;
