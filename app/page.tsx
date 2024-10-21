@@ -4,6 +4,7 @@ import { FaBeer } from 'react-icons/fa'; // Importar el icono que desees
 import { Button } from '@/components/ui/Buttons/button';
 import Card from '@/components/ui/Cards/Card';
 import { ChevronRight } from 'lucide-react';
+import InfoCard from '@/components/ui/Cards/InfoCard';
 
 export default function Home() {
   return (
@@ -71,6 +72,39 @@ export default function Home() {
           <Card icon={FaBeer} title="Test" color="#FFDA44" />
           <Card icon={FaBeer} title="TEST GREEN" color="#1818" />
           <Card icon={FaBeer} title="TEST RED" color="#46ffe0" />
+        </div>
+      </section>
+
+      <section className="text-center mt-24 mb-20 px-4">
+        <h2 className="font-book font-styling font-display mb-2 text-center text-[3rem] md:text-[3.5rem] tracking-tight leading-[120%] font-gradient">
+          Info Cards{' '}
+          <span className="inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#45ff6d] to-[#2e8f27]">
+            with us
+          </span>
+        </h2>
+
+        <p className=" sans mx-auto mb-12 max-w-5xl text-center text-base md:text-[1.125rem] md:leading-[1.5] text-gray-400 font-normal">
+          <span
+            data-br=":ra:"
+            data-brr="1"
+            style={{
+              display: 'inline-block',
+              verticalAlign: 'top',
+              textDecoration: 'inherit',
+            }}
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+            obcaecati quae saepe omnis tempore tenetur natus ad aut corrupti.
+            Aperiam, aliquid. Odit autem veniam, culpa molestiae accusamus
+            dignissimos quia dolorum.
+          </span>
+        </p>
+        <div className="w-full , h-full">
+          <InfoCard
+            icon={FaBeer}
+            title="dsadkasldksakdkasklkd"
+            color="#FFDA44"
+          ></InfoCard>
         </div>
       </section>
     </main>
