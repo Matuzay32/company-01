@@ -1,10 +1,10 @@
 'use client';
-import { FaBeer } from 'react-icons/fa'; // Importar el icono que desees
+import { FaBeer, FaStar } from 'react-icons/fa'; // Importar el icono que desees
 
 import { Button } from '@/components/ui/Buttons/button';
 import Card from '@/components/ui/Cards/Card';
 import { ChevronRight } from 'lucide-react';
-import InfoCard from '@/components/ui/Cards/InfoCard';
+import CardInfo from '@/components/ui/Cards/CardInfo';
 
 export default function Home() {
   return (
@@ -69,16 +69,29 @@ export default function Home() {
         </Button>
 
         <div className="grid grid-cols-1 gap-12 md:gap-8 lg:grid-cols-2">
-          <Card icon={FaBeer} title="Test" color="#FFDA44" />
-          <Card icon={FaBeer} title="TEST GREEN" color="#1818" />
-          <Card icon={FaBeer} title="TEST RED" color="#46ffe0" />
+          <Card
+            icon={FaStar}
+            title="Análisis Intuitivo"
+            href="/analysis" // Enlace al que se dirigirá el usuario
+          />{' '}
+          <Card
+            color="#46ffe0"
+            icon={FaStar}
+            title="Análisis Intuitivo"
+            href="/analysis" // Enlace al que se dirigirá el usuario
+          />{' '}
+          <Card
+            icon={FaStar}
+            title="Análisis Intuitivo"
+            href="/analysis" // Enlace al que se dirigirá el usuario
+          />{' '}
         </div>
       </section>
 
       <section className="text-center mt-24 mb-20 px-4">
         <h2 className="font-book font-styling font-display mb-2 text-center text-[3rem] md:text-[3.5rem] tracking-tight leading-[120%] font-gradient">
           Info Cards{' '}
-          <span className="inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#52f675] to-[#2e8f27]">
+          <span className="inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#8ca190] to-[#2e8f27]">
             with us
           </span>
         </h2>
@@ -100,14 +113,12 @@ export default function Home() {
           </span>
         </p>
         <div className="flex justify-center items-center min-h-screen ">
-          <InfoCard
-            icon={FaBeer}
-            title="¡Salud!"
-            description=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            obcaecati quae saepe omnis tempore tenetur natus ad aut corrupti.
-            Aperiam, aliquid. Odit autem veniam, culpa molestiae accusamus
-            dignissimos quia dolorum."
-            color="#52f675"
+          <CardInfo
+            icon={FaStar}
+            title="Análisis Intuitivo"
+            description="Una breve descripción sobre el análisis intuitivo."
+            buttonText="Get Started" // Texto del botón
+            buttonLink="/signup" // Enlace del botón
           />
         </div>
       </section>
