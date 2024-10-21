@@ -78,7 +78,7 @@ export default function Home() {
       <section className="text-center mt-24 mb-20 px-4">
         <h2 className="font-book font-styling font-display mb-2 text-center text-[3rem] md:text-[3.5rem] tracking-tight leading-[120%] font-gradient">
           Info Cards{' '}
-          <span className="inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#45ff6d] to-[#2e8f27]">
+          <span className="inline leading-[0] bg-gradient-to-br bg-clip-text text-transparent from-[#52f675] to-[#2e8f27]">
             with us
           </span>
         </h2>
@@ -99,12 +99,16 @@ export default function Home() {
             dignissimos quia dolorum.
           </span>
         </p>
-        <div className="w-full , h-full">
+        <div className="flex justify-center items-center min-h-screen ">
           <InfoCard
             icon={FaBeer}
-            title="dsadkasldksakdkasklkd"
-            color="#FFDA44"
-          ></InfoCard>
+            title="¡Salud!"
+            description=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+            obcaecati quae saepe omnis tempore tenetur natus ad aut corrupti.
+            Aperiam, aliquid. Odit autem veniam, culpa molestiae accusamus
+            dignissimos quia dolorum."
+            color="#52f675"
+          />
         </div>
       </section>
     </main>

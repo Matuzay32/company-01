@@ -16,8 +16,6 @@ const Card: React.FC<CardProps> = ({
     <button
       type="button"
       role="tab"
-      aria-selected="true"
-      aria-controls="radix-:r90:-content-Intuitive analytics"
       data-state="active"
       id="radix-:r90:-trigger-Intuitive analytics"
       className="group relative w-[300px] min-h-[5rem] overflow-hidden rounded-2xl border border-slate-6 p-6 outline-none focus-visible:ring-2 focus-visible:ring-slate-6 data-[state='active']:border-slate-6" // Ancho y altura mínima añadidos
