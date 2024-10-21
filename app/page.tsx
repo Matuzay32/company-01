@@ -1,4 +1,5 @@
 'use client';
+import { FaBeer } from 'react-icons/fa'; // Importar el icono que desees
 
 import { Button } from '@/components/ui/Buttons/button';
 import Card from '@/components/ui/Cards/Card';
@@ -67,7 +68,7 @@ export default function Home() {
         </Button>
 
         <div className="grid grid-cols-1 gap-12 md:gap-8 lg:grid-cols-2">
-          <Card></Card>
+          <Card icon={FaBeer} title="TESST" />
         </div>
       </section>
     </main>

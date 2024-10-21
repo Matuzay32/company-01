@@ -60,10 +60,9 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
-        // Agrega el color verde que necesites aquí
         green: {
           DEFAULT: 'hsl(120, 100%, 40%)', // Ajusta el valor según sea necesario
-          11: 'hsl(120, 100%, 25%)', // Un tono más oscuro
+          11: 'hsl(120, 100%, 40%)', // Un tono más oscuro
         },
       },
       keyframes: {
@@ -83,10 +82,16 @@ const config: Config = {
             height: '0',
           },
         },
+        'rotate-green': {
+          // Nueva animación de rotación
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'rotate-green': 'rotate-green 5s linear infinite', // Aplicar la animación de rotación
       },
     },
   },
