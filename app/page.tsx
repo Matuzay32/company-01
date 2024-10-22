@@ -12,6 +12,7 @@ import Card from '@/components/ui/Cards/Card'; // Componente de tarjeta
 import CardInfo from '@/components/ui/Cards/CardInfo'; // Componente de tarjeta con información
 import Hero from '@/components/Heros/Hero'; // Componente Hero
 import Hero2 from '@/components/Heros/Hero2';
+import CustomSection from '@/components/ui/Others/CustomSection';
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-black text-white">
@@ -82,6 +83,61 @@ export default function Home() {
           />
         </div>
       </section>
+      <CustomSection>
+        <section className="text-center mt-24 mb-20 px-4">
+          <h2 className="font-book font-display mb-8 text-[2.5rem] tracking-tight leading-[120%] text-white">
+            Nuestros Servicios
+          </h2>
+          <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
+            Cada uno de nuestros servicios está diseñado para atender tus
+            necesidades específicas. Explora cómo podemos ayudarte a alcanzar
+            tus objetivos.
+          </p>
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+            <Card
+              icon={FaStar}
+              title="Análisis de Datos"
+              href="/data-analysis"
+            />
+            <Card
+              color="#FEFCBF"
+              icon={FaLightbulb}
+              title="Consultoría Estratégica"
+              href="/consulting"
+            />
+            <Card
+              color="#46ffe0"
+              icon={FaBeer}
+              title="Desarrollo de Software"
+              href="/software-development"
+            />
+            <Card
+              icon={FaRegHandshake}
+              title="Soporte Técnico"
+              href="/support"
+            />
+            <Card
+              color="#E9D8FD"
+              icon={FaRegClock}
+              title="Gestión de Proyectos"
+              href="/project-management"
+            />
+            <Card
+              color="#48B"
+              icon={FaUsers}
+              title="Formación y Capacitación"
+              href="/training"
+            />
+
+            <Card
+              color="#FBB6CE"
+              icon={FaUsers}
+              title="Formación y Capacitación"
+              href="/training"
+            />
+          </div>
+        </section>
+      </CustomSection>
       {/* Separador */}
       <div className="my-16"></div> {/* Espacio entre secciones */}
       {/* Sección de CardInfo */}
