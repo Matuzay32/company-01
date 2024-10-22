@@ -17,15 +17,15 @@ const CardInfo: React.FC<CardInfoProps> = ({
   buttonLink,
 }) => {
   return (
-    <div className="relative w-[300px] min-h-[5rem] overflow-hidden rounded-2xl border border-gray-600 p-6">
-      <div className="flex h-full w-full items-center gap-2 text-left">
-        <div className="flex h-10 w-10 justify-center rounded-xl border border-gray-600  p-2 text-white">
+    <div className="relative w-full max-w-xs min-h-[200px] h-auto overflow-hidden rounded-2xl border border-gray-600 p-6 flex flex-col">
+      <div className="flex h-full w-full items-start gap-2 text-left">
+        <div className="flex h-10 w-10 justify-center rounded-xl border border-gray-600 p-2 text-white">
           <Icon className="w-6 h-6" />
         </div>
         <div className="flex flex-col">
           <h4 className="font-bold text-base text-white">{title}</h4>
           {description && (
-            <p className="text-sm text-gray-300">{description}</p>
+            <p className="text-sm text-gray-300 flex-1">{description}</p>
           )}
         </div>
       </div>

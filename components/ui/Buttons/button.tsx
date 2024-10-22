@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
-
 import { cn } from '@/lib/utils';
 
+// Definir las variantes de botón
 const buttonVariants = cva(
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+        default: '', // Dejar vacío para personalización
         destructive:
           'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         outline:
@@ -34,23 +34,56 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends React.ButtonHTMLAttributes<HTMLButtonElement | HTMLAnchorElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  href?: string; // Href para enlaces
+  title?: string; // Título del botón o enlace
+  gradientStart?: string; // Color de inicio del gradiente
+  gradientEnd?: string; // Color final del gradiente
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button';
+const Button = React.forwardRef<
+  HTMLButtonElement | HTMLAnchorElement, // Refs para <button> o <a>
+  ButtonProps
+>(
+  (
+    {
+      className,
+      variant,
+      size,
+      asChild = false,
+      href,
+      title,
+      gradientStart,
+      gradientEnd,
+      ...props
+    },
+    ref
+  ) => {
+    // Si se pasa 'asChild', usará el Slot, si se pasa href será <a>, sino será <button>
+    const Comp: React.ElementType = asChild ? Slot : href ? 'a' : 'button';
+
+    const gradientClasses =
+      gradientStart && gradientEnd
+        ? `bg-gradient-to-br from-[${gradientStart}] to-[${gradientEnd}]`
+        : '';
+
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(
+          buttonVariants({ variant, size, className }),
+          gradientClasses // Añadir gradientes personalizados
+        )}
         ref={ref}
+        href={href} // Solo se aplica href si es un <a>
+        title={title}
         {...props}
       />
     );
   }
 );
+
 Button.displayName = 'Button';
 
 export { Button, buttonVariants };

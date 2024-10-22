@@ -20,7 +20,6 @@ const Card: React.FC<CardProps> = ({
       role="tab"
       aria-selected="true"
       data-state="active"
-      id="radix-:r90:-trigger-Intuitive analytics"
       className="group relative w-[300px] min-h-[5rem] overflow-hidden rounded-2xl border border-slate-600 p-6 outline-none focus-visible:ring-2 focus-visible:ring-slate-600 data-[state='active']:border-slate-600"
       data-orientation="horizontal"
       data-radix-collection-item=""
@@ -38,7 +37,7 @@ const Card: React.FC<CardProps> = ({
       <span
         aria-hidden="true"
         style={{ backgroundColor: color }} // Usar el color proporcionado
-        className="absolute inset-0 z-0 scale-[1] blur animate-spin-slow group-data-[state='active']:before:absolute group-data-[state='active']:before:inset-0 group-data-[state='active']:before:top-1/2 group-data-[state='active']:before:w-[600px] group-data-[state='active']:before:h-[100px] group-data-[state='active']:before:animate-disco-border group-data-[state='active']:before:bg-gradient-conic group-data-[state='active']:before:from-green-11 group-data-[state='active']:before:via-transparent group-data-[state='active']:before:to-transparent"
+        className={`absolute inset-0 z-0 scale-[1] blur animate-spin-slow group-data-[state='active']:before:absolute group-data-[state='active']:before:inset-0 group-data-[state='active']:before:top-1/2 group-data-[state='active']:before:w-[600px] group-data-[state='active']:before:h-[100px] group-data-[state='active']:before:animate-disco-border group-data-[state='active']:before:bg-gradient-conic group-data-[state='active']:before:from-${color} group-data-[state='active']:before:via-transparent group-data-[state='active']:before:to-transparent`}
       ></span>
     </a>
   );
