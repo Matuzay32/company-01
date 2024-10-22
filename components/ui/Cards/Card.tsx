@@ -24,8 +24,8 @@ const Card: React.FC<CardProps> = ({
       data-orientation="horizontal"
       data-radix-collection-item=""
     >
-      <span className="absolute inset-px z-10 grid place-items-center rounded-2xl group-data-[state='active']:bg-black group-data-[state='active']:bg-gradient-to-b group-data-[state='active']:from-grw/[3%] group-data-[state='active']:via-white/[1%] group-data-[state='active']:to-black">
-        <div className="flex h-full w-full items-center gap-2 px-4 py-2 text-left md:gap-4 md:p-6">
+      <div className="absolute h-auto inset-px z-10 grid place-items-center rounded-2xl bg-black ">
+        <div className="flex h-full w-full items-center gap-2 px-4 py-2 text-left md:gap-2 md:p-6">
           <div className="align-center flex h-10 w-10 justify-center rounded-xl border-slate-600 bg-gradient-to-bl from-green/[4%] p-2 text-slate-12 group-data-[state='active']:text-green-9 md:border">
             <Icon className="w-6 h-6" /> {/* Usar el icono como componente */}
           </div>
@@ -33,7 +33,7 @@ const Card: React.FC<CardProps> = ({
             {title} {/* Usar el título como prop */}
           </h4>
         </div>
-      </span>
+      </div>
       <span
         aria-hidden="true"
         style={{ backgroundColor: color }} // Usar el color proporcionado
