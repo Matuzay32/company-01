@@ -11,10 +11,20 @@ import {
 import Card from '@/components/ui/Cards/Card'; // Componente de tarjeta
 import CardInfo from '@/components/ui/Cards/CardInfo'; // Componente de tarjeta con información
 import Hero from '@/components/Heros/Hero'; // Componente Hero
+import Hero2 from '@/components/Heros/Hero2';
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-black text-white">
       {/* Sección Hero 1 */}
+      <Hero2
+        title="Transform Your Digital Presence"
+        description="Elevate your business with our cutting-edge web technologies. From stunning websites to powerful applications, we create solutions that drive growth and engagement."
+        primaryButtonText="Discover Our Services"
+        primaryButtonLink="/services"
+        secondaryButtonText="Get In Touch"
+        secondaryButtonLink="/contact"
+        imageUrl="https://images.unsplash.com/photo-1673235966910-f2a443bdbaaf?q=80&w=2160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
       <Hero
         title="Bienvenido a Nuestra Plataforma"
         subtitle="Descubre cómo podemos ayudarte a mejorar tu experiencia."
