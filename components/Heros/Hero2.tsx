@@ -90,7 +90,7 @@ const Hero2: React.FC<HeroProps> = ({
             height="300"
             width="300"
           />
-          <CubeCanvas></CubeCanvas>
+          {/* <CubeCanvas></CubeCanvas> */}
         </div>
       </div>
     </section>
