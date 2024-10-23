@@ -20,13 +20,13 @@ const Card: React.FC<CardProps> = ({
       role="tab"
       aria-selected="true"
       data-state="active"
-      className="group relative w-[300px] min-h-[5rem] overflow-hidden rounded-2xl border border-slate-600 p-6 outline-none focus-visible:ring-2 focus-visible:ring-slate-600 data-[state='active']:border-slate-600"
+      className="group relative w-full max-w-[300px] min-h-[5rem] overflow-hidden rounded-2xl border border-slate-600 p-4 md:p-6 outline-none focus-visible:ring-2 focus-visible:ring-slate-600 data-[state='active']:border-slate-600"
       data-orientation="horizontal"
       data-radix-collection-item=""
     >
-      <div className="absolute h-auto inset-px z-10 grid place-items-center rounded-2xl bg-black ">
-        <div className="flex h-full w-full items-center gap-2 px-4 py-2 text-left md:gap-2 md:p-6">
-          <div className="align-center flex h-10 w-10 justify-center rounded-xl border-slate-600 bg-gradient-to-bl from-green/[4%] p-2 text-slate-12 group-data-[state='active']:text-green-9 md:border">
+      <div className="absolute h-auto inset-px z-10 grid place-items-center rounded-2xl bg-black">
+        <div className="flex h-full w-full items-center gap-2 px-2 py-2 text-left md:gap-2 md:p-6">
+          <div className="flex h-10 w-10 justify-center rounded-xl border-slate-600 bg-gradient-to-bl from-green/[4%] p-2 text-slate-12 group-data-[state='active']:text-green-9 md:border">
             <Icon className="w-6 h-6" /> {/* Usar el icono como componente */}
           </div>
           <h4 className="font-book font-styling font-display text-base tracking-tight text-slate-12">
