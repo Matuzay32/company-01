@@ -1,4 +1,5 @@
 import React from 'react';
+import CubeCanvas from '../3d/CuveCanvas';
 
 interface HeroProps {
   title: string;
@@ -89,6 +90,7 @@ const Hero2: React.FC<HeroProps> = ({
             height="300"
             width="300"
           />
+          <CubeCanvas></CubeCanvas>
         </div>
       </div>
     </section>
