@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import {
   Environment,
@@ -7,28 +7,17 @@ import {
   Text,
 } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useControls } from 'leva';
 
 const Model = () => {
   const { nodes } = useGLTF('/medias/torrus.glb');
   const torus = useRef(null);
-  const { viewport } = useThree(); // Obtener el viewport
+  const { viewport } = useThree();
 
   useFrame(() => {
     if (torus.current) {
       torus.current.rotation.x += 0.02;
     }
   });
-
-  // const materialProps = useControls({
-  //   scale: { value: 3, min: 0.1, max: 10, step: 0.05 },
-  //   thickness: { value: 0.2, min: 0, max: 3, step: 0.05 },
-  //   roughness: { value: 0, min: 0, max: 1, step: 0.1 },
-  //   transmission: { value: 1, min: 0, max: 1, step: 0.1 },
-  //   ior: { value: 1.2, min: 0, max: 3, step: 0.1 },
-  //   chromaticAberration: { value: 0.02, min: 0, max: 1 },
-  //   backside: { value: true },
-  // });
 
   const materialProps = {
     scale: 3.9,
@@ -40,8 +29,7 @@ const Model = () => {
     backside: true,
   };
 
-  // Escalar el tamaño del texto según el viewport
-  const textSize = Math.max(0.4, viewport.width / 1000); // Ajustar el divisor según sea necesario
+  const textSize = Math.max(0.4, viewport.width / 1000);
 
   return (
     <group
@@ -50,7 +38,7 @@ const Model = () => {
       <Text
         font={'/fonts/PPNeueMontreal-Bold.otf'}
         position={[0, 0, -1]}
-        fontSize={textSize} // Usar el tamaño dinámico
+        fontSize={textSize}
         color="white"
         anchorX="center"
         anchorY="middle"
@@ -60,7 +48,7 @@ const Model = () => {
       <Text
         font={'/fonts/PPNeueMontreal-Bold.otf'}
         position={[0, -1, -1]}
-        fontSize={textSize} // Usar el tamaño dinámico
+        fontSize={textSize}
         color="white"
         anchorX="center"
         anchorY="middle"
@@ -70,21 +58,40 @@ const Model = () => {
       <mesh ref={torus} {...nodes.Torus002}>
         <MeshTransmissionMaterial {...materialProps} />
       </mesh>
-      {/* <mesh ref={cube}> */}
-      {/* <boxGeometry args={[1, 1, 1]} /> Crear un cubo */}
-      {/* <MeshTransmissionMaterial {...materialProps} /> */}
-      {/* </mesh> */}
     </group>
   );
 };
 
 const CubeCanvas = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Establecer el valor inicial
+    handleResize();
+
+    // Agregar listener para cambios de tamaño de ventana
+    window.addEventListener('resize', handleResize);
+
+    // Limpiar el listener al desmontar el componente
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <Canvas style={{ height: '100vh', width: '100vw', background: '#000' }}>
-      <ambientLight intensity={1} />
-      <directionalLight intensity={1} position={[0, 2, 3]} />
+    <Canvas
+      dpr={isMobile ? 0.4 : 1} // Ajustar la resolución según el dispositivo
+      style={{ height: '100vh', width: '100vw', background: '#000' }}
+    >
+      <ambientLight intensity={isMobile ? 0.5 : 1} />
+      <directionalLight intensity={isMobile ? 0.5 : 1} position={[0, 2, 3]} />
       <Model />
-      <Environment preset="city" />
+      <Environment preset={isMobile ? 'sunset' : 'city'} />{' '}
+      {/* Ajustar el preset del entorno según el dispositivo */}
     </Canvas>
   );
 };

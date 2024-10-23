@@ -65,6 +65,7 @@ const config: Config = {
           11: 'hsl(120, 100%, 40%)', // Un tono más oscuro
         },
       },
+
       keyframes: {
         'accordion-down': {
           from: {
