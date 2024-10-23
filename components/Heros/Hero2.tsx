@@ -28,7 +28,7 @@ const Hero2: React.FC<HeroProps> = ({
           <h1 className="font-book font-display text-center md:text-left text-3xl sm:text-4xl md:text-5xl lg:text-7xl leading-snug md:leading-[5rem] tracking-tight font-gradient">
             {title}
           </h1>
-          <p className="sans mb-8 mt-4 max-w-[30rem] text-center leading-7 md:text-left text-sm md:text-base md:text-[1.125rem] md:leading-[1.5] text-slate-11 font-normal">
+          <p className="sans mb-8 mt-4 max-w-[30rem] text-center leading-7 md:text-left text-sm md:text-base md:text-[1.125rem] md:leading-[1.5]  font-normal">
             {description}
           </p>
           <div className="flex flex-col justify-center gap-4 md:flex-row md:justify-start">
@@ -56,7 +56,7 @@ const Hero2: React.FC<HeroProps> = ({
               </span>
             </a>
             <a
-              className="text-base h-12 pl-5 pr-2 gap-0 font-semibold bg-slate-1 border-slate-1 text-slate-11 hover:bg-slate-5 hover:text-slate-12 focus-visible:ring-4 focus-visible:ring-slate-7 focus-visible:outline-none focus-visible:bg-slate-6 disabled:hover:bg-slate-1 inline-flex items-center border justify-center select-none rounded-full disabled:cursor-not-allowed disabled:opacity-70 transition ease-in-out duration-200"
+              className="text-base h-12 pl-5 pr-2 gap-0 font-semibold   inline-flex items-center border justify-center select-none rounded-full "
               href={secondaryButtonLink}
             >
               {secondaryButtonText}
