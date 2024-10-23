@@ -1,4 +1,5 @@
 import React from 'react';
+import Laptop3d from '../3D/Laptop3d';
 
 interface HeroProps {
   title: string;
@@ -81,7 +82,7 @@ const Hero2: React.FC<HeroProps> = ({
         </div>
 
         {/* Imagen Columna */}
-        <div className="relative order-1 min-h-[300px] min-w-[300px] md:flex md:justify-center md:items-center">
+        <div className=" relative order-1 min-h-[500px] min-w-[500px] md:flex md:justify-center md:items-center">
           <img
             className="absolute left-0 top-0 h-[300px] w-[300px] object-cover md:block"
             src={imageUrl}
