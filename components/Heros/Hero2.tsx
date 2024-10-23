@@ -90,6 +90,7 @@ const Hero2: React.FC<HeroProps> = ({
             height="300"
             width="300"
           />
+          <Laptop3d></Laptop3d>
         </div>
       </div>
     </section>
