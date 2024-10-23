@@ -51,7 +51,7 @@ const Model = () => {
 
 const CubeCanvas = () => {
   return (
-    <Canvas>
+    <Canvas style={{ height: '500px', width: '500px', background: '#000' }}>
       <ambientLight intensity={1} />
       <directionalLight intensity={1} position={[0, 2, 3]} />
       <Model />
