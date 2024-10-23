@@ -1,19 +1,18 @@
-// CubeCanvas.jsx
 import React, { useRef } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import {
   Environment,
   MeshTransmissionMaterial,
   useGLTF,
   Text,
 } from '@react-three/drei';
-import { useFrame, useThree } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import { useControls } from 'leva';
 
 const Model = () => {
   const { nodes } = useGLTF('/medias/torrus.glb');
-  const { viewport } = useThree();
   const torus = useRef(null);
+  const { viewport } = useThree(); // Obtener el viewport
 
   useFrame(() => {
     if (torus.current) {
@@ -22,6 +21,7 @@ const Model = () => {
   });
 
   const materialProps = useControls({
+    scale: { value: 1, min: 0.1, max: 10, step: 0.05 },
     thickness: { value: 0.2, min: 0, max: 3, step: 0.05 },
     roughness: { value: 0, min: 0, max: 1, step: 0.1 },
     transmission: { value: 1, min: 0, max: 1, step: 0.1 },
@@ -30,17 +30,32 @@ const Model = () => {
     backside: { value: true },
   });
 
+  // Escalar el tamaño del texto según el viewport
+  const textSize = Math.max(0.4, viewport.width / 1000); // Ajustar el divisor según sea necesario
+
   return (
-    <group scale={viewport.width / 3.75}>
+    <group
+      scale={[materialProps.scale, materialProps.scale, materialProps.scale]}
+    >
       <Text
         font={'/fonts/PPNeueMontreal-Bold.otf'}
         position={[0, 0, -1]}
-        fontSize={0.9}
+        fontSize={textSize} // Usar el tamaño dinámico
         color="white"
         anchorX="center"
         anchorY="middle"
       >
-        hello world!
+        We are
+      </Text>
+      <Text
+        font={'/fonts/PPNeueMontreal-Bold.otf'}
+        position={[0, -1, -1]}
+        fontSize={textSize} // Usar el tamaño dinámico
+        color="white"
+        anchorX="center"
+        anchorY="middle"
+      >
+        Innovation
       </Text>
       <mesh ref={torus} {...nodes.Torus002}>
         <MeshTransmissionMaterial {...materialProps} />
@@ -51,7 +66,7 @@ const Model = () => {
 
 const CubeCanvas = () => {
   return (
-    <Canvas style={{ height: '500px', width: '500px', background: '#000' }}>
+    <Canvas style={{ height: '100vh', width: '100vw', background: '#000' }}>
       <ambientLight intensity={1} />
       <directionalLight intensity={1} position={[0, 2, 3]} />
       <Model />

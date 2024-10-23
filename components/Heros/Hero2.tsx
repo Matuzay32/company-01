@@ -1,5 +1,5 @@
 import React from 'react';
-import CubeCanvas from '../3d/CuveCanvas';
+import CubeCanvas from '../3d/CubeCanvas'; // Asegúrate de que el nombre del archivo sea correcto
 
 interface HeroProps {
   title: string;
@@ -24,11 +24,11 @@ const Hero2: React.FC<HeroProps> = ({
     <section className="mx-auto max-w-5xl px-6 pb-8 md:h-screen md:max-h-[950px] md:max-w-7xl">
       <div className="flex h-full flex-col items-center justify-between md:flex-row md:pb-24">
         {/* Texto Columna */}
-        <div className="origin-center-left order-2 max-w-3xl animate-hero-text-slide-up-fade sm:shrink-0 md:order-1 lg:pl-16">
-          <h1 className="font-book font-display text-center md:text-left text-[4rem] md:text-7xl leading-[4.35rem] md:leading-[5rem] tracking-tight font-gradient">
+        <div className="origin-center-left order-2 max-w-xl animate-hero-text-slide-up-fade sm:shrink-0 md:order-1 lg:pl-16">
+          <h1 className="font-book font-display text-center md:text-left text-3xl sm:text-4xl md:text-5xl lg:text-7xl leading-snug md:leading-[5rem] tracking-tight font-gradient">
             {title}
           </h1>
-          <p className="sans mb-8 mt-4 max-w-[30rem] text-center leading-7 md:text-left text-base md:text-[1.125rem] md:leading-[1.5] text-slate-11 font-normal">
+          <p className="sans mb-8 mt-4 max-w-[30rem] text-center leading-7 md:text-left text-sm md:text-base md:text-[1.125rem] md:leading-[1.5] text-slate-11 font-normal">
             {description}
           </p>
           <div className="flex flex-col justify-center gap-4 md:flex-row md:justify-start">
@@ -82,16 +82,9 @@ const Hero2: React.FC<HeroProps> = ({
         </div>
 
         {/* Imagen Columna */}
-        <div className=" relative order-1 min-h-[500px] min-w-[500px] md:flex md:justify-center md:items-center">
-          <img
-            className="absolute left-0 top-0 h-[300px] w-[300px] object-cover md:block"
-            src={imageUrl}
-            alt="Hero Image"
-            height="300"
-            width="300"
-          />
-          {/* <CubeCanvas></CubeCanvas> */}
-        </div>
+        {/* <div className="relative order-1 w-full h-64 md:w-1/2 md:h-auto md:flex md:justify-center md:items-center">
+          <CubeCanvas />
+        </div> */}
       </div>
     </section>
   );
