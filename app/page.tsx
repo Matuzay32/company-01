@@ -17,6 +17,7 @@ import Hero from '@/components/Heros/Hero'; // Componente Hero
 import Hero2 from '@/components/Heros/Hero2';
 import CustomSection from '@/components/ui/Others/CustomSection';
 import Hero3 from '@/components/Heros/Hero3';
+import Testimonials from '@/components/ui/Testimonials/Testimonials';
 
 export default function Home() {
   const cardData = [
@@ -38,12 +39,7 @@ export default function Home() {
       href: '/software-development',
       color: '#46ffe0',
     },
-    {
-      icon: FaRegHandshake,
-      title: 'Soporte Técnico',
-      href: '/support',
-      color: '#fff',
-    },
+
     {
       icon: FaRegClock,
       title: 'Gestión de Proyectos',
@@ -55,6 +51,13 @@ export default function Home() {
       title: 'Formación y Capacitación',
       href: '/training',
       color: '#FBB6CE',
+    },
+
+    {
+      icon: FaUsers,
+      title: 'Other services',
+      href: '/other-services',
+      color: '#22d3ee',
     },
   ];
 
@@ -89,7 +92,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col bg-black text-white">
       {/* Sección Hero 1 */}
       <Hero3></Hero3>
-      <CustomSection height="h-2" gradientColor="#4ade80">
+      {/* <CustomSection height="h-2" gradientColor="#4ade80">
         <Hero2
           title="Transform Your Digital Presence"
           description="Elevate your business with our cutting-edge web technologies. From stunning websites to powerful applications, we create solutions that drive growth and engagement."
@@ -99,7 +102,7 @@ export default function Home() {
           secondaryButtonLink="/contact"
           imageUrl="https://images.unsplash.com/photo-1673235966910-f2a443bdbaaf?q=80&w=2160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         />
-      </CustomSection>
+      </CustomSection> */}
 
       <CustomSection gradientColor="#46ffe0">
         <Hero
@@ -181,18 +184,12 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* Sección de Testimonios */}
-      <section className="text-center mt-24 mb-20 px-4 bg-gray-100 py-10 rounded-lg">
-        <h2 className="font-book font-display mb-8 text-[2.5rem] tracking-tight leading-[120%] text-gray-800">
-          Testimonios
-        </h2>
-        <p className="mb-12 text-lg text-gray-600 max-w-2xl mx-auto">
-          "La atención y el servicio que recibimos fue excepcional. Nos ayudaron
-          a optimizar nuestros procesos de manera efectiva."
-        </p>
-        <p className="text-lg font-bold text-gray-800">— Cliente Satisfecho</p>
-      </section>
+      <CustomSection height="h-2" gradientColor="#39FF14">
+        {/* Sección de Testimonios */}
+        <section className="text-center mt-24 mb-20 px-4">
+          <Testimonials></Testimonials>
+        </section>
+      </CustomSection>
     </main>
   );
 }
