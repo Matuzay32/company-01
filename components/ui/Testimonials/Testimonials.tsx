@@ -60,7 +60,7 @@ export default function Testimonials() {
   }, [slidesCount, itemsToShow]);
 
   return (
-    <section className="mx-auto px-6 py-12 sm:py-24">
+    <section className="mx-auto px-4 sm:px-6 py-12 sm:py-24 overflow-scroll w-full">
       <h2 className="font-book font-display mb-8 text-[2.5rem] tracking-tight leading-[120%] text-white">
         Testimonios
       </h2>
@@ -68,7 +68,7 @@ export default function Testimonials() {
         Nuestros clientes nos eligen, superamos expectativas, ayudamos a
         construir confianza entre nuestros clientes y nosotros
       </p>
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden overflow-x-hidden">
         <div
           className="flex transition-transform duration-500"
           style={{
@@ -80,21 +80,21 @@ export default function Testimonials() {
               key={index}
               className={`${
                 itemsToShow === 1 ? 'w-full' : 'w-full sm:w-1/3'
-              } flex-shrink-0 px-2 sm:px-4`}
+              } flex-shrink-0 max-w-full px-2 sm:px-4`}
             >
-              <div className="relative rounded-2xl border border-slate-5 bg-gradient-to-b from-black to-black p-6">
+              <div className="relative rounded-2xl border border-slate-5 bg-gradient-to-b from-black to-black p-4 sm:p-6 h-full">
                 <div
                   aria-hidden="true"
                   className="left-1/2 top-0 w-[300px] center pointer-events-none absolute h-1 max-w-full -translate-x-1/2 -translate-y-1/2"
                   style={{
-                    background: `linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 0%, #FBD38D 50%, rgba(0, 0, 0, 0) 100%)`,
+                    background: `linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 0%, #fef9c3 50%, rgba(0, 0, 0, 0) 100%)`,
                   }}
                 ></div>
                 <div
                   aria-hidden="true"
                   className="left-1/2 bottom-0 w-[300px] center pointer-events-none absolute h-px max-w-full -translate-x-1/2 -translate-y-1/2"
                   style={{
-                    background: `linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 0%, #FBD38D 50%, rgba(0, 0, 0, 0) 100%)`,
+                    background: `linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 0%, #D4D4D4 50%, rgba(0, 0, 0, 0) 100%)`,
                   }}
                 ></div>
 

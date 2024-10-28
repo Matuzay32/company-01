@@ -184,9 +184,9 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <CustomSection height="h-2" gradientColor="#39FF14">
+      <CustomSection height="h-3" gradientColor="#39FF14">
         {/* Sección de Testimonios */}
-        <section className="text-center mt-24 mb-20 px-4">
+        <section className="text-center mt-24 mb-20 px-4 w-scree">
           <Testimonials></Testimonials>
         </section>
       </CustomSection>
