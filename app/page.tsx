@@ -114,10 +114,9 @@ export default function Home() {
           gradientEnd="#03abff" // Color final del gradiente
         />
       </CustomSection>
-
-      {/* Sección de Cards */}
+      {/* Cards */}
       <section className="text-center mt-24 mb-20 px-4">
-        <h2 className="font-book font-display mb-8 text-[2.5rem] tracking-tight leading-[120%] text-white">
+        <h2 className="font-book font-display mb-8 text-[2rem] md:text-[2.5rem] tracking-tight leading-[120%] text-white">
           Nuestros Servicios
         </h2>
         <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
@@ -125,7 +124,7 @@ export default function Home() {
           necesidades específicas. Explora cómo podemos ayudarte a alcanzar tus
           objetivos.
         </p>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
           {cardData.map((card, index) => (
             <Card
               key={index}
@@ -148,7 +147,7 @@ export default function Home() {
             necesidades específicas. Explora cómo podemos ayudarte a alcanzar
             tus objetivos.
           </p>
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+          <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
             {cardData.map((card, index) => (
               <Card
                 key={index}
@@ -171,7 +170,7 @@ export default function Home() {
           Nuestra experiencia y dedicación nos distinguen. Conoce los valores
           que nos motivan a brindar un servicio excepcional.
         </p>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
           {cardInfoData.map((info, index) => (
             <CardInfo
               key={index}
@@ -184,12 +183,10 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <CustomSection height="h-3" gradientColor="#39FF14">
-        {/* Sección de Testimonios */}
-        <section className="text-center mt-24 mb-20 px-4 w-scree">
-          <Testimonials></Testimonials>
-        </section>
-      </CustomSection>
+      {/* Sección de Testimonios */}
+      <section className="text-center mt-24 mb-20 px-4 w-scree">
+        <Testimonials></Testimonials>
+      </section>
     </main>
   );
 }

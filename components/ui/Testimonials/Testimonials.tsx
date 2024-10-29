@@ -1,4 +1,7 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const testimonialsData = [
   {
@@ -41,7 +44,15 @@ export default function Testimonials() {
 
   useEffect(() => {
     const handleResize = () => {
-      setItemsToShow(window.innerWidth < 640 ? 1 : 3);
+      if (window.innerWidth < 640) {
+        setItemsToShow(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsToShow(2);
+      } else if (window.innerWidth >= 1280) {
+        setItemsToShow(3);
+      } else {
+        setItemsToShow(3);
+      }
     };
 
     handleResize();
@@ -60,17 +71,17 @@ export default function Testimonials() {
   }, [slidesCount, itemsToShow]);
 
   return (
-    <section className="mx-auto px-4 sm:px-6 py-12 sm:py-24 overflow-scroll w-full">
-      <h2 className="font-book font-display mb-8 text-[2.5rem] tracking-tight leading-[120%] text-white">
+    <section className="mx-auto px-4 sm:px-6 py-12 sm:py-24 overflow-hidden w-full">
+      <h2 className="font-book font-display mb-8 text-3xl sm:text-4xl md:text-[2.5rem] tracking-tight leading-[120%] text-white text-center">
         Testimonios
       </h2>
-      <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
+      <p className="mb-12 text-base sm:text-lg text-gray-400 max-w-3xl mx-auto text-center">
         Nuestros clientes nos eligen, superamos expectativas, ayudamos a
         construir confianza entre nuestros clientes y nosotros
       </p>
-      <div className="relative overflow-hidden overflow-x-hidden">
+      <div className="relative overflow-hidden max-w-7xl mx-auto">
         <div
-          className="flex transition-transform duration-500"
+          className="flex transition-transform duration-500 ease-in-out"
           style={{
             transform: `translateX(-${(currentSlide * 100) / itemsToShow}%)`,
           }}
@@ -78,11 +89,15 @@ export default function Testimonials() {
           {testimonialsData.map((testimonial, index) => (
             <div
               key={index}
-              className={`${
-                itemsToShow === 1 ? 'w-full' : 'w-full sm:w-1/3'
-              } flex-shrink-0 max-w-full px-2 sm:px-4`}
+              className={`flex-shrink-0 px-2 sm:px-4 ${
+                itemsToShow === 1
+                  ? 'w-full'
+                  : itemsToShow === 2
+                  ? 'w-1/2'
+                  : 'w-1/3'
+              }`}
             >
-              <div className="relative rounded-2xl border border-slate-5 bg-gradient-to-b from-black to-black p-4 sm:p-6 h-full">
+              <div className="relative rounded-2xl border border-slate-5 bg-gradient-to-b from-black to-black p-4 sm:p-6 h-full max-w-md mx-auto">
                 <div
                   aria-hidden="true"
                   className="left-1/2 top-0 w-[300px] center pointer-events-none absolute h-1 max-w-full -translate-x-1/2 -translate-y-1/2"
@@ -98,15 +113,17 @@ export default function Testimonials() {
                   }}
                 ></div>
 
-                <blockquote>
-                  <span className="sans text-sm leading-[1.6] text-slate-11 font-normal">
+                <blockquote className="h-full flex flex-col justify-between">
+                  <p className="sans text-sm leading-[1.6] text-slate-11 font-normal mb-4">
                     "{testimonial.text}"
-                  </span>
-                  <div className="relative mt-6 flex flex-row items-center">
-                    <img
+                  </p>
+                  <div className="relative mt-auto flex flex-row items-center">
+                    <Image
                       src={testimonial.image}
                       alt={testimonial.author}
-                      className="h-10 w-10 rounded-full mr-4"
+                      width={40}
+                      height={40}
+                      className="rounded-full mr-4"
                     />
                     <div className="flex flex-col">
                       <span className="sans text-sm leading-[1.6] text-slate-12 font-normal">
