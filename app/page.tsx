@@ -90,21 +90,9 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col bg-black text-white">
-      {/* Sección Hero 1 */}
       <Hero3></Hero3>
-      {/* <CustomSection height="h-2" gradientColor="#4ade80">
-        <Hero2
-          title="Transform Your Digital Presence"
-          description="Elevate your business with our cutting-edge web technologies. From stunning websites to powerful applications, we create solutions that drive growth and engagement."
-          primaryButtonText="Discover Our Services"
-          primaryButtonLink="/services"
-          secondaryButtonText="Get In Touch"
-          secondaryButtonLink="/contact"
-          imageUrl="https://images.unsplash.com/photo-1673235966910-f2a443bdbaaf?q=80&w=2160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        />
-      </CustomSection> */}
-
-      <CustomSection gradientColor="#46ffe0">
+      {/* Sección Hero 1 */}
+      <CustomSection height="h-2" gradientColor="#86efac">
         <Hero
           title="Bienvenido a Nuestra Plataforma"
           subtitle="Descubre cómo podemos ayudarte a mejorar tu experiencia."
@@ -116,29 +104,31 @@ export default function Home() {
       </CustomSection>
       {/* Cards */}
       <section className="text-center mt-24 mb-20 px-4">
-        <h2 className="font-book font-display mb-8 text-[2rem] md:text-[2.5rem] tracking-tight leading-[120%] text-white">
-          Nuestros Servicios
-        </h2>
-        <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
-          Cada uno de nuestros servicios está diseñado para atender tus
-          necesidades específicas. Explora cómo podemos ayudarte a alcanzar tus
-          objetivos.
-        </p>
-        <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
-          {cardData.map((card, index) => (
-            <Card
-              key={index}
-              icon={card.icon}
-              title={card.title}
-              href={card.href}
-              color={card.color}
-            />
-          ))}
-        </div>
+        <CustomSection height="h-2" gradientColor="#86efac">
+          <h2 className="font-book font-display mb-8 text-[2rem] md:text-[2.5rem] tracking-tight leading-[120%] text-white">
+            Nuestros Servicios
+          </h2>
+          <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
+            Cada uno de nuestros servicios está diseñado para atender tus
+            necesidades específicas. Explora cómo podemos ayudarte a alcanzar
+            tus objetivos.
+          </p>
+          <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
+            {cardData.map((card, index) => (
+              <Card
+                key={index}
+                icon={card.icon}
+                title={card.title}
+                href={card.href}
+                color={card.color}
+              />
+            ))}
+          </div>
+        </CustomSection>
       </section>
 
-      <CustomSection gradientColor="#9F7AEA">
-        <section className="text-center mt-24 mb-20 px-4">
+      <section className="text-center mt-24 mb-20 px-4">
+        <CustomSection height="h-2" gradientColor="#86efac">
           <h2 className="font-book font-display mb-8 text-[2.5rem] tracking-tight leading-[120%] text-white">
             Nuestros Servicios
           </h2>
@@ -158,34 +148,39 @@ export default function Home() {
               />
             ))}
           </div>
-        </section>
-      </CustomSection>
+        </CustomSection>
+      </section>
 
       {/* Sección de CardInfo */}
+
       <section className="text-center mt-24 mb-20 px-4">
-        <h2 className="font-book font-display mb-8 text-[2.5rem] tracking-tight leading-[120%] text-white">
-          ¿Por Qué Elegirnos?
-        </h2>
-        <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
-          Nuestra experiencia y dedicación nos distinguen. Conoce los valores
-          que nos motivan a brindar un servicio excepcional.
-        </p>
-        <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
-          {cardInfoData.map((info, index) => (
-            <CardInfo
-              key={index}
-              icon={info.icon}
-              title={info.title}
-              description={info.description}
-              buttonText={info.buttonText}
-              buttonLink={info.buttonLink}
-            />
-          ))}
-        </div>
+        <CustomSection height="h-2" gradientColor="#86efac">
+          <h2 className="font-book font-display mb-8 text-[2.5rem] tracking-tight leading-[120%] text-white">
+            ¿Por Qué Elegirnos?
+          </h2>
+          <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
+            Nuestra experiencia y dedicación nos distinguen. Conoce los valores
+            que nos motivan a brindar un servicio excepcional.
+          </p>
+          <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
+            {cardInfoData.map((info, index) => (
+              <CardInfo
+                key={index}
+                icon={info.icon}
+                title={info.title}
+                description={info.description}
+                buttonText={info.buttonText}
+                buttonLink={info.buttonLink}
+              />
+            ))}
+          </div>
+        </CustomSection>
       </section>
       {/* Sección de Testimonios */}
       <section className="text-center mt-24 mb-20 px-4 w-scree">
-        <Testimonials></Testimonials>
+        <CustomSection height="h-2" gradientColor="#86efac">
+          <Testimonials></Testimonials>
+        </CustomSection>
       </section>
     </main>
   );
