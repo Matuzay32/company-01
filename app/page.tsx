@@ -90,7 +90,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col bg-black text-white">
-      <Hero3></Hero3>
+      {/* <Hero3></Hero3> */}
       {/* Sección Hero 1 */}
       <CustomSection height="h-2" gradientColor="#86efac">
         <Hero
