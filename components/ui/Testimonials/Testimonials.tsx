@@ -1,38 +1,39 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import React, { useEffect, useState } from "react";
+
+import Image from "next/image";
 
 const testimonialsData = [
   {
     text: "Our team loves Resend. It makes email sending so easy and reliable. After we switched to Dedicated IPs, our deliverability improved tremendously and we don't hear complaints about emails landing on spam anymore.",
-    author: 'Vlad Matsiiako',
-    position: 'Co-founder of Infisical',
-    image: 'https://randomuser.me/api/portraits/men/32.jpg',
+    author: "Vlad Matsiiako",
+    position: "Co-founder of Infisical",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
     text: "The best experience I've ever had with an email service. Their support is top-notch and their features are incredibly useful!",
-    author: 'Jane Doe',
-    position: 'CEO of Awesome Company',
-    image: 'https://randomuser.me/api/portraits/women/44.jpg',
+    author: "Jane Doe",
+    position: "CEO of Awesome Company",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
-    text: 'This service has changed the way we communicate with our clients. Highly recommend it!',
-    author: 'John Smith',
-    position: 'Marketing Director',
-    image: 'https://randomuser.me/api/portraits/men/65.jpg',
+    text: "This service has changed the way we communicate with our clients. Highly recommend it!",
+    author: "John Smith",
+    position: "Marketing Director",
+    image: "https://randomuser.me/api/portraits/men/65.jpg",
   },
   {
-    text: 'Fantastic support and incredible features. Our team is very happy with the service!',
-    author: 'Sara Lee',
-    position: 'Product Manager',
-    image: 'https://randomuser.me/api/portraits/women/29.jpg',
+    text: "Fantastic support and incredible features. Our team is very happy with the service!",
+    author: "Sara Lee",
+    position: "Product Manager",
+    image: "https://randomuser.me/api/portraits/women/29.jpg",
   },
   {
-    text: 'Resend has streamlined our email processes, making everything much more efficient.',
-    author: 'Michael Brown',
-    position: 'CTO',
-    image: 'https://randomuser.me/api/portraits/men/78.jpg',
+    text: "Resend has streamlined our email processes, making everything much more efficient.",
+    author: "Michael Brown",
+    position: "CTO",
+    image: "https://randomuser.me/api/portraits/men/78.jpg",
   },
 ];
 
@@ -56,8 +57,8 @@ export default function Testimonials() {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -73,11 +74,11 @@ export default function Testimonials() {
   return (
     <section className="mx-auto px-4 sm:px-6 py-12 sm:py-24 overflow-hidden w-full">
       <h2 className="font-book font-display mb-8 text-3xl sm:text-4xl md:text-[2.5rem] tracking-tight leading-[120%] text-white text-center">
-        Testimonios
+        Testimonials
       </h2>
       <p className="mb-12 text-base sm:text-lg text-gray-400 max-w-3xl mx-auto text-center">
-        Nuestros clientes nos eligen, superamos expectativas, ayudamos a
-        construir confianza entre nuestros clientes y nosotros
+        Our customers choose us because we exceed expectations, we help build
+        trust between our customers and us.
       </p>
       <div className="relative overflow-hidden max-w-7xl mx-auto">
         <div
@@ -91,10 +92,10 @@ export default function Testimonials() {
               key={index}
               className={`flex-shrink-0 px-2 sm:px-4 ${
                 itemsToShow === 1
-                  ? 'w-full'
+                  ? "w-full"
                   : itemsToShow === 2
-                  ? 'w-1/2'
-                  : 'w-1/3'
+                  ? "w-1/2"
+                  : "w-1/3"
               }`}
             >
               <div className="relative rounded-2xl border border-slate-5 bg-gradient-to-b from-black to-black p-4 sm:p-6 h-full max-w-md mx-auto">

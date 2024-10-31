@@ -1,6 +1,6 @@
-import React from 'react';
-import { Button } from '../ui/Buttons/button';
-import { ChevronRight } from 'lucide-react';
+import { Button } from "../ui/Buttons/button";
+import { ChevronRight } from "lucide-react";
+import React from "react";
 
 interface HeroProps {
   title: string;
@@ -16,22 +16,22 @@ export default function Hero({
   subtitle,
   buttonText,
   buttonHref,
-  gradientStart = '#FFFF92', // Valor predeterminado
-  gradientEnd = '#EE8912', // Valor predeterminado
+  gradientStart = "#FFFF92", // Valor predeterminado
+  gradientEnd = "#EE8912", // Valor predeterminado
 }: HeroProps) {
   return (
     <div>
       <section className="text-center mt-24 mb-20 px-4">
         <h2 className="font-book font-display mb-2 text-[3rem] md:text-[3.5rem] tracking-tight leading-[120%] font-gradient">
-          {title}{' '}
-          <span
+          {title}{" "}
+          {/* <span
             className="bg-gradient-to-br bg-clip-text text-transparent"
             style={{
               backgroundImage: `linear-gradient(to bottom right, ${gradientStart}, ${gradientEnd})`,
             }}
           >
             with us
-          </span>
+          </span> */}
         </h2>
 
         <p className="sans mx-auto mb-12 max-w-5xl text-base md:text-[1.125rem] md:leading-[1.5] text-gray-400">

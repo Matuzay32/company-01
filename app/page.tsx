@@ -1,90 +1,90 @@
-'use client';
+"use client";
 
 import {
   FaBeer,
-  FaStar,
   FaLightbulb,
-  FaRegHandshake,
   FaRegClock,
+  FaRegHandshake,
+  FaStar,
   FaUsers,
-} from 'react-icons/fa';
-import { RiCustomerServiceFill } from 'react-icons/ri';
+} from "react-icons/fa";
 
-import { FaMicrochip } from 'react-icons/fa6';
-import Card from '@/components/ui/Cards/Card'; // Componente de tarjeta
-import CardInfo from '@/components/ui/Cards/CardInfo'; // Componente de tarjeta con información
-import Hero from '@/components/Heros/Hero'; // Componente Hero
-import Hero2 from '@/components/Heros/Hero2';
-import CustomSection from '@/components/ui/Others/CustomSection';
-import Hero3 from '@/components/Heros/Hero3';
-import Testimonials from '@/components/ui/Testimonials/Testimonials';
+import Card from "@/components/ui/Cards/Card"; // Componente de tarjeta
+import CardInfo from "@/components/ui/Cards/CardInfo"; // Componente de tarjeta con información
+import CustomSection from "@/components/ui/Others/CustomSection";
+import { FaMicrochip } from "react-icons/fa6";
+import Hero from "@/components/Heros/Hero"; // Componente Hero
+import Hero2 from "@/components/Heros/Hero2";
+import Hero3 from "@/components/Heros/Hero3";
+import { RiCustomerServiceFill } from "react-icons/ri";
+import Testimonials from "@/components/ui/Testimonials/Testimonials";
 
 export default function Home() {
   const cardData = [
     {
       icon: FaStar,
-      title: 'Análisis de Datos',
-      href: '/data-analysis',
-      color: '#fff',
+      title: "Landing pages",
+      href: "/services/landing-pages",
+      color: "#fff",
     },
     {
       icon: FaLightbulb,
-      title: 'Consultoría Estratégica',
-      href: '/consulting',
-      color: '#FEFCBF',
+      title: "Web Development",
+      href: "/services/web-development",
+      color: "#FEFCBF",
     },
     {
       icon: FaMicrochip,
-      title: 'Desarrollo de Software',
-      href: '/software-development',
-      color: '#46ffe0',
+      title: "Software development",
+      href: "/services/software-development",
+      color: "#46ffe0",
     },
 
     {
       icon: FaRegClock,
-      title: 'Gestión de Proyectos',
-      href: '/project-management',
-      color: '#E9D8FD',
+      title: "Web Design",
+      href: "/services/web-desing",
+      color: "#E9D8FD",
     },
     {
       icon: FaUsers,
-      title: 'Formación y Capacitación',
-      href: '/training',
-      color: '#FBB6CE',
+      title: "Staff Augmentation",
+      href: "/services/staff-augmentation",
+      color: "#FBB6CE",
     },
 
     {
       icon: FaUsers,
-      title: 'Other services',
-      href: '/other-services',
-      color: '#22d3ee',
+      title: "Other services",
+      href: "/services/other-services",
+      color: "#22d3ee",
     },
   ];
 
   const cardInfoData = [
     {
       icon: FaStar,
-      title: 'Compromiso con la Calidad',
+      title: "Compromise with Quality",
       description:
-        'Nuestro equipo está dedicado a ofrecer servicios de alta calidad para asegurar tu satisfacción.',
-      buttonText: 'Más Información',
-      buttonLink: '/about',
+        "Our team's mission is to turn your projects real and with high quality",
+      buttonText: "More info",
+      buttonLink: "/about",
     },
     {
       icon: FaLightbulb,
-      title: 'Innovación Constante',
+      title: "Innovación Constante",
       description:
-        'Estamos siempre en búsqueda de nuevas soluciones y enfoques para mejorar nuestros servicios.',
-      buttonText: 'Descubre Más',
-      buttonLink: '/innovation',
+        "Estamos siempre en búsqueda de nuevas soluciones y enfoques para mejorar nuestros servicios.",
+      buttonText: "Descubre Más",
+      buttonLink: "/innovation",
     },
     {
       icon: RiCustomerServiceFill,
-      title: 'Atención Personalizada',
+      title: "Atención Personalizada",
       description:
-        'Ofrecemos atención individualizada a cada uno de nuestros clientes para entender sus necesidades.',
-      buttonText: 'Contáctanos',
-      buttonLink: '/contact',
+        "Ofrecemos atención individualizada a cada uno de nuestros clientes para entender sus necesidades.",
+      buttonText: "Contáctanos",
+      buttonLink: "/contact",
     },
   ];
 
@@ -94,10 +94,10 @@ export default function Home() {
       {/* Sección Hero 1 */}
       <CustomSection height="h-2" gradientColor="#86efac">
         <Hero
-          title="Bienvenido a Nuestra Plataforma"
-          subtitle="Descubre cómo podemos ayudarte a mejorar tu experiencia."
-          buttonText="Comienza Ahora"
-          buttonHref="/start"
+          title="Welcome to our platform"
+          subtitle="Start your poject's vision with us"
+          buttonText="Start now"
+          buttonHref="/pricing"
           gradientStart="#46ffe0" // Color de inicio del gradiente
           gradientEnd="#03abff" // Color final del gradiente
         />
@@ -106,12 +106,11 @@ export default function Home() {
       <section className="text-center mt-24 mb-20 px-4">
         <CustomSection height="h-2" gradientColor="#86efac">
           <h2 className="font-book font-display mb-8 text-[2rem] md:text-[2.5rem] tracking-tight leading-[120%] text-white">
-            Nuestros Servicios
+            Our Services
           </h2>
           <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
-            Cada uno de nuestros servicios está diseñado para atender tus
-            necesidades específicas. Explora cómo podemos ayudarte a alcanzar
-            tus objetivos.
+            To find out more services than the ones you can see here go to
+            "Other services"
           </p>
           <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
             {cardData.map((card, index) => (
@@ -130,7 +129,7 @@ export default function Home() {
       <section className="text-center mt-24 mb-20 px-4">
         <CustomSection height="h-2" gradientColor="#86efac">
           <h2 className="font-book font-display mb-8 text-[2.5rem] tracking-tight leading-[120%] text-white">
-            Nuestros Servicios
+            A C M 1 P T
           </h2>
           <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
             Cada uno de nuestros servicios está diseñado para atender tus
@@ -156,11 +155,11 @@ export default function Home() {
       <section className="text-center mt-24 mb-20 px-4">
         <CustomSection height="h-2" gradientColor="#86efac">
           <h2 className="font-book font-display mb-8 text-[2.5rem] tracking-tight leading-[120%] text-white">
-            ¿Por Qué Elegirnos?
+            Why us?
           </h2>
           <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
-            Nuestra experiencia y dedicación nos distinguen. Conoce los valores
-            que nos motivan a brindar un servicio excepcional.
+            Because we give a personalized service to every need our customer
+            has
           </p>
           <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
             {cardInfoData.map((info, index) => (
