@@ -4,9 +4,12 @@ const CustomSection = ({
   children,
   gradientColor = 'rgba(143, 143, 143, 0.67)',
   height = 'h-px',
+  mt = 'mt-20',
 }: any) => {
   return (
-    <section className=" px-6 py-12 sm:py-24 relative rounded-3xl border-t border-slate-6 mt-20 ">
+    <section
+      className={` px-6 py-12 sm:py-24 relative rounded-3xl border-t border-slate-6 ${mt} `}
+    >
       <div
         aria-hidden="true"
         className={`left-1/2 top-0 w-[300px] center pointer-events-none absolute ${height} max-w-full -translate-x-1/2 -translate-y-1/2`}

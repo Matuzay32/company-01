@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/Buttons/v1/button';
 import {
   Card,
   CardContent,
@@ -238,7 +238,7 @@ export default function Pricing() {
       </div>
 
       {/* Feature Comparison Table */}
-      <CustomSection>
+      <CustomSection mt="mt-40">
         <motion.div
           className="mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -332,20 +332,22 @@ export default function Pricing() {
       </CustomSection>
 
       {/* CTA Section */}
-      <motion.div
-        className="text-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-      >
-        <h3 className="text-3xl font-bold mb-4">¿Listo para comenzar?</h3>
-        <p className="text-xl text-muted-foreground mb-8">
-          Únete a miles de desarrolladores que confían en nuestra plataforma
-        </p>
-        <Button size="lg" variant={'outline'} className="text-lg py-6 px-8 ">
-          Prueba Gratis por 14 Días
-        </Button>
-      </motion.div>
+      <CustomSection>
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          <h3 className="text-3xl font-bold mb-4">¿Listo para comenzar?</h3>
+          <p className="text-xl text-muted-foreground mb-8">
+            Únete a miles de desarrolladores que confían en nuestra plataforma
+          </p>
+          <Button size="lg" variant={'outline'} className="text-lg py-6 px-8 ">
+            Prueba Gratis por 14 Días
+          </Button>
+        </motion.div>
+      </CustomSection>
     </div>
   );
 }

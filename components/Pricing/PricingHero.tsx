@@ -7,7 +7,7 @@ import {
   BarChart4,
   ChevronRight,
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/Buttons/v2/button';
 import {
   Card,
   CardContent,
