@@ -105,7 +105,7 @@ export default function Home() {
       </CustomSection>
       {/* Cards */}
       <section className="text-center mt-24 mb-20 px-4">
-        <CustomSection height="h-2" gradientColor="#86efac">
+        <CustomSection height="h-2" gradientColor="#D6BCFA">
           <h2 className="font-book font-display mb-8 text-[2rem] md:text-[2.5rem] tracking-tight leading-[120%] text-white">
             Our Services
           </h2>
@@ -128,27 +128,6 @@ export default function Home() {
       </section>
 
       <section className="text-center mt-24 mb-20 px-4">
-        {/* <CustomSection height="h-2" gradientColor="#86efac">
-          <h2 className="font-book font-display mb-8 text-[2.5rem] tracking-tight leading-[120%] text-white">
-            A C M 1 P T
-          </h2>
-          <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
-            Cada uno de nuestros servicios está diseñado para atender tus
-            necesidades específicas. Explora cómo podemos ayudarte a alcanzar
-            tus objetivos.
-          </p>
-          <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
-            {cardData.map((card, index) => (
-              <Card
-                key={index}
-                icon={card.icon}
-                title={card.title}
-                href={card.href}
-                color={card.color}
-              />
-            ))}
-          </div>
-        </CustomSection> */}
         <CustomSection height="h-2" gradientColor="#46ffe0">
           <PricingHero></PricingHero>
         </CustomSection>
@@ -157,7 +136,7 @@ export default function Home() {
       {/* Sección de CardInfo */}
 
       <section className="text-center mt-24 mb-20 px-4">
-        <CustomSection height="h-2" gradientColor="#86efac">
+        <CustomSection height="h-2" gradientColor="#FBB6CE">
           <h2 className="font-book font-display mb-8 text-[2.5rem] tracking-tight leading-[120%] text-white">
             Why us?
           </h2>
@@ -181,7 +160,7 @@ export default function Home() {
       </section>
       {/* Sección de Testimonios */}
       <section className="text-center mt-24 mb-20 px-4 w-scree">
-        <CustomSection height="h-2" gradientColor="#86efac">
+        <CustomSection height="h-2" gradientColor="#86efac" mt="mt-1">
           <Testimonials></Testimonials>
         </CustomSection>
       </section>
