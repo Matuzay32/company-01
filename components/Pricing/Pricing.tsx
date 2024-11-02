@@ -27,6 +27,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import CustomSection from '../ui/Others/CustomSection';
 
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -237,92 +238,98 @@ export default function Pricing() {
       </div>
 
       {/* Feature Comparison Table */}
-      <motion.div
-        className="mb-16"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-        <h3 className="text-3xl font-bold text-center mb-8">
-          Comparación de Características
-        </h3>
-        <div className="rounded-lg border overflow-hidden">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="w-[300px]">Característica</TableHead>
-                <TableHead>Free</TableHead>
-                <TableHead>Pro</TableHead>
-                <TableHead>Enterprise</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {featureComparison.map((item) => (
-                <TableRow key={item.feature}>
-                  <TableCell className="font-medium">{item.feature}</TableCell>
-                  <TableCell>
-                    {typeof item.free === 'boolean' ? (
-                      item.free ? (
-                        <Check className="h-5 w-5 text-primary" />
-                      ) : (
-                        '—'
-                      )
-                    ) : (
-                      item.free
-                    )}
-                  </TableCell>
-                  <TableCell>
-                    {typeof item.pro === 'boolean' ? (
-                      item.pro ? (
-                        <Check className="h-5 w-5 text-primary" />
-                      ) : (
-                        '—'
-                      )
-                    ) : (
-                      item.pro
-                    )}
-                  </TableCell>
-                  <TableCell>
-                    {typeof item.enterprise === 'boolean' ? (
-                      item.enterprise ? (
-                        <Check className="h-5 w-5 text-primary" />
-                      ) : (
-                        '—'
-                      )
-                    ) : (
-                      item.enterprise
-                    )}
-                  </TableCell>
+      <CustomSection>
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <h3 className="text-3xl font-bold text-center mb-8">
+            Comparación de Características
+          </h3>
+          <div className="rounded-lg border overflow-hidden">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-[300px]">Característica</TableHead>
+                  <TableHead>Free</TableHead>
+                  <TableHead>Pro</TableHead>
+                  <TableHead>Enterprise</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </div>
-      </motion.div>
+              </TableHeader>
+              <TableBody>
+                {featureComparison.map((item) => (
+                  <TableRow key={item.feature}>
+                    <TableCell className="font-medium">
+                      {item.feature}
+                    </TableCell>
+                    <TableCell>
+                      {typeof item.free === 'boolean' ? (
+                        item.free ? (
+                          <Check className="h-5 w-5 text-primary" />
+                        ) : (
+                          '—'
+                        )
+                      ) : (
+                        item.free
+                      )}
+                    </TableCell>
+                    <TableCell>
+                      {typeof item.pro === 'boolean' ? (
+                        item.pro ? (
+                          <Check className="h-5 w-5 text-primary" />
+                        ) : (
+                          '—'
+                        )
+                      ) : (
+                        item.pro
+                      )}
+                    </TableCell>
+                    <TableCell>
+                      {typeof item.enterprise === 'boolean' ? (
+                        item.enterprise ? (
+                          <Check className="h-5 w-5 text-primary" />
+                        ) : (
+                          '—'
+                        )
+                      ) : (
+                        item.enterprise
+                      )}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </motion.div>
+      </CustomSection>
 
       {/* FAQ Section */}
-      <motion.div
-        className="mb-16"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-      >
-        <h3 className="text-3xl font-bold text-center mb-8">
-          Preguntas Frecuentes
-        </h3>
-        <Accordion
-          type="single"
-          collapsible
-          className="w-full max-w-3xl mx-auto"
+      <CustomSection>
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
         >
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger>{faq.question}</AccordionTrigger>
-              <AccordionContent>{faq.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </motion.div>
+          <h3 className="text-3xl font-bold text-center mb-8">
+            Preguntas Frecuentes
+          </h3>
+          <Accordion
+            type="single"
+            collapsible
+            className="w-full max-w-3xl mx-auto"
+          >
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                <AccordionContent>{faq.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </motion.div>
+      </CustomSection>
 
       {/* CTA Section */}
       <motion.div
