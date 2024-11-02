@@ -1,5 +1,12 @@
 import Link from 'next/link';
-import { ArrowRight, Check, Zap, Shield, BarChart4 } from 'lucide-react';
+import {
+  ArrowRight,
+  Check,
+  Zap,
+  Shield,
+  BarChart4,
+  ChevronRight,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -26,7 +33,11 @@ export default function PricingHero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/pricing" passHref>
-                <Button className="group w-full sm:w-auto text-lg" size="lg">
+                <Button
+                  variant={'gradient'}
+                  className="group w-full sm:w-auto text-lg"
+                  size="lg"
+                >
                   Ver planes y precios
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
