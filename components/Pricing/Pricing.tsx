@@ -129,7 +129,7 @@ export default function Pricing() {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-background/80">
+    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 bg-black">
       {/* Pricing Header */}
       <motion.div
         className="text-center mb-16"
@@ -155,7 +155,7 @@ export default function Pricing() {
           <Switch
             checked={isAnnual}
             onCheckedChange={setIsAnnual}
-            className="data-[state=checked]:bg-primary"
+            className="data-[state=checked]"
           />
           <span
             className={`text-lg ${
@@ -181,12 +181,19 @@ export default function Pricing() {
           >
             <Card
               className={`flex flex-col h-full ${
-                plan.popular ? 'border-primary shadow-lg scale-105' : ''
+                plan.popular ? 'border shadow-lg scale-105' : ''
               }`}
             >
+              <div
+                aria-hidden="true"
+                className="left-1/2 top-0 w-[300px] center pointer-events-none absolute h-px max-w-full -translate-x-1/2 -translate-y-1/2"
+                style={{
+                  background: `linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 0%, #FBD38D 50%, rgba(0, 0, 0, 0) 100%)`,
+                }}
+              ></div>{' '}
               <CardHeader>
                 {plan.popular && (
-                  <div className="text-sm font-medium text-primary mb-2 bg-primary/10 py-1 px-3 rounded-full w-fit">
+                  <div className="text-sm font-medium  mb-2  py-1 px-3 rounded-full w-fit">
                     Más Popular
                   </div>
                 )}
@@ -218,10 +225,7 @@ export default function Pricing() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button
-                  className="w-full text-lg py-6"
-                  variant={plan.popular ? 'default' : 'outline'}
-                >
+                <Button className="w-full text-lg py-6 " variant={'outline'}>
                   {plan.name === 'Enterprise'
                     ? 'Contactar Ventas'
                     : 'Comenzar Ahora'}
@@ -331,7 +335,7 @@ export default function Pricing() {
         <p className="text-xl text-muted-foreground mb-8">
           Únete a miles de desarrolladores que confían en nuestra plataforma
         </p>
-        <Button size="lg" className="text-lg py-6 px-8">
+        <Button size="lg" variant={'outline'} className="text-lg py-6 px-8 ">
           Prueba Gratis por 14 Días
         </Button>
       </motion.div>
