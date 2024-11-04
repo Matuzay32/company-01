@@ -27,6 +27,13 @@ export default function About() {
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/10 shadow-2xl transform -rotate-6" />
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/10 shadow-2xl transform rotate-6" />
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/10 shadow-2xl" />
+
+          {/* Imagen agregada */}
+          <img
+            src="/vortexPulseLogo.webp"
+            alt="Vortex Pulse Logo"
+            className="absolute inset-0 w-full h-full object-contain rounded-2xl"
+          />
         </motion.div>
 
         {/* Hero Content */}
