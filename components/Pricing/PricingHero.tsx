@@ -1,20 +1,21 @@
-import Link from 'next/link';
 import {
   ArrowRight,
-  Check,
-  Zap,
-  Shield,
   BarChart4,
+  Check,
   ChevronRight,
-} from 'lucide-react';
-import { Button } from '@/components/ui/Buttons/v2/button';
+  Shield,
+  Zap,
+} from "lucide-react";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from "@/components/ui/card";
+
+import { Button } from "@/components/ui/Buttons/v2/button";
+import Link from "next/link";
 
 export default function PricingHero() {
   return (
@@ -25,20 +26,20 @@ export default function PricingHero() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
           <div className="flex flex-col justify-center">
             <h1 className="mb-4 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
-              Potencia tu negocio con nuestros planes
+              Enhance your business with our plans
             </h1>
             <p className="mb-8 text-xl text-gray-300">
-              Descubre soluciones flexibles y escalables diseñadas para impulsar
-              tu crecimiento y maximizar tu éxito.
+              Discover flexible and scalable solutions designed to drive your
+              growth and maximize your success.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 sm:justify-center">
               <Link href="/pricing" passHref>
                 <Button
-                  variant={'gradient'}
+                  variant={"gradient"}
                   className="group w-full sm:w-auto text-lg"
                   size="lg"
                 >
-                  Ver planes y precios
+                  Plans & prices
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
@@ -47,16 +48,14 @@ export default function PricingHero() {
                 className="w-full sm:w-auto text-lg"
                 size="lg"
               >
-                Solicitar demo
+                Request demo
               </Button>
             </div>
           </div>
           <div className="flex items-center justify-center">
             <Card className="w-full max-w-md bg-white/5 backdrop-blur-sm border-white/10 shadow-2xl">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold">
-                  Características destacadas
-                </CardTitle>
+                <CardTitle className="text-2xl font-bold">Features</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-4">
@@ -65,9 +64,9 @@ export default function PricingHero() {
                       <Zap className="h-5 w-5 text-blue-500" />
                     </div>
                     <div>
-                      <h3 className="font-semibold">Rendimiento optimizado</h3>
+                      <h3 className="font-semibold">Optimized performance</h3>
                       <p className="text-sm text-gray-400">
-                        Mejora la velocidad y eficiencia de tus operaciones
+                        Enhance the performance of your operations
                       </p>
                     </div>
                   </li>
@@ -76,10 +75,10 @@ export default function PricingHero() {
                       <Shield className="h-5 w-5 text-green-500" />
                     </div>
                     <div>
-                      <h3 className="font-semibold">Seguridad avanzada</h3>
-                      <p className="text-sm text-gray-400">
-                        Protección de nivel empresarial para tus datos
-                      </p>
+                      <h3 className="font-semibold w-full">
+                        Advanced security
+                      </h3>
+                      <p className="text-sm text-gray-400">Protect your data</p>
                     </div>
                   </li>
                   <li className="flex items-start">
@@ -87,9 +86,9 @@ export default function PricingHero() {
                       <BarChart4 className="h-5 w-5 text-purple-500" />
                     </div>
                     <div>
-                      <h3 className="font-semibold">Análisis detallados</h3>
+                      <h3 className="font-semibold">Detailed analisis</h3>
                       <p className="text-sm text-gray-400">
-                        Obtén insights valiosos para tomar mejores decisiones
+                        Gain valuable insights to make better decisions
                       </p>
                     </div>
                   </li>
@@ -98,7 +97,7 @@ export default function PricingHero() {
               <CardFooter>
                 <Link href="/pricing" passHref className="w-full">
                   <Button className="w-full" variant="secondary">
-                    Comparar todos los planes
+                    Compare all the plans
                   </Button>
                 </Link>
               </CardFooter>
