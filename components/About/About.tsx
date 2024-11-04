@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Button } from '../ui/Buttons/v2/button';
+import Component3d from './Component3d';
 
 export default function About() {
   return (
@@ -17,24 +18,7 @@ export default function About() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_50%,#ffffff0d,transparent)]" />
 
-        {/* 3D Icon */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="relative w-32 h-32 mb-12"
-        >
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/10 shadow-2xl transform -rotate-6" />
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/10 shadow-2xl transform rotate-6" />
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/10 shadow-2xl" />
-
-          {/* Imagen agregada */}
-          <img
-            src="/vortexPulseLogo.webp"
-            alt="Vortex Pulse Logo"
-            className="absolute inset-0 w-full h-full object-contain rounded-2xl"
-          />
-        </motion.div>
+        <Component3d></Component3d>
 
         {/* Hero Content */}
         <motion.div
