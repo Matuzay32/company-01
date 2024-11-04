@@ -135,7 +135,11 @@ export default function HeaderGlobal() {
                 }}
                 className="text-4xl font-bold text-center"
               >
-                <Link href={href} className="hover:no-underline">
+                <Link
+                  href={href}
+                  onClick={() => toggleMenu()}
+                  className="hover:no-underline"
+                >
                   {nombre}
                 </Link>
               </motion.div>
