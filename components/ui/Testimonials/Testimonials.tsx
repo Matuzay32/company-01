@@ -116,7 +116,7 @@ export default function Testimonials() {
 
                 <blockquote className="h-full flex flex-col justify-between">
                   <p className="sans text-sm leading-[1.6] text-slate-11 font-normal mb-4">
-                    "{testimonial.text}"
+                    {testimonial.text}
                   </p>
                   <div className="relative mt-auto flex flex-row items-center">
                     <Image
