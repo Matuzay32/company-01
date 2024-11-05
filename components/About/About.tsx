@@ -16,7 +16,8 @@ export default function About() {
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_50%,#ffffff0d,transparent)]" />
+        {/* este color es mas oscuro #ffffff0d */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_50%,#ffffff33,transparent)]" />
 
         <Component3d></Component3d>
 
