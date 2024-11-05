@@ -58,37 +58,37 @@ export default function PricingHero() {
                 <CardTitle className="text-2xl font-bold">Features</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <div className="rounded-full bg-blue-500/10 p-2 mr-3">
-                      <Zap className="h-5 w-5 text-blue-500" />
+                <ul className="space-y-10">
+                  <li className="flex items-center">
+                    <div className="rounded-full bg-blue-500/10 p-2 mr-3 w-1/12">
+                      <Zap className="h-4 w-4 text-blue-500" />
                     </div>
-                    <div>
+                    <div className="flex flex-col justify-center w-11/12">
                       <h3 className="font-semibold">Optimized performance</h3>
                       <p className="text-sm text-gray-400">
                         Enhance the performance of your operations
                       </p>
                     </div>
                   </li>
-                  <li className="flex items-start">
-                    <div className="rounded-full bg-green-500/10 p-2 mr-3">
-                      <Shield className="h-5 w-5 text-green-500" />
+                  <li className="flex items-center">
+                    <div className="rounded-full bg-green-500/10 p-2 mr-3 w-1/12">
+                      <Shield className="h-4 w-4 text-green-500" />
                     </div>
-                    <div>
+                    <div className="flex flex-col justify-center w-11/12">
                       <h3 className="font-semibold w-full">
                         Advanced security
                       </h3>
                       <p className="text-sm text-gray-400">Protect your data</p>
                     </div>
                   </li>
-                  <li className="flex items-start">
-                    <div className="rounded-full bg-purple-500/10 p-2 mr-3">
-                      <BarChart4 className="h-5 w-5 text-purple-500" />
+                  <li className="flex items-center">
+                    <div className="rounded-full bg-purple-500/10 p-2 mr-3 w-1/12">
+                      <BarChart4 className="h-4 w-4 text-purple-500" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold">Detailed analisis</h3>
+                    <div className="flex flex-col justify-center w-11/12">
+                      <h3 className="font-semibold">Actionable Insights</h3>
                       <p className="text-sm text-gray-400">
-                        Gain valuable insights to make better decisions
+                        Empower your strategy with insights
                       </p>
                     </div>
                   </li>

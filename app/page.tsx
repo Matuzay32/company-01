@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   FaBeer,
@@ -7,85 +7,85 @@ import {
   FaRegHandshake,
   FaStar,
   FaUsers,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
-import Card from '@/components/ui/Cards/Card'; // Componente de tarjeta
-import CardInfo from '@/components/ui/Cards/CardInfo'; // Componente de tarjeta con información
-import CustomSection from '@/components/ui/Others/CustomSection';
-import { FaMicrochip } from 'react-icons/fa6';
-import Hero from '@/components/Heros/Hero'; // Componente Hero
-import Hero2 from '@/components/Heros/Hero2';
-import Hero3 from '@/components/Heros/Hero3';
-import PricingHero from '@/components/Pricing/PricingHero';
-import { RiCustomerServiceFill } from 'react-icons/ri';
-import Testimonials from '@/components/ui/Testimonials/Testimonials';
+import Card from "@/components/ui/Cards/Card"; // Componente de tarjeta
+import CardInfo from "@/components/ui/Cards/CardInfo"; // Componente de tarjeta con información
+import CustomSection from "@/components/ui/Others/CustomSection";
+import { FaMicrochip } from "react-icons/fa6";
+import Hero from "@/components/Heros/Hero"; // Componente Hero
+import Hero2 from "@/components/Heros/Hero2";
+import Hero3 from "@/components/Heros/Hero3";
+import PricingHero from "@/components/Pricing/PricingHero";
+import { RiCustomerServiceFill } from "react-icons/ri";
+import Testimonials from "@/components/ui/Testimonials/Testimonials";
 
 export default function Home() {
   const cardData = [
     {
       icon: FaStar,
-      title: 'Landing pages',
-      href: '/services/landing-pages',
-      color: '#fff',
+      title: "Landing pages",
+      href: "/services/landing-pages",
+      color: "#fff",
     },
     {
       icon: FaLightbulb,
-      title: 'Web Development',
-      href: '/services/web-development',
-      color: '#FEFCBF',
+      title: "Web Development",
+      href: "/services/web-development",
+      color: "#FEFCBF",
     },
     {
       icon: FaMicrochip,
-      title: 'Software development',
-      href: '/services/software-development',
-      color: '#46ffe0',
+      title: "Software development",
+      href: "/services/software-development",
+      color: "#46ffe0",
     },
 
     {
       icon: FaRegClock,
-      title: 'Web Design',
-      href: '/services/web-desing',
-      color: '#E9D8FD',
+      title: "Web Design",
+      href: "/services/web-desing",
+      color: "#E9D8FD",
     },
     {
       icon: FaUsers,
-      title: 'Staff Augmentation',
-      href: '/services/staff-augmentation',
-      color: '#FBB6CE',
+      title: "Staff Augmentation",
+      href: "/services/staff-augmentation",
+      color: "#FBB6CE",
     },
 
     {
       icon: FaUsers,
-      title: 'Other services',
-      href: '/services/other-services',
-      color: '#22d3ee',
+      title: "Other services",
+      href: "/services/other-services",
+      color: "#22d3ee",
     },
   ];
 
   const cardInfoData = [
     {
       icon: FaStar,
-      title: 'Compromise with Quality',
+      title: "Compromise with Quality",
       description:
         "Our team's mission is to turn your projects real and with high quality",
-      buttonText: 'More info',
-      buttonLink: '/about',
+      buttonText: "More info",
+      buttonLink: "/about",
     },
     {
       icon: FaLightbulb,
-      title: 'Innovación Constante',
+      title: "Continuous Innovation",
       description:
-        'Estamos siempre en búsqueda de nuevas soluciones y enfoques para mejorar nuestros servicios.',
-      buttonText: 'Descubre Más',
-      buttonLink: '/innovation',
+        "We are always looking for new solutions and approaches to improve our services.",
+      buttonText: "Find out more",
+      buttonLink: "/innovation",
     },
     {
       icon: RiCustomerServiceFill,
-      title: 'Atención Personalizada',
+      title: "Custom support",
       description:
-        'Ofrecemos atención individualizada a cada uno de nuestros clientes para entender sus necesidades.',
-      buttonText: 'Contáctanos',
-      buttonLink: '/contact',
+        "We offer custom support to each of our clients to dig deep into their needs.",
+      buttonText: "Contact us",
+      buttonLink: "/contact",
     },
   ];
 
@@ -96,9 +96,9 @@ export default function Home() {
       <CustomSection height="h-2" gradientColor="#86efac">
         <Hero
           title="Welcome to our platform"
-          subtitle="Start your poject's vision with us"
+          subtitle="Bring your vision to life with expert design and development—let's build something extraordinary together!"
           buttonText="Start now"
-          buttonHref="/pricing"
+          buttonHref="#pricing"
           gradientStart="#46ffe0" // Color de inicio del gradiente
           gradientEnd="#03abff" // Color final del gradiente
         />
@@ -110,8 +110,9 @@ export default function Home() {
             Our Services
           </h2>
           <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
-            To find out more services than the ones you can see here go to
-            "Other services"
+            Your project deserves the best in digital innovation. Browse our
+            featured services here, and check "Other Services" for even more
+            tailored solutions!
           </p>
           <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
             {cardData.map((card, index) => (
@@ -127,7 +128,7 @@ export default function Home() {
         </CustomSection>
       </section>
 
-      <section className="text-center mt-24 mb-20 px-4">
+      <section className="text-center mt-24 mb-20 px-4" id="pricing">
         <CustomSection height="h-2" gradientColor="#46ffe0">
           <PricingHero></PricingHero>
         </CustomSection>
@@ -138,11 +139,12 @@ export default function Home() {
       <section className="text-center mt-24 mb-20 px-4">
         <CustomSection height="h-2" gradientColor="#FBB6CE">
           <h2 className="font-book font-display mb-8 text-[2.5rem] tracking-tight leading-[120%] text-white">
-            Why us?
+            Why us
           </h2>
           <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
-            Because we give a personalized service to every need our customer
-            has
+            Because we believe every project is unique, our team is dedicated to
+            delivering tailored solutions that meet each client’s specific goals
+            and vision
           </p>
           <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
             {cardInfoData.map((info, index) => (
