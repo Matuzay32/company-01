@@ -1,4 +1,5 @@
 import React from 'react';
+import Pattern from '../Patterns/Pattern';
 
 const CustomSection = ({
   children,
@@ -10,11 +11,7 @@ const CustomSection = ({
     <section
       className={` px-6 py-12 sm:py-24 relative rounded-3xl border-t border-slate-6 ${mt} `}
     >
-      {/* Background Pattern */}
-      {/* <div className="z-auto absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808013_1px,transparent_1px)] bg-[size:24px_24px]" /> */}
-      {/* este color es mas oscuro #ffffff0d */}
-      {/* <div className="z-auto absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_50%,#ffffff0d,transparent)]" /> */}
-
+      <Pattern></Pattern>
       <div
         aria-hidden="true"
         className={`left-1/2 top-0 w-[300px] center pointer-events-none absolute ${height} max-w-full -translate-x-1/2 -translate-y-1/2`}
