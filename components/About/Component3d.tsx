@@ -8,7 +8,7 @@ export default function Component3d() {
 
   useEffect(() => {
     controls.start({
-      scale: [1, 2.05, 1],
+      scale: [1, 1.05, 1],
       opacity: [1, 0.95, 1],
       transition: {
         duration: 3,
