@@ -6,33 +6,33 @@ import Image from "next/image";
 
 const testimonialsData = [
   {
-    text: "Our team loves Resend. It makes email sending so easy and reliable. After we switched to Dedicated IPs, our deliverability improved tremendously and we don't hear complaints about emails landing on spam anymore.",
-    author: "Vlad Matsiiako",
-    position: "Co-founder of Infisical",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    text: "The best experience I've ever had with an email service. Their support is top-notch and their features are incredibly useful!",
-    author: "Jane Doe",
-    position: "CEO of Awesome Company",
+    text: "Working with this agency was amazing. They developed a modern and functional website that exceeded our expectations and enhanced our clients' experience!",
+    author: "Sofía R.,",
+    position: "Marketing Manager",
     image: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
-    text: "This service has changed the way we communicate with our clients. Highly recommend it!",
-    author: "John Smith",
-    position: "Marketing Director",
-    image: "https://randomuser.me/api/portraits/men/65.jpg",
+    text: "We needed a customized solution, and their team really captured our vision. Thanks to them, we launched an optimized landing page that doubled our conversions in just one month.",
+    author: "Carlos M.,",
+    position: "Entrepreneur and Founder",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
-    text: "Fantastic support and incredible features. Our team is very happy with the service!",
-    author: "Sara Lee",
+    text: "From design to development, the experience was flawless. Your team not only met our deadlines, but offered ideas that improved our final product. We will definitely continue to collaborate!",
+    author: "Laura G.,",
     position: "Product Manager",
     image: "https://randomuser.me/api/portraits/women/29.jpg",
   },
   {
-    text: "Resend has streamlined our email processes, making everything much more efficient.",
-    author: "Michael Brown",
+    text: "We decided to delegate software development to this agency, and it was the best decision. We got an experienced team that integrated perfectly with our business and delivered solid results.",
+    author: "Andres T.,",
     position: "CTO",
+    image: "https://randomuser.me/api/portraits/men/65.jpg",
+  },
+  {
+    text: "Thanks to their expertise in web design, we achieved an impressive online presence that has attracted new clients. Attention to detail and personalized service made all the difference.",
+    author: "Marta S.,",
+    position: "Business Owner",
     image: "https://randomuser.me/api/portraits/men/78.jpg",
   },
 ];

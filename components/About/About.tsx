@@ -1,13 +1,12 @@
-'use client';
+"use client";
 //changes
 
-import { ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-
-import { Button } from '../ui/Buttons/v2/button';
-import Component3d from './Component3d';
+import { ArrowRight } from "lucide-react";
+import { Button } from "../ui/Buttons/v2/button";
+import Component3d from "./Component3d";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
@@ -29,19 +28,18 @@ export default function About() {
           className="relative text-center max-w-4xl mx-auto space-y-6"
         >
           <h1 className="text-4xl md:text-7xl font-bold tracking-tight">
-            Transforma el crecimiento de tu equipo con Vortex Pulse
+            Transform your team growth with Vortex Pulse
           </h1>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-            En un mundo donde la tecnología avanza sin descanso, ¿por qué la
-            contratación sigue atrapada en métodos anticuados? En Vortex Pulse,
-            estamos aquí para cambiar eso.
+            In a world where technology is relentlessly advancing, why is
+            recruiting still stuck in antiquated methods? At Vortex Pulse, we're
+            here to change that.
           </p>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-            Conectamos a las empresas con el talento que necesitan para escalar
-            sus proyectos, sin fricciones, sin retrasos. Ya sea para proyectos
-            pequeños o grandes iniciativas, nuestro enfoque moderno y
-            personalizado asegura que encuentres al experto adecuado, cuando y
-            donde lo necesites.
+            We connect companies with the talent they need to scale their
+            projects, without friction, without delays. Whether for small
+            projects or large initiatives, our modern, customized approach
+            ensures you find the right expert, when and where you need them.
           </p>
         </motion.div>
       </section>
@@ -56,31 +54,30 @@ export default function About() {
             className="max-w-4xl mx-auto"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
-              Nuestra historia
+              Our history
             </h2>
             <div className="space-y-6 text-lg text-gray-400">
               <p>
-                Fundamos Vortex Pulse con una misión sencilla: proporcionar a
-                las empresas el equipo completo y especializado que necesitan
-                para llevar a cabo sus proyectos, adaptándonos a sus necesidades
-                y prioridades. En un entorno tecnológico en constante cambio,
-                entendemos que cada cliente requiere soluciones rápidas,
-                eficientes y hechas a la medida.
+                We founded Vortex Pulse with a simple mission: to provide
+                companies with the complete and specialized team they need to
+                carry out their projects, adapting to their needs and
+                priorities. In an ever-changing technological environment, we
+                understand that each client requires fast, efficient and
+                tailor-made solutions.
               </p>
               <p>
-                En Vortex Pulse, combinamos tecnología avanzada con un equipo de
-                expertos que se dedica a conseguir y coordinar el talento
-                adecuado para cada proyecto. Nos ocupamos de cada detalle, desde
-                la selección del equipo hasta el seguimiento continuo,
-                asegurando que nuestros clientes puedan confiar en un servicio
-                realmente moderno y completo.
+                At Vortex Pulse, we combine advanced technology with a team of
+                experts dedicated to sourcing and coordinating the right talent
+                for each project. We take care of every detail, from team
+                selection to ongoing monitoring, ensuring that our clients can
+                rely on a truly modern and comprehensive service.
               </p>
               <p>
-                Hoy, nos enorgullece ser el aliado de empresas de todos los
-                tamaños, ayudándolas a convertir sus ideas en realidad. Nuestro
-                objetivo es que nuestros clientes puedan concentrarse en lo que
-                realmente importa: crear productos y servicios extraordinarios,
-                mientras nosotros nos ocupamos del resto.
+                Today, we are proud to be the partner of companies of all sizes,
+                helping them turn their ideas into reality. Our goal is to
+                enable our clients to focus on what really matters: creating
+                extraordinary products and services, while we take care of the
+                rest.
               </p>
             </div>
           </motion.div>
@@ -92,9 +89,9 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { number: '500+', label: 'Successful placements' },
-              { number: '98%', label: 'Client satisfaction' },
-              { number: '24/7', label: 'Support available' },
+              { number: "50+", label: "Successful placements" },
+              { number: "100%", label: "Client satisfaction" },
+              { number: "24/7", label: "Support available" },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -123,15 +120,14 @@ export default function About() {
             className="max-w-4xl mx-auto text-center space-y-8"
           >
             <h2 className="text-3xl md:text-5xl font-bold">
-              ¿Listo para construir el equipo ideal para tu proyecto?
+              Ready to build your best project team?
             </h2>
             <p className="text-lg text-gray-400">
-              Únete a las empresas que ya confían en nuestro enfoque
-              personalizado y eficaz para crear equipos a la medida de sus
-              necesidades.
+              Join the companies that already rely on our customized and
+              effective approach to create teams tailored to their needs.
             </p>
             <Button size="lg" className="bg-white text-black hover:bg-gray-100">
-              Comienza ahora
+              Start now
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </motion.div>
