@@ -33,7 +33,7 @@ const testimonialsData = [
     text: "Thanks to their expertise in web design, we achieved an impressive online presence that has attracted new clients. Attention to detail and personalized service made all the difference.",
     author: "Marta S.,",
     position: "Business Owner",
-    image: "https://randomuser.me/api/portraits/men/78.jpg",
+    image: "https://randomuser.me/api/portraits/women/78.jpg",
   },
 ];
 
