@@ -9,7 +9,7 @@ export default function LandingPages() {
   const sections = [
     {
       title: 'SaaS',
-      image: '/vortexPulseLogo.webp',
+      image: '/exampleLanding.jpeg',
       color: '#ffff', // Color distintivo para SaaS
       links: [
         { title: 'Feature overview', href: '/handbook/saas/feature-overview' },
