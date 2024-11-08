@@ -13,94 +13,12 @@ import {
   Bell,
   User,
   Search,
+  XCircle,
 } from 'lucide-react';
 import { Button } from '../ui/Buttons/v2/button';
 import { Input } from '@/components/ui/input';
 import CustomSection from '../ui/Others/CustomSection';
 import Pattern from '../ui/Patterns/Pattern';
-
-const events = [
-  {
-    id: 1,
-    type: 'delivered',
-    status: 'success',
-    title: 'Consulta recibida',
-    description: 'Cliente envía consulta inicial',
-    time: '2 minutos atrás',
-    agent: 'Email',
-    platform: 'Windows',
-  },
-  {
-    id: 2,
-    type: 'clicked',
-    status: 'info',
-    title: 'Reunión agendada',
-    description: 'Cliente hace clic en el enlace para agendar reunión',
-    time: '5 minutos atrás',
-    agent: 'Gmail',
-    platform: 'macOS',
-  },
-  {
-    id: 3,
-    type: 'opened',
-    status: 'success',
-    title: 'Revisión de propuesta',
-    description: 'Cliente abre y revisa la propuesta enviada',
-    time: '10 minutos atrás',
-    agent: 'Gmail',
-    platform: 'macOS',
-  },
-  {
-    id: 4,
-    type: 'bounced',
-    status: 'error',
-    title: 'Propuesta no aceptada',
-    description: 'Cliente decide no avanzar con la propuesta',
-    time: '15 minutos atrás',
-    agent: 'Email',
-    platform: 'Windows',
-  },
-  {
-    id: 5,
-    type: 'complained',
-    status: 'warning',
-    title: 'Queja recibida',
-    description: 'Cliente envía comentarios o quejas',
-    time: '20 minutos atrás',
-    agent: 'Gmail',
-    platform: 'Windows',
-  },
-  {
-    id: 6,
-    type: 'delivered',
-    status: 'success',
-    title: 'Nueva propuesta enviada',
-    description: 'Nueva propuesta con ajustes enviados al cliente',
-    time: '30 minutos atrás',
-    agent: 'Gmail',
-    platform: 'Windows',
-  },
-  {
-    id: 7,
-    type: 'opened',
-    status: 'success',
-    title: 'Propuesta aceptada',
-    description: 'Cliente abre y acepta la propuesta final',
-    time: '45 minutos atrás',
-    agent: 'Email',
-    platform: 'macOS',
-  },
-  {
-    id: 8,
-    type: 'complained',
-    status: 'warning',
-    title: 'Contrato firmado',
-    description: 'Cliente firma contrato y se procede con el proyecto',
-    time: '1 hora atrás',
-    agent: 'Email',
-    platform: 'Windows',
-  },
-];
 
 const responses = [
   {
@@ -147,12 +65,94 @@ const responses = [
   },
 ];
 
+const events = [
+  {
+    id: 1,
+    type: 'delivered',
+    status: 'success',
+    title: 'Consulta recibida',
+    description: 'Cliente envía consulta inicial',
+    time: '2 minutos atrás',
+    agent: 'Email',
+    platform: 'Whatsapp',
+  },
+  {
+    id: 2,
+    type: 'clicked',
+    status: 'info',
+    title: 'Reunión agendada',
+    description: 'Cliente hace clic en el enlace para agendar reunión',
+    time: '5 minutos atrás',
+    agent: 'Email',
+    platform: 'Whatsapp',
+  },
+  {
+    id: 3,
+    type: 'delivered',
+    status: 'success',
+    title: 'Propuesta enviada',
+    description: 'Propuesta enviada al cliente para revisión',
+    time: '10 minutos atrás',
+    agent: 'Email',
+    platform: 'Whatsapp',
+  },
+  {
+    id: 4,
+    type: 'opened',
+    status: 'success',
+    title: 'Revisión de propuesta',
+    description: 'Cliente abre y revisa la propuesta enviada',
+    time: '15 minutos atrás',
+    agent: 'Email',
+    platform: 'Whatsapp',
+  },
+  {
+    id: 5,
+    type: 'bounced',
+    status: 'error',
+    title: 'Propuesta no aceptada',
+    description: 'Cliente decide no avanzar con la propuesta',
+    time: '20 minutos atrás',
+    agent: 'Email',
+    platform: 'Whatsapp',
+  },
+  {
+    id: 6,
+    type: 'delivered',
+    status: 'success',
+    title: 'Nueva propuesta enviada',
+    description: 'Se envía una nueva propuesta con ajustes',
+    time: '30 minutos atrás',
+    agent: 'Email',
+    platform: 'Whatsapp',
+  },
+  {
+    id: 7,
+    type: 'opened',
+    status: 'success',
+    title: 'Propuesta aceptada',
+    description: 'Cliente abre y acepta la propuesta final',
+    time: '45 minutos atrás',
+    agent: 'Email',
+    platform: 'Whatsapp',
+  },
+  {
+    id: 8,
+    type: 'delivered',
+    status: 'success',
+    title: 'Contrato firmado',
+    description: 'Cliente firma contrato y se procede con el proyecto',
+    time: '1 hora atrás',
+    agent: 'Email',
+    platform: 'Whatsapp',
+  },
+];
+
 const iconMap = {
   delivered: Mail, // Representa consulta o propuesta enviada
   clicked: GitBranch, // Representa acción de clic (reunión agendada)
   opened: Mail, // Representa propuesta abierta y revisada
-  bounced: Mail, // Representa rechazo de propuesta
-  complained: Bell, // Representa queja o comentario
+  bounced: XCircle, // Representa rechazo de propuesta
 };
 
 export default function Development() {
@@ -163,7 +163,7 @@ export default function Development() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveEvent((prev) => (prev + 1) % events.length);
-    }, 3000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -262,7 +262,7 @@ export default function Development() {
           {/* Modular Webhooks Panel */}
           <CustomSection>
             <motion.div
-              className="relative flex flex-col gap-4 rounded-3xl  overflow-hidden"
+              className="relative flex flex-col gap-4 rounded-3xl overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -271,62 +271,68 @@ export default function Development() {
                 <div className="absolute left-12 top-12 h-4/5 w-px bg-gray-800" />
                 <div className="relative space-y-8">
                   <AnimatePresence>
-                    {events.map((event, index) => {
-                      // Asegúrate de que event.type sea una clave válida de iconMap
-                      const Icon = iconMap[event.type as keyof typeof iconMap];
+                    {events
+                      .slice(activeEvent, activeEvent + 3) // Solo muestra 3 eventos
+                      .map((event, index) => {
+                        const Icon =
+                          iconMap[event.type as keyof typeof iconMap];
 
-                      return (
-                        <motion.div
-                          key={event.id}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{
-                            opacity: activeEvent === index ? 1 : 0.5,
-                            x: 0,
-                            scale: activeEvent === index ? 1.05 : 1,
-                          }}
-                          exit={{ opacity: 0, x: 20 }}
-                          transition={{ duration: 0.3 }}
-                          className="flex gap-8"
-                        >
-                          <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-gray-800 bg-black">
-                            <Icon className="h-5 w-5" />
-                          </div>
-                          <div>
-                            <div className="flex items-center gap-4">
-                              <span
-                                className={`inline-flex items-center rounded-md px-2 py-1 text-xs ${
-                                  event.status === 'success'
-                                    ? 'bg-green-900 text-green-300'
-                                    : event.status === 'error'
-                                    ? 'bg-red-900 text-red-300'
-                                    : 'bg-yellow-900 text-yellow-300'
-                                }`}
-                              >
-                                {event.type}
-                              </span>
-                              <span className="flex items-center gap-1 text-xs text-gray-400">
-                                <Clock className="h-4 w-4" />
-                                {event.time}
-                              </span>
+                        // Asegúrate de que cada evento tiene su propio índice de brillo correcto
+                        const isSelected =
+                          activeEvent % events.length === index + activeEvent;
+
+                        return (
+                          <motion.div
+                            key={event.id}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{
+                              opacity: isSelected ? 1 : 0.5,
+                              x: 0,
+                              scale: isSelected ? 1.05 : 1,
+                            }}
+                            exit={{ opacity: 0, x: 20 }}
+                            transition={{ duration: 0.3 }}
+                            className="flex gap-8"
+                          >
+                            <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-gray-800 bg-black">
+                              <Icon className="h-5 w-5" />
                             </div>
-                            <div className="mt-2 text-sm">
-                              <div className="font-medium">{event.title}</div>
-                              <div className="text-gray-400">
-                                {event.description}
-                              </div>
-                              <div className="mt-1 flex items-center gap-2">
-                                <span className="rounded-md border border-gray-800 bg-gray-900/50 px-2 py-1 text-xs">
-                                  {event.agent}
+                            <div>
+                              <div className="flex items-center gap-4">
+                                <span
+                                  className={`inline-flex items-center rounded-md px-2 py-1 text-xs ${
+                                    event.status === 'success'
+                                      ? 'bg-green-900 text-green-300'
+                                      : event.status === 'error'
+                                      ? 'bg-red-900 text-red-300'
+                                      : 'bg-yellow-900 text-yellow-300'
+                                  }`}
+                                >
+                                  {event.type}
                                 </span>
-                                <span className="rounded-md border border-gray-800 bg-gray-900/50 px-2 py-1 text-xs">
-                                  {event.platform}
+                                <span className="flex items-center gap-1 text-xs text-gray-400">
+                                  <Clock className="h-4 w-4" />
+                                  {event.time}
                                 </span>
                               </div>
+                              <div className="mt-2 text-sm">
+                                <div className="font-medium">{event.title}</div>
+                                <div className="text-gray-400">
+                                  {event.description}
+                                </div>
+                                <div className="mt-1 flex items-center gap-2">
+                                  <span className="rounded-md border border-gray-800 bg-gray-900/50 px-2 py-1 text-xs">
+                                    {event.agent}
+                                  </span>
+                                  <span className="rounded-md border border-gray-800 bg-gray-900/50 px-2 py-1 text-xs">
+                                    {event.platform}
+                                  </span>
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                        </motion.div>
-                      );
-                    })}
+                          </motion.div>
+                        );
+                      })}
                   </AnimatePresence>
                 </div>
               </div>
