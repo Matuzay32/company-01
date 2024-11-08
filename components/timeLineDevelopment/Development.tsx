@@ -68,11 +68,11 @@ const responses = [
 const events = [
   {
     id: 1,
-    type: 'delivered',
-    status: 'success',
-    title: 'Consulta recibida',
-    description: 'Cliente envía consulta inicial',
-    time: '2 minutos atrás',
+    type: 'clicked',
+    status: 'info',
+    title: 'Reunión agendada',
+    description: 'Cliente hace clic en el enlace para agendar reunión',
+    time: '5 minutos atrás',
     agent: 'Email',
     platform: 'Whatsapp',
   },
