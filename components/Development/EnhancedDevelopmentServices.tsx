@@ -51,7 +51,7 @@ const services = [
 const CustomCard = ({
   children,
   gradientColor,
-  borderColor = 'border-zinc-800',
+  borderColor = 'border-zinc-300',
 }: {
   children: React.ReactNode;
   gradientColor: string;
@@ -125,7 +125,7 @@ export default function EnhancedDevelopmentServices() {
             >
               <CustomCard
                 gradientColor={service.color.split(' ')[1]}
-                borderColor="border-zinc-700"
+                borderColor="border-zinc-600"
               >
                 <div className="relative z-10">
                   <service.icon className="w-12 h-12 mb-4 text-white" />
@@ -151,58 +151,6 @@ export default function EnhancedDevelopmentServices() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-16"
-        >
-          <CustomCard
-            gradientColor="rgba(143, 143, 143, 0.67)"
-            borderColor="border-zinc-700"
-          >
-            <h3 className="text-3xl font-semibold text-center mb-8 relative z-10">
-              Get in Touch
-            </h3>
-            <form
-              onSubmit={handleSubmit}
-              className="max-w-md mx-auto relative z-10"
-            >
-              <div className="space-y-4">
-                <Input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                  className="bg-zinc-800 border-zinc-700"
-                />
-                <Input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  className="bg-zinc-800 border-zinc-700"
-                />
-                <Textarea
-                  name="message"
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  className="bg-zinc-800 border-zinc-700"
-                />
-                <Button type="submit" className="w-full">
-                  Send Message <Send className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-            </form>
-          </CustomCard>
-        </motion.div>
       </div>
     </div>
   );
