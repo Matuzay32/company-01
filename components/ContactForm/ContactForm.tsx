@@ -7,6 +7,7 @@ import { Button } from '../ui/Buttons/v2/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import Pattern from '../ui/Patterns/Pattern';
+import CustomSection from '../ui/Others/CustomSection';
 
 const services = [
   {
@@ -121,16 +122,12 @@ export default function ContactForm() {
             </p>
           </div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-16"
-        >
-          <CustomCard
-            gradientColor="rgba(143, 143, 143, 0.67)"
-            borderColor="border-zinc-700"
+        <CustomSection height="h-2" gradientColor="#86efac">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-16"
           >
             <h3 className="text-3xl font-semibold text-center mb-8 relative z-10">
               Get in Touch
@@ -171,8 +168,8 @@ export default function ContactForm() {
                 </Button>
               </div>
             </form>
-          </CustomCard>
-        </motion.div>
+          </motion.div>
+        </CustomSection>
       </div>
     </div>
   );
