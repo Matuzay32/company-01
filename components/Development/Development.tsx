@@ -19,6 +19,7 @@ import { Button } from '../ui/Buttons/v2/button';
 import { Input } from '@/components/ui/input';
 import CustomSection from '../ui/Others/CustomSection';
 import Pattern from '../ui/Patterns/Pattern';
+import EnhancedDevelopmentServices from './EnhancedDevelopmentServices';
 
 const responses = [
   {
@@ -374,6 +375,8 @@ export default function Development() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <EnhancedDevelopmentServices></EnhancedDevelopmentServices>
     </div>
   );
 }
