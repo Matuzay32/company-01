@@ -164,7 +164,7 @@ export default function Development() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveEvent((prev) => (prev + 1) % events.length);
-    }, 1000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
