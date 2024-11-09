@@ -1,9 +1,11 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Check, ChevronDown, ChevronUp } from 'lucide-react';
-import { Button } from '@/components/ui/Buttons/v1/button';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import {
   Card,
   CardContent,
@@ -11,7 +13,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from "@/components/ui/card";
+import { Check, ChevronDown, ChevronUp } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -19,113 +22,132 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
-import { Switch } from '@/components/ui/switch';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
-import CustomSection from '../ui/Others/CustomSection';
+} from "@/components/ui/table";
+
+import { Button } from "@/components/ui/Buttons/v1/button";
+import CustomSection from "../ui/Others/CustomSection";
+import { Switch } from "@/components/ui/switch";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
 
   const plans = [
     {
-      name: 'Free',
-      description: 'Perfecto para pruebas y proyectos pequeños',
+      name: "Free",
+      description: "Perfecto para pruebas y proyectos pequeños",
       price: { monthly: 0, annual: 0 },
       features: [
-        '100 emails/día',
-        '1 miembro del equipo',
-        'Análisis básico',
-        'Tiempo de respuesta de soporte de 24h',
+        "100 emails/día",
+        "1 miembro del equipo",
+        "Análisis básico",
+        "Tiempo de respuesta de soporte de 24h",
       ],
     },
     {
-      name: 'Pro',
-      description: 'Para negocios y equipos en crecimiento',
+      name: "Pro",
+      description: "Para negocios y equipos en crecimiento",
       price: { monthly: 20, annual: 15 },
       features: [
-        '50,000 emails/mes',
-        'Miembros de equipo ilimitados',
-        'Análisis avanzado',
-        'Tiempo de respuesta de soporte de 4h',
-        'Dominios personalizados',
-        'Plantillas de email',
+        "50,000 emails/mes",
+        "Miembros de equipo ilimitados",
+        "Análisis avanzado",
+        "Tiempo de respuesta de soporte de 4h",
+        "Dominios personalizados",
+        "Plantillas de email",
       ],
       popular: true,
     },
     {
-      name: 'Enterprise',
-      description: 'Para operaciones de email a gran escala',
-      price: { monthly: 'Personalizado', annual: 'Personalizado' },
+      name: "Enterprise",
+      description: "Para operaciones de email a gran escala",
+      price: { monthly: "Personalizado", annual: "Personalizado" },
       features: [
-        'Volumen de email personalizado',
-        'Soporte dedicado',
-        'SLA',
-        'Contratos personalizados',
-        'Seguridad avanzada',
-        'Envío prioritario',
+        "Volumen de email personalizado",
+        "Soporte dedicado",
+        "SLA",
+        "Contratos personalizados",
+        "Seguridad avanzada",
+        "Envío prioritario",
       ],
     },
   ];
 
   const featureComparison = [
     {
-      feature: 'Acceso a API de Email',
+      feature: "Acceso a API de Email",
       free: true,
       pro: true,
       enterprise: true,
     },
     {
-      feature: 'Dominios Personalizados',
+      feature: "Dominios Personalizados",
       free: false,
       pro: true,
       enterprise: true,
     },
     {
-      feature: 'Plantillas de Email',
+      feature: "Plantillas de Email",
       free: false,
       pro: true,
       enterprise: true,
     },
     {
-      feature: 'Panel de Análisis',
-      free: 'Básico',
-      pro: 'Avanzado',
-      enterprise: 'Personalizado',
+      feature: "Panel de Análisis",
+      free: "Básico",
+      pro: "Avanzado",
+      enterprise: "Personalizado",
     },
     {
-      feature: 'Tiempo de Respuesta de Soporte',
-      free: '24h',
-      pro: '4h',
-      enterprise: '1h',
+      feature: "Tiempo de Respuesta de Soporte",
+      free: "24h",
+      pro: "4h",
+      enterprise: "1h",
     },
   ];
 
   const faqs = [
     {
-      question: '¿Puedo cambiar de plan en cualquier momento?',
+      question: "What kind of digital products and services do we offer?",
       answer:
-        'Sí, puedes actualizar o degradar tu plan en cualquier momento. Los cambios se reflejarán en tu próxima factura.',
+        "Our products and services include custom website design and development, optimized landing page design and development, custom software development, and Staff Augmentation+Outsourcing.",
     },
     {
-      question: '¿Qué métodos de pago aceptan?',
+      question:
+        "Can I request changes or adjustments after the project is finished?",
       answer:
-        'Aceptamos todas las principales tarjetas de crédito y débito, así como PayPal para ciertos países.',
+        "Of course! We offer a post-delivery review period. In addition, we have maintenance and upgrade plans for those who wish to optimize or add new features in the future.",
     },
     {
-      question: '¿Ofrecen descuentos para organizaciones sin fines de lucro?',
+      question: "How involved can I be in the design and development process?",
       answer:
-        'Sí, ofrecemos descuentos especiales para organizaciones sin fines de lucro verificadas. Por favor, contacta a nuestro equipo de ventas para más información.',
+        "We work closely with each client and throughout the project, providing regular updates and reviews to ensure that every detail is aligned with your expectations.",
     },
     {
-      question: '¿Cómo funciona el período de prueba?',
+      question: "Do you offer customized services?",
       answer:
-        'Ofrecemos un período de prueba gratuito de 14 días para el plan Pro. No se requiere tarjeta de crédito para comenzar.',
+        "Yes, each of our services is fully customizable. We adapt each project to the needs and style of your brand, ensuring a unique and authentic result.",
+    },
+    {
+      question: "Can you handle the maintenance of my website or application?",
+      answer:
+        "We offer ongoing maintenance services so that your site or application is always up to date and running optimally. This includes technical support, content updates and security monitoring.",
+    },
+    {
+      question: "What is the cost of a landing page or website?",
+      answer:
+        "Cost varies according to complexity and customization. We offer customized quotes for each project as well as pre-designed packages with flexible payment options.",
+    },
+    {
+      question: "How is payment handled and do you have financing options?",
+      answer:
+        "To ensure transparency and convenience, we accept payments in different modalities, generally divided into milestones: a down payment, an interim payment and the final balance upon completion of the project. We also offer financing options for larger projects.",
+    },
+    {
+      question: "Why should I choose your agency and not another?",
+      answer:
+        "We differentiate ourselves by our focus on innovation, customization and constant support throughout the process. We ensure that each project is unique and has a real impact on the growth of your business.",
     },
   ];
 
@@ -148,7 +170,7 @@ export default function Pricing() {
         <div className="mt-8 flex items-center justify-center gap-4">
           <span
             className={`text-lg ${
-              !isAnnual ? 'text-primary font-semibold' : 'text-muted-foreground'
+              !isAnnual ? "text-primary font-semibold" : "text-muted-foreground"
             }`}
           >
             Mensual
@@ -160,10 +182,10 @@ export default function Pricing() {
           />
           <span
             className={`text-lg ${
-              isAnnual ? 'text-primary font-semibold' : 'text-muted-foreground'
+              isAnnual ? "text-primary font-semibold" : "text-muted-foreground"
             }`}
           >
-            Anual{' '}
+            Anual{" "}
             <span className="text-sm font-normal text-green-500">
               (Ahorra 25%)
             </span>
@@ -182,7 +204,7 @@ export default function Pricing() {
           >
             <Card
               className={`flex flex-col h-full ${
-                plan.popular ? 'border shadow-lg scale-105' : ''
+                plan.popular ? "border shadow-lg scale-105" : ""
               }`}
             >
               <div
@@ -191,7 +213,7 @@ export default function Pricing() {
                 style={{
                   background: `linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 0%, #FBD38D 50%, rgba(0, 0, 0, 0) 100%)`,
                 }}
-              ></div>{' '}
+              ></div>{" "}
               <CardHeader>
                 {plan.popular && (
                   <div className="text-sm font-medium  mb-2  py-1 px-3 rounded-full w-fit">
@@ -204,13 +226,13 @@ export default function Pricing() {
               <CardContent className="flex-1">
                 <div className="mb-6">
                   <span className="text-5xl font-bold">
-                    {typeof plan.price[isAnnual ? 'annual' : 'monthly'] ===
-                    'number'
-                      ? `$${plan.price[isAnnual ? 'annual' : 'monthly']}`
-                      : plan.price[isAnnual ? 'annual' : 'monthly']}
+                    {typeof plan.price[isAnnual ? "annual" : "monthly"] ===
+                    "number"
+                      ? `$${plan.price[isAnnual ? "annual" : "monthly"]}`
+                      : plan.price[isAnnual ? "annual" : "monthly"]}
                   </span>
-                  {typeof plan.price[isAnnual ? 'annual' : 'monthly'] ===
-                    'number' && (
+                  {typeof plan.price[isAnnual ? "annual" : "monthly"] ===
+                    "number" && (
                     <span className="text-muted-foreground ml-2 text-lg">
                       /mes
                     </span>
@@ -226,10 +248,10 @@ export default function Pricing() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full text-lg py-6 " variant={'outline'}>
-                  {plan.name === 'Enterprise'
-                    ? 'Contactar Ventas'
-                    : 'Comenzar Ahora'}
+                <Button className="w-full text-lg py-6 " variant={"outline"}>
+                  {plan.name === "Enterprise"
+                    ? "Contactar Ventas"
+                    : "Comenzar Ahora"}
                 </Button>
               </CardFooter>
             </Card>
@@ -265,33 +287,33 @@ export default function Pricing() {
                       {item.feature}
                     </TableCell>
                     <TableCell>
-                      {typeof item.free === 'boolean' ? (
+                      {typeof item.free === "boolean" ? (
                         item.free ? (
                           <Check className="h-5 w-5 text-primary" />
                         ) : (
-                          '—'
+                          "—"
                         )
                       ) : (
                         item.free
                       )}
                     </TableCell>
                     <TableCell>
-                      {typeof item.pro === 'boolean' ? (
+                      {typeof item.pro === "boolean" ? (
                         item.pro ? (
                           <Check className="h-5 w-5 text-primary" />
                         ) : (
-                          '—'
+                          "—"
                         )
                       ) : (
                         item.pro
                       )}
                     </TableCell>
                     <TableCell>
-                      {typeof item.enterprise === 'boolean' ? (
+                      {typeof item.enterprise === "boolean" ? (
                         item.enterprise ? (
                           <Check className="h-5 w-5 text-primary" />
                         ) : (
-                          '—'
+                          "—"
                         )
                       ) : (
                         item.enterprise
@@ -313,9 +335,7 @@ export default function Pricing() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <h3 className="text-3xl font-bold text-center mb-8">
-            Preguntas Frecuentes
-          </h3>
+          <h3 className="text-3xl font-bold text-center mb-8">FAQ</h3>
           <Accordion
             type="single"
             collapsible
@@ -343,7 +363,7 @@ export default function Pricing() {
           <p className="text-xl text-muted-foreground mb-8">
             Únete a miles de desarrolladores que confían en nuestra plataforma
           </p>
-          <Button size="lg" variant={'outline'} className="text-lg py-6 px-8 ">
+          <Button size="lg" variant={"outline"} className="text-lg py-6 px-8 ">
             Prueba Gratis por 14 Días
           </Button>
         </motion.div>
