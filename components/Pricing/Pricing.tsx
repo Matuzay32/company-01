@@ -35,9 +35,9 @@ export default function Pricing() {
 
   const plans = [
     {
-      name: "Free",
-      description: "Perfecto para pruebas y proyectos pequeños",
-      price: { monthly: 0, annual: 0 },
+      name: "Starter",
+      description: "Perfect for your project start-up",
+      price: { monthly: 20, annual: 15 },
       features: [
         "100 emails/día",
         "1 miembro del equipo",
@@ -47,8 +47,8 @@ export default function Pricing() {
     },
     {
       name: "Pro",
-      description: "Para negocios y equipos en crecimiento",
-      price: { monthly: 20, annual: 15 },
+      description: "For growing businesses and teams",
+      price: { monthly: 39, annual: 30 },
       features: [
         "50,000 emails/mes",
         "Miembros de equipo ilimitados",
@@ -61,8 +61,9 @@ export default function Pricing() {
     },
     {
       name: "Enterprise",
-      description: "Para operaciones de email a gran escala",
-      price: { monthly: "Personalizado", annual: "Personalizado" },
+      description:
+        "Advanced scalability, innovation and premium support for your business.",
+      price: { monthly: "Let's talk", annual: "Let's talk" },
       features: [
         "Volumen de email personalizado",
         "Soporte dedicado",
@@ -161,11 +162,10 @@ export default function Pricing() {
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl mb-4">
-          Precios simples y transparentes
+          Choose the best plan to boost your growth
         </h2>
         <p className="mt-4 text-xl text-muted-foreground max-w-2xl mx-auto">
-          Elige el plan que mejor se adapte a tus necesidades y escala a medida
-          que creces
+          Choose the plan that best suits your needs and scale as you grow
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
           <span
@@ -173,7 +173,7 @@ export default function Pricing() {
               !isAnnual ? "text-primary font-semibold" : "text-muted-foreground"
             }`}
           >
-            Mensual
+            Monthly
           </span>
           <Switch
             checked={isAnnual}
@@ -185,10 +185,7 @@ export default function Pricing() {
               isAnnual ? "text-primary font-semibold" : "text-muted-foreground"
             }`}
           >
-            Anual{" "}
-            <span className="text-sm font-normal text-green-500">
-              (Ahorra 25%)
-            </span>
+            yearly{" "}
           </span>
         </div>
       </motion.div>
@@ -217,7 +214,7 @@ export default function Pricing() {
               <CardHeader>
                 {plan.popular && (
                   <div className="text-sm font-medium  mb-2  py-1 px-3 rounded-full w-fit">
-                    Más Popular
+                    Most Popular
                   </div>
                 )}
                 <CardTitle className="text-2xl">{plan.name}</CardTitle>
@@ -234,7 +231,7 @@ export default function Pricing() {
                   {typeof plan.price[isAnnual ? "annual" : "monthly"] ===
                     "number" && (
                     <span className="text-muted-foreground ml-2 text-lg">
-                      /mes
+                      /month
                     </span>
                   )}
                 </div>
@@ -249,9 +246,7 @@ export default function Pricing() {
               </CardContent>
               <CardFooter>
                 <Button className="w-full text-lg py-6 " variant={"outline"}>
-                  {plan.name === "Enterprise"
-                    ? "Contactar Ventas"
-                    : "Comenzar Ahora"}
+                  Start now
                 </Button>
               </CardFooter>
             </Card>
@@ -267,14 +262,12 @@ export default function Pricing() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <h3 className="text-3xl font-bold text-center mb-8">
-            Comparación de Características
-          </h3>
+          <h3 className="text-3xl font-bold text-center mb-8">Compare</h3>
           <div className="rounded-lg border overflow-hidden">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-[300px]">Característica</TableHead>
+                  <TableHead className="w-[300px]">Features</TableHead>
                   <TableHead>Free</TableHead>
                   <TableHead>Pro</TableHead>
                   <TableHead>Enterprise</TableHead>
