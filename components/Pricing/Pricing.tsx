@@ -38,24 +38,19 @@ export default function Pricing() {
       name: "Starter",
       description: "Perfect for your project start-up",
       price: { monthly: 20, annual: 15 },
-      features: [
-        "100 emails/día",
-        "1 miembro del equipo",
-        "Análisis básico",
-        "Tiempo de respuesta de soporte de 24h",
-      ],
+      features: ["Website", "Landing page", "8 hour support"],
     },
     {
       name: "Pro",
       description: "For growing businesses and teams",
       price: { monthly: 39, annual: 30 },
       features: [
-        "50,000 emails/mes",
-        "Miembros de equipo ilimitados",
+        "Website",
+        "Landing page",
         "Análisis avanzado",
         "Tiempo de respuesta de soporte de 4h",
         "Dominios personalizados",
-        "Plantillas de email",
+        "12 hour support",
       ],
       popular: true,
     },
@@ -65,12 +60,12 @@ export default function Pricing() {
         "Advanced scalability, innovation and premium support for your business.",
       price: { monthly: "Let's talk", annual: "Let's talk" },
       features: [
-        "Volumen de email personalizado",
-        "Soporte dedicado",
+        "Website",
+        "Landing page",
         "SLA",
         "Contratos personalizados",
         "Seguridad avanzada",
-        "Envío prioritario",
+        "Custom support",
       ],
     },
   ];
@@ -352,12 +347,12 @@ export default function Pricing() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <h3 className="text-3xl font-bold mb-4">¿Listo para comenzar?</h3>
+          <h3 className="text-3xl font-bold mb-4">Ready to start?</h3>
           <p className="text-xl text-muted-foreground mb-8">
-            Únete a miles de desarrolladores que confían en nuestra plataforma
+            Join our selected group of clients
           </p>
           <Button size="lg" variant={"outline"} className="text-lg py-6 px-8 ">
-            Prueba Gratis por 14 Días
+            Join
           </Button>
         </motion.div>
       </CustomSection>
