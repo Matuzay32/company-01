@@ -38,19 +38,20 @@ export default function Pricing() {
       name: "Starter",
       description: "Perfect for your project start-up",
       price: { monthly: 20, annual: 15 },
-      features: ["Website", "Landing page", "8 hour support"],
+      features: ["Website", "Landing page", "Web design", "5 hours support"],
     },
     {
       name: "Pro",
       description: "For growing businesses and teams",
       price: { monthly: 39, annual: 30 },
       features: [
-        "Website",
-        "Landing page",
-        "Análisis avanzado",
-        "Tiempo de respuesta de soporte de 4h",
-        "Dominios personalizados",
-        "12 hour support",
+        "Up to 3 customized websites",
+        "2 advanced landing pages with SEO optimization",
+        "Google Analytics integration",
+        "Web design",
+        "Projects planning",
+        "8 hours support",
+        "Outsourcing",
       ],
       popular: true,
     },
@@ -60,46 +61,55 @@ export default function Pricing() {
         "Advanced scalability, innovation and premium support for your business.",
       price: { monthly: "Let's talk", annual: "Let's talk" },
       features: [
-        "Website",
-        "Landing page",
-        "SLA",
-        "Contratos personalizados",
-        "Seguridad avanzada",
+        "Unlimited websites with advanced functionalities",
+        "Unlimited Landing pages optimized for conversion",
+        "Unlimited web designs",
+        "Advanced integrations with custom tools and APIs",
         "Custom support",
+        "Tailor-made strategies: design, UX/UI and digital marketing consultancy",
+        "Ongoing management and maintenance of all projects",
+        "Outsourcing",
+        "Need anything else? contact us",
       ],
     },
   ];
 
   const featureComparison = [
     {
-      feature: "Acceso a API de Email",
-      free: true,
+      feature: "Web sites",
+      starter: true,
       pro: true,
       enterprise: true,
     },
     {
-      feature: "Dominios Personalizados",
-      free: false,
+      feature: "Support",
+      starter: true,
       pro: true,
       enterprise: true,
     },
     {
-      feature: "Plantillas de Email",
-      free: false,
+      feature: "Projects planning",
+      starter: false,
       pro: true,
       enterprise: true,
     },
     {
-      feature: "Panel de Análisis",
-      free: "Básico",
-      pro: "Avanzado",
-      enterprise: "Personalizado",
+      feature: "Outsourcing",
+      starter: false,
+      pro: true,
+      enterprise: true,
     },
     {
-      feature: "Tiempo de Respuesta de Soporte",
-      free: "24h",
-      pro: "4h",
-      enterprise: "1h",
+      feature: "Unlimited websites",
+      starter: false,
+      pro: false,
+      enterprise: true,
+    },
+    {
+      feature: "Unlimited landing pages",
+      starter: false,
+      pro: false,
+      enterprise: true,
     },
   ];
 
@@ -263,7 +273,7 @@ export default function Pricing() {
               <TableHeader>
                 <TableRow>
                   <TableHead className="w-[300px]">Features</TableHead>
-                  <TableHead>Free</TableHead>
+                  <TableHead>Starter</TableHead>
                   <TableHead>Pro</TableHead>
                   <TableHead>Enterprise</TableHead>
                 </TableRow>
@@ -275,14 +285,14 @@ export default function Pricing() {
                       {item.feature}
                     </TableCell>
                     <TableCell>
-                      {typeof item.free === "boolean" ? (
-                        item.free ? (
+                      {typeof item.starter === "boolean" ? (
+                        item.starter ? (
                           <Check className="h-5 w-5 text-primary" />
                         ) : (
                           "—"
                         )
                       ) : (
-                        item.free
+                        item.starter
                       )}
                     </TableCell>
                     <TableCell>
