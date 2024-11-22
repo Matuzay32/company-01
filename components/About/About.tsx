@@ -1,12 +1,13 @@
-"use client";
+'use client';
 //changes
 
-import { ArrowRight } from "lucide-react";
-import { Button } from "../ui/Buttons/v2/button";
-import Component3d from "./Component3d";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
+import { ArrowRight } from 'lucide-react';
+import { Button } from '../ui/Buttons/v2/button';
+import Component3d from './Component3d';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import CustomSection from '../ui/Others/CustomSection';
 
 export default function About() {
   return (
@@ -16,9 +17,9 @@ export default function About() {
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         {/* este color es mas oscuro #ffffff0d */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_50%,#ffffff33,transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_50%,#ffffff21,transparent)]" />
 
-        <Component3d></Component3d>
+        {/* <Component3d></Component3d> */}
 
         {/* Hero Content */}
         <motion.div
@@ -45,53 +46,112 @@ export default function About() {
       </section>
 
       {/* Our Story Section */}
-      <section className="relative py-32">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
-              Our history
-            </h2>
-            <div className="space-y-6 text-lg text-gray-400">
-              <p>
-                We founded Vortex Pulse with a simple mission: to provide
-                companies with the complete and specialized team they need to
-                carry out their projects, adapting to their needs and
-                priorities. In an ever-changing technological environment, we
-                understand that each client requires fast, efficient and
-                tailor-made solutions.
-              </p>
-              <p>
-                At Vortex Pulse, we combine advanced technology with a team of
-                experts dedicated to sourcing and coordinating the right talent
-                for each project. We take care of every detail, from team
-                selection to ongoing monitoring, ensuring that our clients can
-                rely on a truly modern and comprehensive service.
-              </p>
-              <p>
-                Today, we are proud to be the partner of companies of all sizes,
-                helping them turn their ideas into reality. Our goal is to
-                enable our clients to focus on what really matters: creating
-                extraordinary products and services, while we take care of the
-                rest.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CustomSection mt="mt-40">
+        <section className="relative py-32">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-4xl mx-auto"
+            >
+              <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
+                Our history
+              </h2>
+              <div className="space-y-6 text-lg text-gray-400">
+                <p>
+                  We founded Vortex Pulse with a simple mission: to provide
+                  companies with the complete and specialized team they need to
+                  carry out their projects, adapting to their needs and
+                  priorities. In an ever-changing technological environment, we
+                  understand that each client requires fast, efficient and
+                  tailor-made solutions.
+                </p>
+                <p>
+                  At Vortex Pulse, we combine advanced technology with a team of
+                  experts dedicated to sourcing and coordinating the right
+                  talent for each project. We take care of every detail, from
+                  team selection to ongoing monitoring, ensuring that our
+                  clients can rely on a truly modern and comprehensive service.
+                </p>
+                <p>
+                  Today, we are proud to be the partner of companies of all
+                  sizes, helping them turn their ideas into reality. Our goal is
+                  to enable our clients to focus on what really matters:
+                  creating extraordinary products and services, while we take
+                  care of the rest.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </CustomSection>
+
+      <CustomSection mt="mt-40">
+        <section className="relative py-20">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-6xl mx-auto"
+            >
+              <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
+                Mision And Vision
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-gray-400">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4 text-white">
+                    Mission
+                  </h3>
+                  <p className="text-lg leading-relaxed">
+                    To provide companies with the complete and specialized team
+                    they need to carry out their projects, adapting to their
+                    needs and priorities. In an ever-changing technological
+                    environment, we understand that each client requires fast,
+                    efficient, and tailor-made solutions.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4 text-white">
+                    Vision
+                  </h3>
+                  <p className="text-lg leading-relaxed">
+                    To be the trusted partner of companies of all sizes, helping
+                    them turn their ideas into reality. We aim to enable our
+                    clients to focus on creating extraordinary products and
+                    services, while we take care of the rest.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-12 text-lg text-gray-400 leading-relaxed space-y-6">
+                <p>
+                  At Vortex Pulse, we combine advanced technology with a team of
+                  experts dedicated to sourcing and coordinating the right
+                  talent for each project. We take care of every detail, from
+                  team selection to ongoing monitoring, ensuring that our
+                  clients can rely on a truly modern and comprehensive service.
+                </p>
+                <p>
+                  Today, we are proud to help companies achieve their goals and
+                  stay ahead in the competitive tech landscape. Together, we
+                  create a future where innovation and efficiency go hand in
+                  hand.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </CustomSection>
 
       {/* Stats Section */}
       <section className="relative py-32 border-t border-white/10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { number: "50+", label: "Successful placements" },
-              { number: "100%", label: "Client satisfaction" },
-              { number: "24/7", label: "Support available" },
+              { number: '50+', label: 'Successful placements' },
+              { number: '100%', label: 'Client satisfaction' },
+              { number: '24/7', label: 'Support available' },
             ].map((stat, index) => (
               <motion.div
                 key={index}
