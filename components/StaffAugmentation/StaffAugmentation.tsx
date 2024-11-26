@@ -34,7 +34,7 @@ const CustomCard = ({
       <Pattern />
       <div
         aria-hidden="true"
-        className="left-1/2 top-0 w-[300px] h-px absolute max-w-full -translate-x-1/2 -translate-y-1/2"
+        className="left-1/2 top-0 w-[300px] h-2 absolute max-w-full -translate-x-1/2 -translate-y-1/2 "
         style={{
           background: `linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 0%, ${gradientColor} 50%, rgba(0, 0, 0, 0) 100%)`,
         }}
@@ -404,7 +404,7 @@ export default function EnhancedStaffAugmentation() {
           <h2 className="text-4xl font-bold text-center mb-8">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <CustomCard gradientColor="#ffff">
+              <CustomCard gradientColor="#46ffe0">
                 <motion.div
                   key={service.title}
                   initial={{ opacity: 0, y: 20 }}
