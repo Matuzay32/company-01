@@ -1,151 +1,153 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from "framer-motion";
 import {
-  Mail,
   ArrowRight,
+  Bell,
+  ChevronDown,
   Clock,
-  Terminal,
   Code,
   GitBranch,
-  ChevronDown,
-  Bell,
-  User,
+  Mail,
   Search,
+  Terminal,
+  User,
   XCircle,
-} from 'lucide-react';
-import { Button } from '../ui/Buttons/v2/button';
-import { Input } from '@/components/ui/input';
-import CustomSection from '../ui/Others/CustomSection';
-import Pattern from '../ui/Patterns/Pattern';
-import EnhancedDevelopmentServices from './EnhancedDevelopmentServices';
+} from "lucide-react";
+import React, { useEffect, useState } from "react";
+
+import { Button } from "../ui/Buttons/v2/button";
+import CustomSection from "../ui/Others/CustomSection";
+import EnhancedDevelopmentServices from "./EnhancedDevelopmentServices";
+import { Input } from "@/components/ui/input";
+import Pattern from "../ui/Patterns/Pattern";
 
 const responses = [
   {
-    id: 'aws123',
-    name: 'AWS Elastic Beanstalk',
-    status: 'Active',
-    timestamp: '2024-11-06T07:26:20Z',
+    id: "aws123",
+    name: "AWS Elastic Beanstalk",
+    status: "Active",
+    timestamp: "2024-11-06T07:26:20Z",
   },
   {
-    id: 'azure456',
-    name: 'Microsoft Azure',
-    status: 'Active',
-    timestamp: '2024-11-06T07:26:18Z',
+    id: "azure456",
+    name: "Microsoft Azure",
+    status: "Active",
+    timestamp: "2024-11-06T07:26:18Z",
   },
   {
-    id: 'heroku789',
-    name: 'Heroku',
-    status: 'Active',
-    timestamp: '2024-11-06T07:26:15Z',
+    id: "heroku789",
+    name: "Heroku",
+    status: "Active",
+    timestamp: "2024-11-06T07:26:15Z",
   },
   {
-    id: 'gcp012',
-    name: 'Google Cloud Platform',
-    status: 'Active',
-    timestamp: '2024-11-06T07:25:50Z',
+    id: "gcp012",
+    name: "Google Cloud Platform",
+    status: "Active",
+    timestamp: "2024-11-06T07:25:50Z",
   },
   {
-    id: 'netlify345',
-    name: 'Netlify',
-    status: 'Active',
-    timestamp: '2024-11-06T07:25:35Z',
+    id: "netlify345",
+    name: "Netlify",
+    status: "Active",
+    timestamp: "2024-11-06T07:25:35Z",
   },
   {
-    id: 'vercel678',
-    name: 'Vercel',
-    status: 'Active',
-    timestamp: '2024-11-06T07:25:20Z',
+    id: "vercel678",
+    name: "Vercel",
+    status: "Active",
+    timestamp: "2024-11-06T07:25:20Z",
   },
   {
-    id: 'docker890',
-    name: 'Docker',
-    status: 'Active',
-    timestamp: '2024-11-06T07:24:55Z',
+    id: "docker890",
+    name: "Docker",
+    status: "Active",
+    timestamp: "2024-11-06T07:24:55Z",
   },
 ];
 
 const events = [
   {
     id: 1,
-    type: 'clicked',
-    status: 'info',
-    title: 'Reunión agendada',
-    description: 'Cliente hace clic en el enlace para agendar reunión',
-    time: '5 minutos atrás',
-    agent: 'Email',
-    platform: 'Whatsapp',
+    type: "clicked",
+    status: "info",
+    title: "Schedule an appointment",
+    description:
+      "The client press the link to schedule an appointment with our team",
+    time: "5 minutes ago",
+    agent: "Email",
+    platform: "Whatsapp",
   },
   {
     id: 2,
-    type: 'clicked',
-    status: 'info',
-    title: 'Reunión agendada',
-    description: 'Cliente hace clic en el enlace para agendar reunión',
-    time: '5 minutos atrás',
-    agent: 'Email',
-    platform: 'Whatsapp',
+    type: "clicked",
+    status: "info",
+    title: "Scheduled appointment",
+    description: "The client is ready to meet us!",
+    time: "5 minutes ago",
+    agent: "Email",
+    platform: "Whatsapp",
   },
   {
     id: 3,
-    type: 'delivered',
-    status: 'success',
-    title: 'Propuesta enviada',
-    description: 'Propuesta enviada al cliente para revisión',
-    time: '10 minutos atrás',
-    agent: 'Email',
-    platform: 'Whatsapp',
+    type: "delivered",
+    status: "success",
+    title: "Proposal submitted",
+    description: "Proposal submitted to the client to be analyzed",
+    time: "1 hour ago",
+    agent: "Email",
+    platform: "Whatsapp",
   },
   {
     id: 4,
-    type: 'opened',
-    status: 'success',
-    title: 'Revisión de propuesta',
-    description: 'Cliente abre y revisa la propuesta enviada',
-    time: '15 minutos atrás',
-    agent: 'Email',
-    platform: 'Whatsapp',
+    type: "opened",
+    status: "success",
+    title: "Proposal review",
+    description: "The client send a response to our team",
+    time: "1 day ago",
+    agent: "Email",
+    platform: "Whatsapp",
   },
   {
     id: 5,
-    type: 'bounced',
-    status: 'error',
-    title: 'Propuesta no aceptada',
-    description: 'Cliente decide no avanzar con la propuesta',
-    time: '20 minutos atrás',
-    agent: 'Email',
-    platform: 'Whatsapp',
+    type: "bounced",
+    status: "error",
+    title: "Propuesta no aceptada",
+    description: "Cliente decide no avanzar con la propuesta",
+    time: "20 minutos atrás",
+    agent: "Email",
+    platform: "Whatsapp",
   },
   {
     id: 6,
-    type: 'delivered',
-    status: 'success',
-    title: 'Nueva propuesta enviada',
-    description: 'Se envía una nueva propuesta con ajustes',
-    time: '30 minutos atrás',
-    agent: 'Email',
-    platform: 'Whatsapp',
+    type: "delivered",
+    status: "success",
+    title: "Nueva propuesta enviada",
+    description: "Se envía una nueva propuesta con ajustes",
+    time: "30 minutos atrás",
+    agent: "Email",
+    platform: "Whatsapp",
   },
   {
     id: 7,
-    type: 'opened',
-    status: 'success',
-    title: 'Propuesta aceptada',
-    description: 'Cliente abre y acepta la propuesta final',
-    time: '45 minutos atrás',
-    agent: 'Email',
-    platform: 'Whatsapp',
+    type: "opened",
+    status: "success",
+    title: "Propuesta aceptada",
+    description: "Cliente abre y acepta la propuesta final",
+    time: "45 minutos atrás",
+    agent: "Email",
+    platform: "Whatsapp",
   },
   {
     id: 8,
-    type: 'delivered',
-    status: 'success',
-    title: 'Contrato firmado',
-    description: 'Cliente firma contrato y se procede con el proyecto',
-    time: '1 hora atrás',
-    agent: 'Email',
-    platform: 'Whatsapp',
+    type: "delivered",
+    status: "success",
+    title: "Contrato firmado",
+    description: "Cliente firma contrato y se procede con el proyecto",
+    time: "1 hora atrás",
+    agent: "Email",
+    platform: "Whatsapp",
   },
 ];
 
@@ -159,7 +161,7 @@ const iconMap = {
 export default function Development() {
   const [activeEvent, setActiveEvent] = useState(0);
   const [showNotifications, setShowNotifications] = useState(false);
-  const [testMode, setTestMode] = useState('delivered');
+  const [testMode, setTestMode] = useState("delivered");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -175,15 +177,15 @@ export default function Development() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-900 via-black to-black"></div>
           <div className="relative z-10 container px-4 md:px-6">
             <p className="text-sm uppercase tracking-widest text-zinc-400 text-center mb-8">
-              Impulsa tu negocio con
+              Boost your business with
             </p>
             <h1 className="font-serif text-center text-7xl md:text-8xl lg:text-9xl tracking-tight mb-8">
-              Desarrollo Web de Alto Impacto
+              High Impact Web Development
             </h1>
             <p className="mt-8 text-lg text-zinc-400 max-w-2xl mx-auto text-center leading-relaxed">
-              Somos expertos en crear soluciones digitales innovadoras que
-              transforman tu presencia online, acelerando el crecimiento de tu
-              empresa con las mejores herramientas del mercado.
+              We are experts in creating innovative digital solutions that
+              transform your online presence, accelerating the growth of your
+              company with the best tools on the market.
             </p>
           </div>
         </div>
@@ -192,12 +194,12 @@ export default function Development() {
           {/* Tools List Panel */}
           <CustomSection>
             <motion.div
-              className="relative flex flex-col gap-4 rounded-3xl overflow-hidden"
+              className="relative flex flex-col gap-4 rounded-3xl overflow-hidden z-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="relative z-10 h-[400px] overflow-hiden bg-gradient-to-b from-black to-black p-8">
+              <div className="relative z-10 h-[400px] overflow-hidden bg-gradient-to-b from-black to-black p-8">
                 <div className="mb-8">
                   <span className="inline-flex items-center rounded-full border border-to-black p-8 px-3 py-1 text-xs">
                     Tools List
@@ -207,7 +209,7 @@ export default function Development() {
 
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold">Our Tools</h3>
-                  <div className="overflow-y-auto max-h-[300px]">
+                  <div className="overflow-y-auto max-h-[300px] scrollbar-hide">
                     <AnimatePresence>
                       {responses.map((tool, index) => (
                         <motion.div
@@ -221,14 +223,14 @@ export default function Development() {
                           <div className="flex items-center gap-4 text-sm">
                             <span
                               className={`px-2 py-1 rounded-md ${
-                                String(tool.status) === 'Active'
-                                  ? 'bg-green-900 text-green-300'
-                                  : 'bg-red-900 text-red-300'
+                                String(tool.status) === "Active"
+                                  ? "bg-green-900 text-green-300"
+                                  : "bg-red-900 text-red-300"
                               }`}
                             >
-                              {String(tool.status) === 'active'
-                                ? 'Active'
-                                : 'Inactive'}
+                              {String(tool.status) === "active"
+                                ? "Active"
+                                : "Inactive"}
                             </span>
                             <div className="flex flex-col text-sm">
                               <span className="font-semibold">{tool.name}</span>
@@ -302,11 +304,11 @@ export default function Development() {
                               <div className="flex items-center gap-4">
                                 <span
                                   className={`inline-flex items-center rounded-md px-2 py-1 text-xs ${
-                                    event.status === 'success'
-                                      ? 'bg-green-900 text-green-300'
-                                      : event.status === 'error'
-                                      ? 'bg-red-900 text-red-300'
-                                      : 'bg-yellow-900 text-yellow-300'
+                                    event.status === "success"
+                                      ? "bg-green-900 text-green-300"
+                                      : event.status === "error"
+                                      ? "bg-red-900 text-red-300"
+                                      : "bg-yellow-900 text-yellow-300"
                                   }`}
                                 >
                                   {event.type}

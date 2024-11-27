@@ -1,57 +1,66 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Code, Server, Globe, Zap, ArrowRight, Send } from 'lucide-react';
-import { Button } from '../ui/Buttons/v2/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import Pattern from '../ui/Patterns/Pattern';
+import { ArrowRight, Code, Globe, Send, Server, Zap } from "lucide-react";
+import React, { useState } from "react";
+
+import { Button } from "../ui/Buttons/v2/button";
+import { Input } from "@/components/ui/input";
+import Pattern from "../ui/Patterns/Pattern";
+import { Textarea } from "@/components/ui/textarea";
+import { motion } from "framer-motion";
 
 const services = [
   {
     icon: Code,
-    title: 'Frontend Development',
+    title: "Frontend Development",
     description:
-      'Create responsive and interactive user interfaces using modern frameworks.',
-    technologies: ['React', 'Vue.js', 'Next.js', 'Tailwind CSS'],
-    color: 'from-blue-600 to-cyan-500',
+      "Create responsive, interactive and beautiful user interfaces using modern frameworks.",
+    technologies: ["React", "Vue", "Next", "Tailwind CSS", "Nuxt", "Angular"],
+    color: "from-blue-600 to-cyan-500",
   },
   {
     icon: Server,
-    title: 'Backend Development',
+    title: "Backend Development",
     description:
-      'Build robust server-side applications and APIs for scalable solutions.',
-    technologies: ['Node.js', 'Python', 'Java', 'GraphQL'],
-    color: 'from-green-600 to-emerald-500',
+      "Build robust server-side applications and APIs for scalable solutions focused on microservices.",
+    technologies: ["Node", "Python", "Java", "GraphQL", "PHP"],
+    color: "from-green-600 to-emerald-500",
   },
   {
     icon: Globe,
-    title: 'Full Stack Solutions',
+    title: "Full Stack Solutions",
     description:
-      'End-to-end web application development, from database to UI implementation.',
-    technologies: ['MERN Stack', 'Django', 'Ruby on Rails', 'PostgreSQL'],
-    color: 'from-purple-600 to-pink-500',
+      "End-to-end web application development, from database to UI implementation.",
+    technologies: [
+      "MERN Stack",
+      "MEAN Stack",
+      "MEVN Stack",
+      "MongoDB",
+      "PostgreSQL",
+      "Wordpress",
+      "and more...",
+    ],
+    color: "from-purple-600 to-pink-500",
   },
   {
     icon: Zap,
-    title: 'Performance Optimization',
+    title: "Performance Optimization",
     description:
       "Improve your web application's speed and efficiency for better UX and SEO.",
     technologies: [
-      'Webpack',
-      'Lazy Loading',
-      'CDN Integration',
-      'Caching Strategies',
+      "Webpack",
+      "Lazy Loading",
+      "CDN Integration",
+      "Caching Strategies",
     ],
-    color: 'from-yellow-500 to-orange-500',
+    color: "from-yellow-500 to-orange-500",
   },
 ];
 
 const CustomCard = ({
   children,
   gradientColor,
-  borderColor = 'border-zinc-300',
+  borderColor = "border-zinc-300",
 }: {
   children: React.ReactNode;
   gradientColor: string;
@@ -74,7 +83,7 @@ const CustomCard = ({
         className="-top-1 left-1/2 h-[200px] w-full max-w-[200px] md:max-w-[400px] absolute -translate-x-1/2 -translate-y-1/2"
         style={{
           background:
-            'conic-gradient(from 90deg at 50% 50%, rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 50%), radial-gradient(rgba(200, 200, 200, 0.1) 0%, transparent 80%)',
+            "conic-gradient(from 90deg at 50% 50%, rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 50%), radial-gradient(rgba(200, 200, 200, 0.1) 0%, transparent 80%)",
         }}
       />
       {children}
@@ -84,9 +93,9 @@ const CustomCard = ({
 
 export default function EnhancedDevelopmentServices() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleInputChange = (
@@ -98,9 +107,9 @@ export default function EnhancedDevelopmentServices() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     alert("Thanks for your message! We'll get back to you soon.");
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -124,7 +133,7 @@ export default function EnhancedDevelopmentServices() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <CustomCard
-                gradientColor={service.color.split(' ')[1]}
+                gradientColor={service.color.split(" ")[1]}
                 borderColor="border-zinc-600"
               >
                 <div className="relative z-10">
