@@ -1,15 +1,16 @@
-import "./globals.css";
+import './globals.css';
 
-import HeaderGlobal from "@/components/ui/Headers/headerGlobal";
-import { Inter } from "next/font/google";
-import type { Metadata } from "next";
+import HeaderGlobal from '@/components/ui/Headers/headerGlobal';
+import { Inter } from 'next/font/google';
+import type { Metadata } from 'next';
+import Footer from '@/components/Footer/Footer';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Digital Agency Landing Page",
+  title: 'Digital Agency Landing Page',
   description:
-    "Elevate your digital presence with our web and app development services",
+    'Elevate your digital presence with our web and app development services',
 };
 
 export default function RootLayout({
@@ -24,6 +25,8 @@ export default function RootLayout({
       >
         <HeaderGlobal></HeaderGlobal>
         {children}
+
+        <Footer></Footer>
       </body>
     </html>
   );
