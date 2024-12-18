@@ -4,6 +4,7 @@ import HeaderGlobal from '@/components/ui/Headers/headerGlobal';
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import Footer from '@/components/Footer/Footer';
+import LoadingBar from '@/components/Loadding/LoadingBar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,6 +24,8 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-gray-900 text-white scroll-smooth`}
       >
+        <LoadingBar />
+
         <HeaderGlobal></HeaderGlobal>
         {children}
 

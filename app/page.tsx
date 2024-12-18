@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   FaBeer,
@@ -7,85 +7,86 @@ import {
   FaRegHandshake,
   FaStar,
   FaUsers,
-} from "react-icons/fa";
+} from 'react-icons/fa';
 
-import Card from "@/components/ui/Cards/Card"; // Componente de tarjeta
-import CardInfo from "@/components/ui/Cards/CardInfo"; // Componente de tarjeta con información
-import CustomSection from "@/components/ui/Others/CustomSection";
-import { FaMicrochip } from "react-icons/fa6";
-import Hero from "@/components/Heros/Hero"; // Componente Hero
-import Hero2 from "@/components/Heros/Hero2";
-import Hero3 from "@/components/Heros/Hero3";
-import PricingHero from "@/components/Pricing/PricingHero";
-import { RiCustomerServiceFill } from "react-icons/ri";
-import Testimonials from "@/components/ui/Testimonials/Testimonials";
+import Card from '@/components/ui/Cards/Card'; // Componente de tarjeta
+import CardInfo from '@/components/ui/Cards/CardInfo'; // Componente de tarjeta con información
+import CustomSection from '@/components/ui/Others/CustomSection';
+import { FaMicrochip } from 'react-icons/fa6';
+import Hero from '@/components/Heros/Hero'; // Componente Hero
+import Hero2 from '@/components/Heros/Hero2';
+import Hero3 from '@/components/Heros/Hero3';
+import PricingHero from '@/components/Pricing/PricingHero';
+import { RiCustomerServiceFill } from 'react-icons/ri';
+import Testimonials from '@/components/ui/Testimonials/Testimonials';
+import LoadingBar from '@/components/Loadding/LoadingBar';
 
 export default function Home() {
   const cardData = [
     {
       icon: FaStar,
-      title: "Landing pages",
-      href: "/services/landing-pages",
-      color: "#fff",
+      title: 'Landing pages',
+      href: '/services/landing-pages',
+      color: '#fff',
     },
     {
       icon: FaLightbulb,
-      title: "Web Development",
-      href: "/services/web-development",
-      color: "#FEFCBF",
+      title: 'Web Development',
+      href: '/services/web-development',
+      color: '#FEFCBF',
     },
     {
       icon: FaMicrochip,
-      title: "Software development",
-      href: "/services/software-development",
-      color: "#46ffe0",
+      title: 'Software development',
+      href: '/services/software-development',
+      color: '#46ffe0',
     },
 
     {
       icon: FaRegClock,
-      title: "Web Design",
-      href: "/services/web-desing",
-      color: "#E9D8FD",
+      title: 'Web Design',
+      href: '/services/web-desing',
+      color: '#E9D8FD',
     },
     {
       icon: FaUsers,
-      title: "Staff Augmentation",
-      href: "/services/staff-augmentation",
-      color: "#FBB6CE",
+      title: 'Staff Augmentation',
+      href: '/services/staff-augmentation',
+      color: '#FBB6CE',
     },
 
     {
       icon: FaUsers,
-      title: "Services",
-      href: "/services",
-      color: "#22d3ee",
+      title: 'Services',
+      href: '/services',
+      color: '#22d3ee',
     },
   ];
 
   const cardInfoData = [
     {
       icon: FaStar,
-      title: "Compromise with Quality",
+      title: 'Compromise with Quality',
       description:
         "Our team's mission is to turn your projects real and with high quality",
-      buttonText: "More info",
-      buttonLink: "/about",
+      buttonText: 'More info',
+      buttonLink: '/about',
     },
     {
       icon: FaLightbulb,
-      title: "Continuous Innovation",
+      title: 'Continuous Innovation',
       description:
-        "We are always looking for new solutions and approaches to improve our services.",
-      buttonText: "Find out more",
-      buttonLink: "/innovation",
+        'We are always looking for new solutions and approaches to improve our services.',
+      buttonText: 'Find out more',
+      buttonLink: '/innovation',
     },
     {
       icon: RiCustomerServiceFill,
-      title: "Custom support",
+      title: 'Custom support',
       description:
-        "We offer custom support to each of our clients to dig deep into their needs.",
-      buttonText: "Contact us",
-      buttonLink: "/contact",
+        'We offer custom support to each of our clients to dig deep into their needs.',
+      buttonText: 'Contact us',
+      buttonLink: '/contact',
     },
   ];
 
