@@ -1,58 +1,59 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Code, Server, Globe, Zap, ArrowRight, Send } from 'lucide-react';
-import { Button } from '../ui/Buttons/v2/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import Pattern from '../ui/Patterns/Pattern';
-import CustomSection from '../ui/Others/CustomSection';
+import { ArrowRight, Code, Globe, Send, Server, Zap } from "lucide-react";
+import React, { useEffect, useState } from "react";
+
+import { Button } from "../ui/Buttons/v2/button";
+import CustomSection from "../ui/Others/CustomSection";
+import { Input } from "@/components/ui/input";
+import Pattern from "../ui/Patterns/Pattern";
+import { Textarea } from "@/components/ui/textarea";
+import { motion } from "framer-motion";
 
 const services = [
   {
     icon: Code,
-    title: 'Frontend Development',
+    title: "Frontend Development",
     description:
-      'Create responsive and interactive user interfaces using modern frameworks.',
-    technologies: ['React', 'Vue.js', 'Next.js', 'Tailwind CSS'],
-    color: 'from-blue-600 to-cyan-500',
+      "Create responsive and interactive user interfaces using modern frameworks.",
+    technologies: ["React", "Vue.js", "Next.js", "Tailwind CSS"],
+    color: "from-blue-600 to-cyan-500",
   },
   {
     icon: Server,
-    title: 'Backend Development',
+    title: "Backend Development",
     description:
-      'Build robust server-side applications and APIs for scalable solutions.',
-    technologies: ['Node.js', 'Python', 'Java', 'GraphQL'],
-    color: 'from-green-600 to-emerald-500',
+      "Build robust server-side applications and APIs for scalable solutions.",
+    technologies: ["Node.js", "Python", "Java", "GraphQL"],
+    color: "from-green-600 to-emerald-500",
   },
   {
     icon: Globe,
-    title: 'Full Stack Solutions',
+    title: "Full Stack Solutions",
     description:
-      'End-to-end web application development, from database to UI implementation.',
-    technologies: ['MERN Stack', 'Django', 'Ruby on Rails', 'PostgreSQL'],
-    color: 'from-purple-600 to-pink-500',
+      "End-to-end web application development, from database to UI implementation.",
+    technologies: ["MERN Stack", "Django", "Ruby on Rails", "PostgreSQL"],
+    color: "from-purple-600 to-pink-500",
   },
   {
     icon: Zap,
-    title: 'Performance Optimization',
+    title: "Performance Optimization",
     description:
       "Improve your web application's speed and efficiency for better UX and SEO.",
     technologies: [
-      'Webpack',
-      'Lazy Loading',
-      'CDN Integration',
-      'Caching Strategies',
+      "Webpack",
+      "Lazy Loading",
+      "CDN Integration",
+      "Caching Strategies",
     ],
-    color: 'from-yellow-500 to-orange-500',
+    color: "from-yellow-500 to-orange-500",
   },
 ];
 
 const CustomCard = ({
   children,
   gradientColor,
-  borderColor = 'border-zinc-800',
+  borderColor = "border-zinc-800",
 }: {
   children: React.ReactNode;
   gradientColor: string;
@@ -75,7 +76,7 @@ const CustomCard = ({
         className="-top-1 left-1/2 h-[200px] w-full max-w-[200px] md:max-w-[400px] absolute -translate-x-1/2 -translate-y-1/2"
         style={{
           background:
-            'conic-gradient(from 90deg at 50% 50%, rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 50%), radial-gradient(rgba(200, 200, 200, 0.1) 0%, transparent 80%)',
+            "conic-gradient(from 90deg at 50% 50%, rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 50%), radial-gradient(rgba(200, 200, 200, 0.1) 0%, transparent 80%)",
         }}
       />
       {children}
@@ -85,10 +86,15 @@ const CustomCard = ({
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
+  const [status, setStatus] = useState<string>("");
+
+  useEffect(() => {
+    console.log(formData);
+  }, [formData]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -97,11 +103,31 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert("Thanks for your message! We'll get back to you soon.");
-    setFormData({ name: '', email: '', message: '' });
+    console.log("Form submitted:", formData);
+    setStatus("Sending...");
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        const errorData = await response.json();
+        setStatus(`Failed to send message: ${errorData.message}`);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatus("An error occurred. Please try again.");
+    }
   };
 
   return (
@@ -111,14 +137,15 @@ export default function ContactForm() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-900 via-black to-black"></div>
           <div className="relative z-10 container px-4 md:px-6">
             <p className="text-sm uppercase tracking-widest text-zinc-400 text-center mb-8">
-              Dejanos Guiarte en el cumplimiento de tus metas{' '}
+              Let us guide you in achieving your goals.{" "}
             </p>
             <h1 className="font-serif text-center text-7xl md:text-8xl lg:text-9xl tracking-tight mb-8">
-              Ponete en contacto con nostros
+              Get in touch with us
             </h1>
             <p className="text-sm uppercase tracking-widest text-zinc-400 text-center mb-8">
-              Trabajemos juntos para realizar tus espectativas de la forma mas
-              adecuada posible caminemos juntos hacia tu meta.
+              {
+                "Let's work together to discover your ideal project and help you achieve your business goals."
+              }
             </p>
           </div>
         </div>

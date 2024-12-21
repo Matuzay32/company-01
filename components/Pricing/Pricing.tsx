@@ -28,10 +28,12 @@ import { Button } from "@/components/ui/Buttons/v1/button";
 import CustomSection from "../ui/Others/CustomSection";
 import { Switch } from "@/components/ui/switch";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
+  const router = useRouter();
 
   const plans = [
     {
@@ -361,7 +363,12 @@ export default function Pricing() {
           <p className="text-xl text-muted-foreground mb-8">
             Join our selected group of clients
           </p>
-          <Button size="lg" variant={"outline"} className="text-lg py-6 px-8 ">
+          <Button
+            size="lg"
+            variant={"outline"}
+            className="text-lg py-6 px-8 "
+            onClick={() => router.push("/contact")}
+          >
             Join
           </Button>
         </motion.div>
