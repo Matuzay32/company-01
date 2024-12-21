@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from 'framer-motion';
 import {
   ArrowRight,
   Bell,
@@ -13,141 +13,153 @@ import {
   Terminal,
   User,
   XCircle,
-} from "lucide-react";
-import React, { useEffect, useState } from "react";
+  Cloud,
+  Database,
+  Package,
+} from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 
-import { Button } from "../ui/Buttons/v2/button";
-import CustomSection from "../ui/Others/CustomSection";
-import EnhancedDevelopmentServices from "./EnhancedDevelopmentServices";
-import { Input } from "@/components/ui/input";
-import Pattern from "../ui/Patterns/Pattern";
+import { Button } from '../ui/Buttons/v2/button';
+import CustomSection from '../ui/Others/CustomSection';
+import EnhancedDevelopmentServices from './EnhancedDevelopmentServices';
+import { Input } from '@/components/ui/input';
+import Pattern from '../ui/Patterns/Pattern';
 
 const responses = [
   {
-    id: "aws123",
-    name: "AWS Elastic Beanstalk",
-    status: "Active",
-    timestamp: "2024-11-06T07:26:20Z",
+    id: 1,
+    name: 'AWS services',
+    status: 'Active',
+    timestamp: '',
   },
   {
-    id: "azure456",
-    name: "Microsoft Azure",
-    status: "Active",
-    timestamp: "2024-11-06T07:26:18Z",
+    id: 2,
+    name: 'Heroku',
+    status: 'Active',
+    timestamp: '',
   },
   {
-    id: "heroku789",
-    name: "Heroku",
-    status: "Active",
-    timestamp: "2024-11-06T07:26:15Z",
+    id: 4,
+    name: 'Google Cloud Platform',
+    status: 'Active',
+    timestamp: '',
   },
   {
-    id: "gcp012",
-    name: "Google Cloud Platform",
-    status: "Active",
-    timestamp: "2024-11-06T07:25:50Z",
+    id: 5,
+    name: 'Netlify',
+    status: 'Active',
+    timestamp: '',
   },
   {
-    id: "netlify345",
-    name: "Netlify",
-    status: "Active",
-    timestamp: "2024-11-06T07:25:35Z",
+    id: 6,
+    name: 'Vercel',
+    status: 'Active',
+    timestamp: '',
   },
   {
-    id: "vercel678",
-    name: "Vercel",
-    status: "Active",
-    timestamp: "2024-11-06T07:25:20Z",
+    id: 7,
+    name: 'EC2 elastic Search',
+    status: 'Active',
+    timestamp: '',
   },
   {
-    id: "docker890",
-    name: "Docker",
-    status: "Active",
-    timestamp: "2024-11-06T07:24:55Z",
+    id: 8,
+    name: 'Docker',
+    status: 'Active',
+    timestamp: '',
+  },
+  {
+    id: 9,
+    name: 'Kubernetes',
+    status: 'Active',
+    timestamp: '',
   },
 ];
 
 const events = [
   {
     id: 1,
-    type: "clicked",
-    status: "info",
-    title: "Schedule an appointment",
-    description:
-      "The client press the link to schedule an appointment with our team",
-    time: "5 minutes ago",
-    agent: "Email",
-    platform: "Whatsapp",
+    type: 'clicked',
+    status: 'info',
+    title: 'Scheduled deployment',
+    description: 'The team initiated the deployment process to production.',
+    time: '5 minutes ago',
+    agent: 'CI/CD Pipeline',
+    platform: 'Jenkins',
   },
   {
     id: 2,
-    type: "clicked",
-    status: "info",
-    title: "Scheduled appointment",
-    description: "The client is ready to meet us!",
-    time: "5 minutes ago",
-    agent: "Email",
-    platform: "Whatsapp",
+    type: 'clicked',
+    status: 'info',
+    title: 'Deployment in progress',
+    description: 'Deployment is running smoothly and is almost complete.',
+    time: '5 minutes ago',
+    agent: 'CI/CD Pipeline',
+    platform: 'Jenkins',
   },
   {
     id: 3,
-    type: "delivered",
-    status: "success",
-    title: "Proposal submitted",
-    description: "Proposal submitted to the client to be analyzed",
-    time: "1 hour ago",
-    agent: "Email",
-    platform: "Whatsapp",
+    type: 'delivered',
+    status: 'success',
+    title: 'Production deployment completed',
+    description: 'The new version was successfully deployed to production.',
+    time: '1 hour ago',
+    agent: 'CI/CD Pipeline',
+    platform: 'GitHub Actions',
   },
   {
     id: 4,
-    type: "opened",
-    status: "success",
-    title: "Proposal review",
-    description: "The client send a response to our team",
-    time: "1 day ago",
-    agent: "Email",
-    platform: "Whatsapp",
+    type: 'opened',
+    status: 'success',
+    title: 'Deployment rollback',
+    description:
+      'The previous deployment failed, and the system is being rolled back.',
+    time: '1 day ago',
+    agent: 'CI/CD Pipeline',
+    platform: 'GitHub Actions',
   },
   {
     id: 5,
-    type: "bounced",
-    status: "error",
-    title: "Propuesta no aceptada",
-    description: "Cliente decide no avanzar con la propuesta",
-    time: "20 minutos atrás",
-    agent: "Email",
-    platform: "Whatsapp",
+    type: 'bounced',
+    status: 'error',
+    title: 'Deployment failed',
+    description: 'Deployment failed due to server errors during the process.',
+    time: '20 minutes ago',
+    agent: 'CI/CD Pipeline',
+    platform: 'GitLab CI',
   },
   {
     id: 6,
-    type: "delivered",
-    status: "success",
-    title: "Nueva propuesta enviada",
-    description: "Se envía una nueva propuesta con ajustes",
-    time: "30 minutos atrás",
-    agent: "Email",
-    platform: "Whatsapp",
+    type: 'delivered',
+    status: 'success',
+    title: 'Hotfix deployed',
+    description:
+      'A critical hotfix was deployed to address an urgent issue in production.',
+    time: '30 minutes ago',
+    agent: 'CI/CD Pipeline',
+    platform: 'CircleCI',
   },
   {
     id: 7,
-    type: "opened",
-    status: "success",
-    title: "Propuesta aceptada",
-    description: "Cliente abre y acepta la propuesta final",
-    time: "45 minutos atrás",
-    agent: "Email",
-    platform: "Whatsapp",
+    type: 'opened',
+    status: 'success',
+    title: 'Deployment verification',
+    description:
+      'The team has verified that the deployment was successful and systems are stable.',
+    time: '45 minutes ago',
+    agent: 'Deployment Monitor',
+    platform: 'New Relic',
   },
   {
     id: 8,
-    type: "delivered",
-    status: "success",
-    title: "Contrato firmado",
-    description: "Cliente firma contrato y se procede con el proyecto",
-    time: "1 hora atrás",
-    agent: "Email",
-    platform: "Whatsapp",
+    type: 'delivered',
+    status: 'success',
+    title: 'Server scaling',
+    description:
+      'Auto-scaling triggered due to increased traffic to the application.',
+    time: '1 hour ago',
+    agent: 'Cloud Infrastructure',
+    platform: 'AWS EC2',
   },
 ];
 
@@ -156,12 +168,16 @@ const iconMap = {
   clicked: GitBranch, // Representa acción de clic (reunión agendada)
   opened: Mail, // Representa propuesta abierta y revisada
   bounced: XCircle, // Representa rechazo de propuesta
+  success: Cloud, // Representa implementación exitosa
+  error: XCircle, // Representa error en la implementación
+  deploy: Package, // Representa despliegue realizado
+  kubernetes: Database, // Represent
 };
 
 export default function Development() {
   const [activeEvent, setActiveEvent] = useState(0);
   const [showNotifications, setShowNotifications] = useState(false);
-  const [testMode, setTestMode] = useState("delivered");
+  const [testMode, setTestMode] = useState('delivered');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -199,7 +215,7 @@ export default function Development() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="relative z-10 h-[400px] overflow-hidden bg-gradient-to-b from-black to-black p-8">
+              <div className="relative z-10 h-[400px] overflow-hidden  p-8">
                 <div className="mb-8">
                   <span className="inline-flex items-center rounded-full border border-to-black p-8 px-3 py-1 text-xs">
                     Tools List
@@ -209,7 +225,7 @@ export default function Development() {
 
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold">Our Tools</h3>
-                  <div className="overflow-y-auto max-h-[300px] scrollbar-hide">
+                  <div className="overflow-y-auto max-h-[200px] scrollbar-hide">
                     <AnimatePresence>
                       {responses.map((tool, index) => (
                         <motion.div
@@ -223,14 +239,14 @@ export default function Development() {
                           <div className="flex items-center gap-4 text-sm">
                             <span
                               className={`px-2 py-1 rounded-md ${
-                                String(tool.status) === "Active"
-                                  ? "bg-green-900 text-green-300"
-                                  : "bg-red-900 text-red-300"
+                                String(tool.status) === 'Active'
+                                  ? 'bg-green-900 text-green-300'
+                                  : 'bg-red-900 text-red-300'
                               }`}
                             >
-                              {String(tool.status) === "active"
-                                ? "Active"
-                                : "Inactive"}
+                              {String(tool.status) === 'active'
+                                ? 'Active'
+                                : 'Inactive'}
                             </span>
                             <div className="flex flex-col text-sm">
                               <span className="font-semibold">{tool.name}</span>
@@ -270,7 +286,7 @@ export default function Development() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="relative z-10 h-[400px] overflow-hidden bg-gradient-to-b from-black to-black p-8">
+              <div className="relative z-10 h-[400px] overflow-hidden  p-8">
                 <div className="absolute left-12 top-12 h-4/5 w-px bg-gray-800" />
                 <div className="relative space-y-8">
                   <AnimatePresence>
@@ -304,11 +320,11 @@ export default function Development() {
                               <div className="flex items-center gap-4">
                                 <span
                                   className={`inline-flex items-center rounded-md px-2 py-1 text-xs ${
-                                    event.status === "success"
-                                      ? "bg-green-900 text-green-300"
-                                      : event.status === "error"
-                                      ? "bg-red-900 text-red-300"
-                                      : "bg-yellow-900 text-yellow-300"
+                                    event.status === 'success'
+                                      ? 'bg-green-900 text-green-300'
+                                      : event.status === 'error'
+                                      ? 'bg-red-900 text-red-300'
+                                      : 'bg-yellow-900 text-yellow-300'
                                   }`}
                                 >
                                   {event.type}
