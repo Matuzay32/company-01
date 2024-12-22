@@ -249,7 +249,7 @@ export default function EnhancedStaffAugmentation() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="relative z-10 h-[400px] overflow-hidden bg-gradient-to-b from-black to-black p-8">
+              <div className="relative z-10 h-[400px] overflow-hidden p-8">
                 <div className="mb-8">
                   <span className="inline-flex items-center rounded-full border border-zinc-700 px-3 py-1 text-xs">
                     Hiring Process
@@ -296,12 +296,6 @@ export default function EnhancedStaffAugmentation() {
                   We follow a rigorous and efficient process to ensure we find
                   the perfect match for your project needs.
                 </p>
-                <a
-                  href="#"
-                  className="mt-4 inline-flex items-center text-sm text-gray-400 hover:text-white transition-colors duration-200"
-                >
-                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
               </div>
             </motion.div>
           </CustomSection>
@@ -314,7 +308,7 @@ export default function EnhancedStaffAugmentation() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="relative z-10 h-[400px] overflow-hidden bg-gradient-to-b from-black to-black p-8">
+              <div className="relative z-10 h-[400px] overflow-hidden  p-8">
                 <div className="absolute left-12 top-12 h-4/5 w-px bg-gray-800" />
                 <div className="relative space-y-8">
                   <AnimatePresence>
@@ -388,12 +382,6 @@ export default function EnhancedStaffAugmentation() {
                   initial requirements to team integration, we keep you informed
                   every step of the way.
                 </p>
-                <a
-                  href="#"
-                  className="mt-4 inline-flex items-center text-sm text-gray-400 hover:text-white transition-colors duration-200"
-                >
-                  View full timeline <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
               </div>
             </motion.div>
           </CustomSection>
