@@ -209,11 +209,12 @@ export default function Development() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Tools List Panel */}
           <CustomSection>
-            <div className="flex flex-col items-center justify-center mb-8">
-              <h2 className="text-4xl font-bold text-white text-center">
+            <div className="mb-8 flex justify-center">
+              <span className="inline-flex items-center rounded-full border border-zinc-700 px-12 py-6 text-3xl font-bold">
                 Infrastructure Tools
-              </h2>
+              </span>
             </div>
+
             <motion.div
               className="relative flex flex-col gap-4 rounded-3xl overflow-hidden z-0"
               initial={{ opacity: 0, y: 20 }}
@@ -266,11 +267,12 @@ export default function Development() {
 
           {/* Modular Webhooks Panel */}
           <CustomSection>
-            <div className="flex flex-col items-center justify-center mb-8">
-              <h2 className="text-4xl font-bold text-white text-center">
+            <div className="mb-8 flex justify-center">
+              <span className="inline-flex items-center rounded-full border border-zinc-700 px-12 py-6 text-3xl font-bold">
                 Deployment Events
-              </h2>
+              </span>
             </div>
+
             <motion.div
               className="relative flex flex-col gap-4 rounded-3xl overflow-hidden"
               initial={{ opacity: 0, y: 20 }}

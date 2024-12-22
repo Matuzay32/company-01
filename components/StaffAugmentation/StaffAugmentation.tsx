@@ -243,6 +243,12 @@ export default function EnhancedStaffAugmentation() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Hiring Process Panel */}
           <CustomSection>
+            <div className="mb-8 flex justify-center">
+              <span className="inline-flex items-center rounded-full border border-zinc-700 px-12 py-6 text-3xl font-bold">
+                Hiring Process
+              </span>
+            </div>
+
             <motion.div
               className="relative flex flex-col gap-4 rounded-3xl overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
@@ -250,15 +256,9 @@ export default function EnhancedStaffAugmentation() {
               transition={{ duration: 0.5 }}
             >
               <div className="relative z-10 h-[400px] overflow-hidden p-8">
-                <div className="mb-8">
-                  <span className="inline-flex items-center rounded-full border border-zinc-700 px-3 py-1 text-xs">
-                    Hiring Process
-                  </span>
-                </div>
                 <div className="relative mb-8"></div>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">Our Hiring Steps</h3>
                   <div className="overflow-y-auto max-h-[300px]">
                     <AnimatePresence>
                       {hiringProcesses.map((process, index) => (
@@ -302,6 +302,11 @@ export default function EnhancedStaffAugmentation() {
 
           {/* Hiring Events Panel */}
           <CustomSection>
+            <div className="mb-8 flex justify-center">
+              <span className="inline-flex items-center rounded-full border border-zinc-700 px-12 py-6 text-3xl font-bold">
+                Hiring Timeline
+              </span>
+            </div>
             <motion.div
               className="relative flex flex-col gap-4 rounded-3xl overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
