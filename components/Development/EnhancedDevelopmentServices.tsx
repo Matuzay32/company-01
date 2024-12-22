@@ -137,7 +137,6 @@ export default function EnhancedDevelopmentServices() {
         </motion.h2>
 
         <div className="mt-16">
-          <h2 className="text-4xl font-bold text-center mb-8">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <CustomCard gradientColor="#46ffe0">

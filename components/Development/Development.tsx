@@ -216,15 +216,9 @@ export default function Development() {
               transition={{ duration: 0.5 }}
             >
               <div className="relative z-10 h-[400px] overflow-hidden  p-8">
-                <div className="mb-8">
-                  <span className="inline-flex items-center rounded-full border border-to-black p-8 px-3 py-1 text-xs">
-                    Tools List
-                  </span>
-                </div>
                 <div className="relative mb-8"></div>
 
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">Our Tools</h3>
                   <div className="overflow-y-auto max-h-[200px] scrollbar-hide">
                     <AnimatePresence>
                       {responses.map((tool, index) => (
@@ -261,19 +255,6 @@ export default function Development() {
                     </AnimatePresence>
                   </div>
                 </div>
-              </div>
-              <div className="z-10 p-8">
-                <h2 className="text-xl font-semibold">Tool Environment</h2>
-                <p className="mt-2 text-sm text-gray-400">
-                  Safely test and monitor your development tools in a controlled
-                  environment.
-                </p>
-                <a
-                  href="#"
-                  className="mt-4 inline-flex items-center text-sm text-gray-400 hover:text-white transition-colors duration-200"
-                >
-                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
               </div>
             </motion.div>
           </CustomSection>
@@ -354,20 +335,6 @@ export default function Development() {
                       })}
                   </AnimatePresence>
                 </div>
-              </div>
-              <div className="z-10 p-8">
-                <h2 className="text-xl font-semibold">Modular Webhooks</h2>
-                <p className="mt-2 text-sm text-gray-400">
-                  Receive real-time notifications directly to your server. Every
-                  time an email is delivered, opened, bounces, or a link is
-                  clicked.
-                </p>
-                <a
-                  href="#"
-                  className="mt-4 inline-flex items-center text-sm text-gray-400 hover:text-white transition-colors duration-200"
-                >
-                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
               </div>
             </motion.div>
           </CustomSection>
