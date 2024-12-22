@@ -43,6 +43,7 @@ const LoadingBar: React.FC = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black"
+          style={{ zIndex: 51 }}
         >
           {/* Porcentaje */}
           <motion.div
