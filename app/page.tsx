@@ -135,32 +135,6 @@ export default function Home() {
         </CustomSection>
       </section>
 
-      {/* Sección de CardInfo */}
-
-      <section className="text-center mt-24 mb-20 px-4">
-        <CustomSection height="h-2" gradientColor="#FBB6CE">
-          <h2 className="font-book font-display mb-8 text-[2.5rem] tracking-tight leading-[120%] text-white">
-            Why us
-          </h2>
-          <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
-            Because we believe every project is unique, our team is dedicated to
-            delivering tailored solutions that meet each client’s specific goals
-            and vision
-          </p>
-          <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
-            {cardInfoData.map((info, index) => (
-              <CardInfo
-                key={index}
-                icon={info.icon}
-                title={info.title}
-                description={info.description}
-                buttonText={info.buttonText}
-                buttonLink={info.buttonLink}
-              />
-            ))}
-          </div>
-        </CustomSection>
-      </section>
       {/* Sección de Testimonios */}
       <section className="text-center mt-24 mb-20 px-4 w-scree">
         <CustomSection height="h-2" gradientColor="#86efac" mt="mt-1">

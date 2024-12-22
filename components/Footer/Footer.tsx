@@ -1,29 +1,29 @@
-"use client";
+'use client';
 
 import {
   AiFillGithub,
   AiFillLinkedin,
   AiFillTwitterCircle,
-} from "react-icons/ai";
+} from 'react-icons/ai';
 
-import Link from "next/link";
-import { motion } from "framer-motion";
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { name: "Inicio", href: "/" },
-    { name: "Servicios", href: "/services" },
-    { name: "Sobre Nosotros", href: "/about" },
-    { name: "Contacto", href: "/contact" },
-    { name: "Pricing", href: "/pricing" },
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Pricing', href: '/pricing' },
   ];
 
   const socialLinks = [
-    { Icon: AiFillGithub, href: "https://github.com/vortexpulse" },
-    { Icon: AiFillLinkedin, href: "https://linkedin.com/company/vortexpulse" },
-    { Icon: AiFillTwitterCircle, href: "https://twitter.com/vortexpulse" },
+    { Icon: AiFillGithub, href: 'https://github.com/vortexpulse' },
+    { Icon: AiFillLinkedin, href: 'https://linkedin.com/company/vortexpulse' },
+    { Icon: AiFillTwitterCircle, href: 'https://twitter.com/vortexpulse' },
   ];
 
   return (
@@ -54,9 +54,9 @@ const Footer = () => {
       {/* Contenido del footer con backdrop-filter */}
       <div className="relative backdrop-blur-sm bg-black bg-opacity-70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex justify-between">
-            {/**Column 1 and 2 container */}
-            <div className="grid grid-cols-2 w-3/4 gap-10">
+          <div className="flex flex-wrap gap-8 justify-between">
+            {/* Columnas 1 y 2 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full md:w-3/4">
               {/* Columna 1: Logo y descripción */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -83,11 +83,11 @@ const Footer = () => {
                   Quick Links
                 </h3>
                 <ul className="space-y-2">
-                  {footerLinks.map((link, index) => (
+                  {footerLinks.map((link) => (
                     <motion.li
                       key={link.name}
                       whileHover={{ scale: 1.05, x: 10 }}
-                      transition={{ type: "spring", stiffness: 300 }}
+                      transition={{ type: 'spring', stiffness: 300 }}
                     >
                       <Link
                         href={link.href}
@@ -100,14 +100,16 @@ const Footer = () => {
                 </ul>
               </motion.div>
             </div>
+
             {/* Columna 3: Redes sociales */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
+              className="w-full md:w-auto"
             >
               <h3 className="text-lg font-semibold mb-4 text-cyan-300">
-                Connect with us{" "}
+                Connect with us
               </h3>
               <div className="flex space-x-4">
                 {socialLinks.map(({ Icon, href }, index) => (

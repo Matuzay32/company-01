@@ -195,7 +195,7 @@ export default function Development() {
             <p className="text-sm uppercase tracking-widest text-zinc-400 text-center mb-8">
               Boost your business with
             </p>
-            <h1 className="font-serif text-center text-7xl md:text-8xl lg:text-9xl tracking-tight mb-8">
+            <h1 className="font-serif text-center text-6xl md:text-5xl lg:text-9xl tracking-tight mb-8">
               High Impact Web Development
             </h1>
             <p className="mt-8 text-lg text-zinc-400 max-w-2xl mx-auto text-center leading-relaxed">

@@ -1,18 +1,20 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
+import CustomSection from '@/components/ui/Others/CustomSection';
+import { motion } from 'framer-motion';
 
 const products = [
   {
-    title: "Web Design",
-    description: "Create stunning websites that leave a lasting impression",
-    video: "https://www.apple.com/105/media/us/macbook-pro-14-and-16/2021/a1c5c147-6e09-4f99-8233-da7a1f9c789c/anim/hero/large.mp4"
+    title: 'Web Design',
+    description: 'Create stunning websites that leave a lasting impression',
+    video: '/videos/particles_video2.mp4',
   },
   {
-    title: "Mobile First",
-    description: "Optimized experiences for every device",
-    image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&q=80"
-  }
+    title: 'Mobile First',
+    description: 'Optimized experiences for every device',
+    image:
+      'https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&q=80',
+  },
 ];
 
 export default function ProductShowcase() {

@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import HeroTitle from "./HeroTitle";
-import HeroScroll from "./HeroScroll";
-import { motion } from "framer-motion";
+import HeroTitle from './HeroTitle';
+import HeroScroll from './HeroScroll';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
@@ -15,12 +15,12 @@ export default function Hero() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="https://cdn.cuberto.com/cb/showreel/1.mp4" type="video/mp4" />
+          <source src="/videos/particles_video1.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
       </div>
-      
-      <motion.div 
+
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
