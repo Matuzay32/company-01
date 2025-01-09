@@ -8,6 +8,7 @@ import {
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+//Footer
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
