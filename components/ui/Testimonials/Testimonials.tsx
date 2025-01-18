@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 
 import Image from "next/image";
+import ImageAna from "../../../assets/images/Ana_Pi.jpeg";
 
 const testimonialsData = [
   {
@@ -31,9 +32,9 @@ const testimonialsData = [
   },
   {
     text: "Thanks to their expertise in web design, we achieved an impressive online presence that has attracted new clients. Attention to detail and personalized service made all the difference.",
-    author: "Marta S.,",
+    author: "Ana P.,",
     position: "Business Owner",
-    image: "https://randomuser.me/api/portraits/women/78.jpg",
+    image: ImageAna,
   },
 ];
 
