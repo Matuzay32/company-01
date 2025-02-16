@@ -142,6 +142,7 @@ const techStack = [
       'OpenAI',
       'LangChain',
       'Hugging Face',
+      'DeepSeek',
       'Keras',
     ],
   },
@@ -411,12 +412,45 @@ export default function ServicesComponent() {
           </div>
         </CustomSection>
 
-        {/* Technologies Section */}
         <CustomSection>
           <div className="my-20">
             <h2 className="text-4xl font-bold text-center mb-16">
               Tecnologías que Dominamos
             </h2>
+
+            <motion.div
+              className="relative flex flex-col gap-4 rounded-3xl overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="relative z-10 h-[400px] overflow-hidden p-8">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentTech}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -100 }}
+                    transition={{ duration: 0.5 }}
+                    className="flex flex-col items-center justify-center h-full"
+                  >
+                    <h3 className="text-4xl font-bold mb-6">
+                      {techStack[currentTech].name}
+                    </h3>
+                    <div className="flex flex-wrap gap-4 justify-center">
+                      {techStack[currentTech].techs.map((tech) => (
+                        <div
+                          key={tech}
+                          className="px-6 py-3 rounded-full border border-zinc-700 bg-zinc-900/50 text-lg"
+                        >
+                          {tech}
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </motion.div>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               {techStack
                 .flatMap((stack) => stack.techs)
@@ -479,13 +513,15 @@ export default function ServicesComponent() {
                 Agenda una consultoría y descubre cómo podemos llevar tu empresa
                 al siguiente nivel tecnológico.
               </p>
-              <Button
-                size="lg"
-                className="text-xl py-8 px-16 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
-              >
-                Comenzar Ahora
-                <ArrowRight className="ml-4 w-6 h-6" />
-              </Button>
+              <a href={'/pricing'}>
+                <Button
+                  size="lg"
+                  className="text-xl py-8 px-16 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
+                >
+                  Comenzar Ahora
+                  <ArrowRight className="ml-4 w-6 h-6" />
+                </Button>
+              </a>
             </div>
           </div>
         </motion.div>

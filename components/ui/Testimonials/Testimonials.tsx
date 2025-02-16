@@ -1,39 +1,39 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import Image from "next/image";
-import ImageAna from "../../../assets/images/Ana_Pi.jpeg";
+import Image from 'next/image';
+import ImageAna from '../../../assets/images/Ana_Pi.jpeg';
 
 const testimonialsData = [
   {
     text: "Working with this agency was amazing. They developed a modern and functional website that exceeded our expectations and enhanced our clients' experience!",
-    author: "Sofía R.,",
-    position: "Marketing Manager",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    author: 'Sofía R.,',
+    position: 'Marketing Manager',
+    image: 'https://randomuser.me/api/portraits/women/44.jpg',
   },
   {
-    text: "We needed a customized solution, and their team really captured our vision. Thanks to them, we launched an optimized landing page that doubled our conversions in just one month.",
-    author: "Carlos M.,",
-    position: "Entrepreneur and Founder",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    text: 'We needed a customized solution, and their team really captured our vision. Thanks to them, we launched an optimized landing page that doubled our conversions in just one month.',
+    author: 'Carlos M.,',
+    position: 'Entrepreneur and Founder',
+    image: 'https://randomuser.me/api/portraits/men/32.jpg',
   },
   {
-    text: "From design to development, the experience was flawless. Your team not only met our deadlines, but offered ideas that improved our final product. We will definitely continue to collaborate!",
-    author: "Laura G.,",
-    position: "Product Manager",
-    image: "https://randomuser.me/api/portraits/women/29.jpg",
+    text: 'From design to development, the experience was flawless. Your team not only met our deadlines, but offered ideas that improved our final product. We will definitely continue to collaborate!',
+    author: 'Laura G.,',
+    position: 'Product Manager',
+    image: 'https://randomuser.me/api/portraits/women/29.jpg',
   },
   {
-    text: "We decided to delegate software development to this agency, and it was the best decision. We got an experienced team that integrated perfectly with our business and delivered solid results.",
-    author: "Andres T.,",
-    position: "CTO",
-    image: "https://randomuser.me/api/portraits/men/65.jpg",
+    text: 'We decided to delegate software development to this agency, and it was the best decision. We got an experienced team that integrated perfectly with our business and delivered solid results.',
+    author: 'Andres T.,',
+    position: 'CTO',
+    image: 'https://randomuser.me/api/portraits/men/65.jpg',
   },
   {
-    text: "Thanks to their expertise in web design, we achieved an impressive online presence that has attracted new clients. Attention to detail and personalized service made all the difference.",
-    author: "Ana P.,",
-    position: "Business Owner",
+    text: 'Thanks to their expertise in web design, we achieved an impressive online presence that has attracted new clients. Attention to detail and personalized service made all the difference.',
+    author: 'Ana P.,',
+    position: 'Business Owner',
     image: ImageAna,
   },
 ];
@@ -58,8 +58,8 @@ export default function Testimonials() {
     };
 
     handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
@@ -93,10 +93,10 @@ export default function Testimonials() {
               key={index}
               className={`flex-shrink-0 px-2 sm:px-4 ${
                 itemsToShow === 1
-                  ? "w-full"
+                  ? 'w-full'
                   : itemsToShow === 2
-                  ? "w-1/2"
-                  : "w-1/3"
+                  ? 'w-1/2'
+                  : 'w-1/3'
               }`}
             >
               <div className="relative rounded-2xl border border-slate-5 bg-gradient-to-b from-black to-black p-4 sm:p-6 h-full max-w-md mx-auto">
