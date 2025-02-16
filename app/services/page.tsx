@@ -457,9 +457,17 @@ export default function ServicesComponent() {
                 .map((tech, index) => (
                   <motion.div
                     key={tech}
-                    whileHover={{ scale: 1.1, rotate: [0, -2, 2, -2, 0] }}
-                    className="p-4 text-center border border-zinc-700 rounded-xl bg-zinc-900/50 hover:bg-zinc-800/50 transition-colors"
+                    className="p-4 text-center border border-zinc-700 rounded-xl bg-zinc-900/50 relative overflow-hidden"
+                    whileHover={{
+                      scale: 1.1,
+                      backgroundColor: 'rgba(63, 63, 70, 0.5)',
+                      transition: { duration: 0.3 },
+                    }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '0px 0px -100px 0px' }}
                   >
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-blue-600/10 opacity-0 hover:opacity-100 transition-opacity" />
                     {tech}
                   </motion.div>
                 ))}
