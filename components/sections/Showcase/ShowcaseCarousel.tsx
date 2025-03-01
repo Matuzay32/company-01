@@ -1,29 +1,30 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Carousel, CarouselItem } from '../../ui/carousel';
+import { Carousel, CarouselItem } from "../../ui/carousel";
+
+import Image from "next/image";
+import ImmersiveDesignImg from "@/public/services-webdesign/immersive-design.jpeg";
+import { motion } from "framer-motion";
 
 const showcaseItems = [
   {
-    title: 'Immersive Design',
+    title: "Immersive Design",
     description:
-      'Create stunning visual experiences that captivate your audience',
-    image:
-      'https://images.unsplash.com/photo-1618788372246-79faff0c3742?auto=format&fit=crop&q=80',
+      "Create stunning visual experiences that captivate your audience",
+    image: ImmersiveDesignImg.src ? ImmersiveDesignImg.src : "", //"https://images.unsplash.com/photo-1618788372246-79faff0c3742?auto=format&fit=crop&q=80",
     video:
-      'https://www.apple.com/105/media/us/mac-pro/2019/58a54c8c-ad92-40b5-8dc2-1f45671d6493/anim/hero/large.mp4',
+      "https://www.apple.com/105/media/us/mac-pro/2019/58a54c8c-ad92-40b5-8dc2-1f45671d6493/anim/hero/large.mp4",
   },
   {
-    title: 'Pixel Perfect',
-    description: 'Every detail matters in creating the perfect user experience',
-    image:
-      'https://images.unsplash.com/photo-1618788372246-79faff0c3742?auto=format&fit=crop&q=80',
+    title: "Pixel Perfect",
+    description: "Every detail matters in creating the perfect user experience",
+    image: "../../../public/services-webdesign/pixel_perfect.jpeg",
   },
   {
-    title: 'Future Ready',
+    title: "Future Ready",
     description: "Built with tomorrow's technology for today's challenges",
     image:
-      'https://images.unsplash.com/photo-1618788372246-79faff0c3742?auto=format&fit=crop&q=80',
+      "https://images.unsplash.com/photo-1618788372246-79faff0c3742?auto=format&fit=crop&q=80",
   },
 ];
 
@@ -44,7 +45,9 @@ export default function ShowcaseCarousel() {
                 <source src={item.video} type="video/mp4" />
               </video>
             ) : (
-              <img
+              <Image
+                width={100}
+                height={100}
                 src={item.image}
                 alt={item.title}
                 className="absolute inset-0 w-full h-full object-cover"

@@ -2,38 +2,43 @@
 
 import React, { useEffect, useState } from "react";
 
+import AndresImg from "@/app/assets/andres.jpeg";
+import CarlosImg from "@/app/assets/carlos.jpeg";
 import Image from "next/image";
+import LauraImg from "@/app/assets/laura.jpeg";
+import MartaImg from "@/app/assets/marta.jpeg";
+import SofiaImg from "@/app/assets/sofia.jpeg";
 
 const testimonialsData = [
   {
     text: "Working with this agency was amazing. They developed a modern and functional website that exceeded our expectations and enhanced our clients' experience!",
     author: "Sofía R.,",
     position: "Marketing Manager",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    image: SofiaImg,
   },
   {
     text: "We needed a customized solution, and their team really captured our vision. Thanks to them, we launched an optimized landing page that doubled our conversions in just one month.",
     author: "Carlos M.,",
     position: "Entrepreneur and Founder",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    image: CarlosImg,
   },
   {
     text: "From design to development, the experience was flawless. Your team not only met our deadlines, but offered ideas that improved our final product. We will definitely continue to collaborate!",
     author: "Laura G.,",
     position: "Product Manager",
-    image: "https://randomuser.me/api/portraits/women/29.jpg",
+    image: LauraImg,
   },
   {
     text: "We decided to delegate software development to this agency, and it was the best decision. We got an experienced team that integrated perfectly with our business and delivered solid results.",
     author: "Andres T.,",
     position: "CTO",
-    image: "https://randomuser.me/api/portraits/men/65.jpg",
+    image: AndresImg,
   },
   {
     text: "Thanks to their expertise in web design, we achieved an impressive online presence that has attracted new clients. Attention to detail and personalized service made all the difference.",
     author: "Marta S.,",
     position: "Business Owner",
-    image: "https://randomuser.me/api/portraits/women/78.jpg",
+    image: MartaImg,
   },
 ];
 
@@ -124,7 +129,8 @@ export default function Testimonials() {
                       alt={testimonial.author}
                       width={40}
                       height={40}
-                      className="rounded-full mr-4"
+                      className="rounded-full mr-4 object-cover"
+                      style={{ maxWidth: "40px", maxHeight: "40px" }}
                     />
                     <div className="flex flex-col">
                       <span className="sans text-sm leading-[1.6] text-slate-12 font-normal">
