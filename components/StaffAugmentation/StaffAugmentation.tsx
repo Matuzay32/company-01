@@ -78,7 +78,7 @@ const services = [
     title: 'Web Design',
     description:
       'Create visually stunning and user-friendly designs that elevate your brand and user experience.',
-    url: '/services/web-design',
+    url: '/services/web-desing',
   },
 ];
 
