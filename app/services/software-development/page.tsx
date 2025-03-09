@@ -64,6 +64,7 @@ const deploymentServices = [
       'Implementación multi-cloud con auto-escalado y alta disponibilidad',
     gradient: '#46ffe0',
     url: '/deployment/cloud',
+    button: false,
   },
   {
     icon: GitBranch,
@@ -72,6 +73,7 @@ const deploymentServices = [
       'Pipelines de entrega continua con testing y rollback automático',
     gradient: '#ff6b6b',
     url: '/deployment/cicd',
+    button: false,
   },
   {
     icon: Server,
@@ -79,6 +81,7 @@ const deploymentServices = [
     description: 'Gestión centralizada de clusters y configuraciones',
     gradient: '#4dabf7',
     url: '/deployment/servers',
+    button: false,
   },
   {
     icon: Lock,
@@ -86,6 +89,7 @@ const deploymentServices = [
     description: 'Hardening de servidores y políticas de acceso Zero Trust',
     gradient: '#94d82d',
     url: '/deployment/security',
+    button: false,
   },
   {
     icon: Wrench,
@@ -93,6 +97,7 @@ const deploymentServices = [
     description: 'Actualizaciones sin downtime y monitoreo 24/7',
     gradient: '#f783ac',
     url: '/deployment/maintenance',
+    button: false,
   },
   {
     icon: Network,
@@ -100,6 +105,7 @@ const deploymentServices = [
     description: 'Distribución inteligente de tráfico global',
     gradient: '#ff922b',
     url: '/deployment/load-balancing',
+    button: false,
   },
 ];
 
@@ -374,10 +380,13 @@ export default function DeploymentComponent() {
                     {service.title}
                   </h3>
                   <p className="text-gray-400 mb-4">{service.description}</p>
-                  <Button variant="outline" className="group">
-                    <span>Ver detalles</span>
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
+                  {service.button && (
+                    <Button variant="outline" asChild>
+                      <a href={service.url}>
+                        More details <ArrowRight className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  )}
                 </motion.div>
               </CustomCard>
             ))}

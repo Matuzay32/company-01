@@ -63,6 +63,7 @@ const services = [
       'Aplicaciones web completas con tecnologías modernas y escalables',
     gradient: '#46ffe0',
     url: '/services/full-stack',
+    button: false,
   },
   {
     icon: Settings,
@@ -71,6 +72,7 @@ const services = [
       'Soluciones personalizadas para automatizar procesos empresariales',
     gradient: '#ff6b6b',
     url: '/services/sistemas-gestion',
+    button: false,
   },
   {
     icon: FileText,
@@ -78,6 +80,7 @@ const services = [
     description: 'Plataformas integradas para gestión financiera y contable',
     gradient: '#4dabf7',
     url: '/services/facturacion',
+    button: false,
   },
   {
     icon: BrainCircuit,
@@ -86,6 +89,7 @@ const services = [
       'Implementación de modelos de inteligencia artificial en tus procesos',
     gradient: '#94d82d',
     url: '/services/ai-integration',
+    button: false,
   },
   {
     icon: PenLine,
@@ -93,6 +97,7 @@ const services = [
     description: 'Creación automatizada de contenido relevante y optimizado',
     gradient: '#f783ac',
     url: '/services/ai-content',
+    button: false,
   },
   {
     icon: Cloud,
@@ -100,6 +105,7 @@ const services = [
     description: 'Infraestructura escalable y segura en la nube',
     gradient: '#ff922b',
     url: '/services/cloud',
+    button: false,
   },
 ];
 
@@ -494,11 +500,13 @@ export default function ServicesComponent() {
                     {service.title}
                   </h3>
                   <p className="text-gray-400 mb-4">{service.description}</p>
-                  <Button variant="outline" asChild>
-                    <a href={service.url}>
-                      Ver detalles <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
+                  {service.button && (
+                    <Button variant="outline" asChild>
+                      <a href={service.url}>
+                        More details <ArrowRight className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  )}
                 </motion.div>
               </CustomCard>
             ))}

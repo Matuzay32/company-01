@@ -112,7 +112,7 @@ export default function Home() {
           </h2>
           <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
             Your project deserves the best in digital innovation. Browse our
-            featured services here, and check "Services" for even more tailored
+            featured services here, and check Services for even more tailored
             solutions!
           </p>
           <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
