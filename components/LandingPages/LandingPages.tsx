@@ -13,7 +13,7 @@ export default function LandingPages() {
       color: "#ffff", // Color distintivo para SaaS
       description:
         "KleanPower Solutions is a gateway to a world of clean, smart energy. With a design that evokes freshness and sustainability, each element guides the user into an experience of awareness and action. From environmental benefits to long-term savings, EcoPower inspires visitors to join the change at the click of a button - a KLEANER future starts here!",
-      link: "",
+      link: "/hola",
     },
     {
       title: "UrbanFit Studio",
