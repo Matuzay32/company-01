@@ -531,7 +531,7 @@ export default function ServicesComponent() {
               </p>
               <a href={'/pricing'}>
                 <Button
-                  size="lg"
+                  size="md"
                   className="text-xl py-8 px-16 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 
                   sm:text-base sm:px-4 sm:py-2 md:text-lg md:px-8 md:py-4 lg:text-xl lg:px-16 lg:py-8"
                 >
