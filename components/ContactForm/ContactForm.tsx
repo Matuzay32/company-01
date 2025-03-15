@@ -8,6 +8,7 @@ import CustomSection from "../ui/Others/CustomSection";
 import { Input } from "@/components/ui/input";
 import Pattern from "../ui/Patterns/Pattern";
 import { Textarea } from "@/components/ui/textarea";
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 
 const services = [
@@ -50,6 +51,12 @@ const services = [
   },
 ];
 
+const defaultForm = {
+  name: "",
+  email: "",
+  message: "",
+};
+
 const CustomCard = ({
   children,
   gradientColor,
@@ -85,16 +92,8 @@ const CustomCard = ({
 };
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState(defaultForm);
   const [status, setStatus] = useState<string>("");
-
-  useEffect(() => {
-    console.log(formData);
-  }, [formData]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -105,27 +104,19 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
     setStatus("Sending...");
 
-    try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+    const serviceId = "service_9vh83fd";
+    const templateId = "template_qt8tc7v";
+    const publicKey = "58423gevKIJBU8vwX";
 
-      if (response.ok) {
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        const errorData = await response.json();
-        setStatus(`Failed to send message: ${errorData.message}`);
-      }
+    try {
+      await emailjs.send(serviceId, templateId, formData, publicKey);
+      console.log("Correo enviado correctamente");
+      setStatus("");
+      setFormData(defaultForm);
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error al enviar el correo:", error);
       setStatus("An error occurred. Please try again.");
     }
   };
