@@ -1,35 +1,35 @@
-import { ArrowRight } from "lucide-react";
-import { Button } from "../ui/Buttons/v2/button";
-import CustomSection from "../ui/Others/CustomSection";
-import Image from "next/image";
-import Link from "next/link";
-import Pattern from "../ui/Patterns/Pattern";
+import { ArrowRight } from 'lucide-react';
+import { Button } from '../ui/Buttons/v2/button';
+import CustomSection from '../ui/Others/CustomSection';
+import Image from 'next/image';
+import Link from 'next/link';
+import Pattern from '../ui/Patterns/Pattern';
 
 export default function LandingPages() {
   const sections = [
     {
-      title: "KleanPower",
-      image: "/exampleLanding.jpeg",
-      color: "#ffff", // Color distintivo para SaaS
+      title: 'Welcome to Elite Modeling Agency',
+      image: '/Elite.png',
+      color: '#ffff', // Color distintivo para SaaS
       description:
-        "KleanPower Solutions is a gateway to a world of clean, smart energy. With a design that evokes freshness and sustainability, each element guides the user into an experience of awareness and action. From environmental benefits to long-term savings, EcoPower inspires visitors to join the change at the click of a button - a KLEANER future starts here!",
-      link: "/hola",
+        'Step into a world of high fashion and creativity. Explore exclusive collections, groundbreaking events, and be inspired by the passion and talent of Elite.',
+      link: '/hola',
     },
     {
-      title: "UrbanFit Studio",
-      image: "/vortexPulseLogo.webp",
-      color: "#33FF57",
+      title: 'UrbanFit Studio',
+      image: '/vortexPulseLogo.webp',
+      color: '#33FF57',
       description:
-        "UrbanFit Studio presents a dynamic and motivating proposal, ideal for those looking to transform their lifestyle. With striking graphics and a modern design, the page highlights personalized programs and irresistible promotions. The intuitive navigation and success stories inspire confidence and motivate you to take the first step towards a more active lifestyle. UrbanFit is the perfect combination of design and energy.",
-      link: "",
+        'UrbanFit Studio presents a dynamic and motivating proposal, ideal for those looking to transform their lifestyle. With striking graphics and a modern design, the page highlights personalized programs and irresistible promotions. The intuitive navigation and success stories inspire confidence and motivate you to take the first step towards a more active lifestyle. UrbanFit is the perfect combination of design and energy.',
+      link: '',
     },
     {
-      title: "Luxury Interiors",
-      image: "/vortexPulseLogo.webp",
-      color: "#3357FF",
+      title: 'Luxury Interiors',
+      image: '/vortexPulseLogo.webp',
+      color: '#3357FF',
       description:
         "Luxury Interiors' landing page redefines the concept of luxury in interior design. With a stunning visual display and sophisticated color palette, the site appeals to lovers of refined style and exceptional quality. Each section highlights exclusive and customizable pieces, with an attention to detail that conveys elegance. Elegance Interiors invites you to transform every space into a work of art, offering furniture that is synonymous with distinction and sophistication.",
-      link: "",
+      link: '',
     },
   ];
 
@@ -85,13 +85,13 @@ export default function LandingPages() {
                     <div className="flex items-center justify-center [transform-style:preserve-3d] [perspective:1000px] [perspective-origin:center]">
                       <div
                         className="relative [box-shadow:20px_20px_20px_rgba(0,_0,_0,_0.2)] [transform-style:preserve-3d] [transform:rotateY(30deg)_rotateX(0deg)] transition-transform ease-in-out duration-500 group-hover:[transform:rotateY(0deg)] group-hover:[box-shadow:0_20px_20px_rgba(0,_0,_0,_0.2)]"
-                        style={{ width: "214px", height: "314px" }}
+                        style={{ width: '214px', height: '314px' }}
                       >
                         <div className="content-[''] absolute w-[44px] h-full origin-left bg-center bg-[#2a2a2a] [transform:rotateY(90deg)] bg-[linear-gradient(180deg,_#2a2a2a,_#2a2a2a_50%,_#000000_100%)] [box-shadow:-1px_-1px_4px_3px_rgba(0,_0,_0,_0.25)_inset,_1px_1px_4px_0px_rgba(255,_255,_255,_0.1)_inset,_8px_-8px_16px_-8px_rgba(0,_0,_0,_0.08)_inset,_16px_-16px_16px_-16px_rgba(0,_0,_0,_0.25)_inset]"></div>
 
                         <div
                           className="content-[''] absolute top-0 left-0 w-full h-full bg-[rgba(0,_0,_0,_0.1)] bg-[radial-gradient(_184.29%_112.9%_at_46.2%_0%,_#ffffff80_0%,_rgba(255,_255,_255,_0)_10%_),_linear-gradient(_90deg,_rgba(255,_255,_255,_0)_0.46%,_rgba(255,_255,_255,_0.2)_0.82%,_rgba(255,_255,_255,_0)_2.18%,_rgba(255,_255,_255,_0)_4.43%,_rgba(0,_0,_0,_0)_4.79%,_rgba(0,_0,_0,_0.06)_5.18%,_rgba(0,_0,_0,_0.15)_5.44%,_rgba(0,_0,_0,_0.2)_5.74%,_rgba(255,_255,_255,_0.2)_5.78%,_rgba(255,_255,_255,_0.17)_6.03%,_rgba(255,_255,_255,_0.09)_6.29%,_rgba(255,_255,_255,_0)_6.56%_)] [box-shadow:-1px_-1px_4px_3px_rgba(0,_0,_0,_0.35)_inset,_1px_1px_4px_0px_rgba(255,_255,_255,_0.35)_inset,_8px_-8px_16px_-8px_rgba(0,_0,_0,_0.08)_inset,_16px_-16px_16px_-16px_rgba(0,_0,_0,_0.25)_inset]"
-                          style={{ backgroundBlendMode: "soft-light" }}
+                          style={{ backgroundBlendMode: 'soft-light' }}
                         >
                           <Image
                             src={section.image}
