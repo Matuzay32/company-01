@@ -186,10 +186,15 @@ export default function About() {
               Join the companies that already rely on our customized and
               effective approach to create teams tailored to their needs.
             </p>
-            <Button size="lg" className="bg-white text-black hover:bg-gray-100">
-              Start now
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <Link className="ml-2 h-4 w-4" href="/pricing">
+              <Button
+                size="lg"
+                className="bg-white text-black hover:bg-gray-100"
+              >
+                Start now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>
