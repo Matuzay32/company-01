@@ -84,7 +84,7 @@ const CubeCanvas = () => {
 
   return (
     <Canvas
-      dpr={isMobile ? 0.4 : 0.6} // Ajustar la resolución según el dispositivo
+      dpr={isMobile ? 1 : 1} // Ajustar la resolución según el dispositivo
       style={{ height: '100vh', width: '100vw', background: '#000' }}
     >
       <ambientLight intensity={isMobile ? 0.5 : 1} />
