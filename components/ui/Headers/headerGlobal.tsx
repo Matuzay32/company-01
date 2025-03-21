@@ -84,46 +84,6 @@ const menus: Record<string, DropdownMenu> = {
       },
     ],
   },
-  resources: {
-    sections: [
-      {
-        items: [
-          { label: 'Changelog', href: '#' },
-          { label: 'Status', href: '#' },
-          { label: 'Support', href: '#' },
-          { label: 'Security', href: '#' },
-        ],
-      },
-    ],
-    cards: [
-      {
-        title: 'Resource Center',
-        description: 'Guides & tutorials',
-        href: '#',
-        icon: '',
-      },
-    ],
-  },
-  docs: {
-    sections: [
-      {
-        items: [
-          { label: 'Getting Started', href: '#' },
-          { label: 'API Reference', href: '#' },
-          { label: 'SDKs', href: '#' },
-          { label: 'Guides', href: '#' },
-        ],
-      },
-    ],
-    cards: [
-      {
-        title: 'Documentation',
-        description: 'Learn how to integrate',
-        href: '#',
-        icon: '',
-      },
-    ],
-  },
 };
 
 // Componente para renderizar la tarjeta (card) de cada menú
