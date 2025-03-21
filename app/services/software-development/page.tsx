@@ -59,50 +59,50 @@ const CustomCard = ({
 const deploymentServices = [
   {
     icon: Cloud,
-    title: 'Despliegue en la Nube',
+    title: 'Cloud Deployment',
     description:
-      'Implementación multi-cloud con auto-escalado y alta disponibilidad',
+      'Multi-cloud implementation with auto-scaling and high availability',
     gradient: '#46ffe0',
     url: '/deployment/cloud',
     button: false,
   },
   {
     icon: GitBranch,
-    title: 'CI/CD Automatizado',
+    title: 'Automated CI/CD',
     description:
-      'Pipelines de entrega continua con testing y rollback automático',
+      'Continuous delivery pipelines with automated testing and rollback',
     gradient: '#ff6b6b',
     url: '/deployment/cicd',
     button: false,
   },
   {
     icon: Server,
-    title: 'Orquestación de Servidores',
-    description: 'Gestión centralizada de clusters y configuraciones',
+    title: 'Server Orchestration',
+    description: 'Centralized cluster and configuration management',
     gradient: '#4dabf7',
     url: '/deployment/servers',
     button: false,
   },
   {
     icon: Lock,
-    title: 'Seguridad en Producción',
-    description: 'Hardening de servidores y políticas de acceso Zero Trust',
+    title: 'Production Security',
+    description: 'Server hardening and Zero Trust access policies',
     gradient: '#94d82d',
     url: '/deployment/security',
     button: false,
   },
   {
     icon: Wrench,
-    title: 'Mantenimiento Continuo',
-    description: 'Actualizaciones sin downtime y monitoreo 24/7',
+    title: 'Continuous Maintenance',
+    description: 'Zero-downtime updates and 24/7 monitoring',
     gradient: '#f783ac',
     url: '/deployment/maintenance',
     button: false,
   },
   {
     icon: Network,
-    title: 'Balanceo de Carga',
-    description: 'Distribución inteligente de tráfico global',
+    title: 'Load Balancing',
+    description: 'Intelligent global traffic distribution',
     gradient: '#ff922b',
     url: '/deployment/load-balancing',
     button: false,
@@ -148,26 +148,26 @@ const deploymentStack = [
 
 const deploymentSteps = [
   {
-    title: 'Planificación',
-    description: 'Diseño de arquitectura y estrategia de despliegue',
+    title: 'Planning',
+    description: 'Architecture design and deployment strategy',
     icon: Code,
     color: '#46ffe0',
   },
   {
-    title: 'Preparación de Ambiente',
-    description: 'Configuración de infraestructura y redes',
+    title: 'Environment Preparation',
+    description: 'Infrastructure and network setup',
     icon: Wrench,
     color: '#ff6b6b',
   },
   {
-    title: 'Implementación CI/CD',
-    description: 'Configuración de pipelines automatizados',
+    title: 'CI/CD Implementation',
+    description: 'Automated pipeline configuration',
     icon: GitBranch,
     color: '#4dabf7',
   },
   {
-    title: 'Monitoreo Continuo',
-    description: 'Implementación de sistemas de observabilidad',
+    title: 'Continuous Monitoring',
+    description: 'Observability systems implementation',
     icon: Network,
     color: '#94d82d',
   },
@@ -320,8 +320,8 @@ export default function DeploymentComponent() {
                           repeat: Infinity,
                         }}
                       />
-                      Despliegue continuo con zero-downtime y seguridad
-                      enterprise-level
+                      Robust continuous deployment ensuring zero downtime and
+                      enterprise-level security.
                     </motion.div>
                   </motion.div>
                 </motion.div>
@@ -334,7 +334,7 @@ export default function DeploymentComponent() {
         <CustomSection>
           <div className="my-20">
             <h2 className="text-4xl font-bold text-center mb-16">
-              Ecosistema Tecnológico
+              Technology Ecosystem{' '}
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 relative">
               {deploymentStack
@@ -363,7 +363,7 @@ export default function DeploymentComponent() {
         {/* Servicios */}
         <div className="mt-16">
           <h2 className="text-4xl font-bold text-center mb-8">
-            Servicios Especializados
+            Specialized Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {deploymentServices.map((service, index) => (

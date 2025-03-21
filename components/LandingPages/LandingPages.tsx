@@ -124,25 +124,6 @@ export default function LandingPages() {
           </CustomSection>
         ))}
       </div>
-
-      {/* CTA Section */}
-      <div className="border-t border-zinc-800">
-        <div className="container px-4 md:px-6 py-24">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-serif">
-              Ready to create your landing page?
-            </h2>
-            <p className="text-zinc-400 max-w-[42rem] leading-normal sm:text-lg sm:leading-7">
-              Explore our process to start building effective landing pages that
-              convert.
-            </p>
-            <Button className="mt-4" size="lg">
-              Start now!
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

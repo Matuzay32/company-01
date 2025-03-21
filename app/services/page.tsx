@@ -58,51 +58,50 @@ const CustomCard = ({
 const services = [
   {
     icon: Code,
-    title: 'Desarrollo Full Stack',
+    title: 'Full Stack Development',
     description:
-      'Aplicaciones web completas con tecnologías modernas y escalables',
+      'Complete web applications with modern and scalable technologies',
     gradient: '#46ffe0',
     url: '/services/full-stack',
     button: false,
   },
   {
     icon: Settings,
-    title: 'Sistemas de Gestión',
-    description:
-      'Soluciones personalizadas para automatizar procesos empresariales',
+    title: 'Management Systems',
+    description: 'Custom solutions to automate business processes',
     gradient: '#ff6b6b',
-    url: '/services/sistemas-gestion',
+    url: '/services/management-systems',
     button: false,
   },
   {
     icon: FileText,
-    title: 'Sistemas de Facturación',
-    description: 'Plataformas integradas para gestión financiera y contable',
+    title: 'Billing Systems',
+    description: 'Integrated platforms for financial and accounting management',
     gradient: '#4dabf7',
-    url: '/services/facturacion',
+    url: '/services/billing',
     button: false,
   },
   {
     icon: BrainCircuit,
-    title: 'Integración de AI',
+    title: 'AI Integration',
     description:
-      'Implementación de modelos de inteligencia artificial en tus procesos',
+      'Implementation of artificial intelligence models in your processes',
     gradient: '#94d82d',
     url: '/services/ai-integration',
     button: false,
   },
   {
     icon: PenLine,
-    title: 'Generación de Contenido con AI',
-    description: 'Creación automatizada de contenido relevante y optimizado',
+    title: 'AI Content Generation',
+    description: 'Automated creation of relevant and optimized content',
     gradient: '#f783ac',
     url: '/services/ai-content',
     button: false,
   },
   {
     icon: Cloud,
-    title: 'Soluciones Cloud',
-    description: 'Infraestructura escalable y segura en la nube',
+    title: 'Cloud Solutions',
+    description: 'Scalable and secure cloud infrastructure',
     gradient: '#ff922b',
     url: '/services/cloud',
     button: false,
@@ -119,7 +118,7 @@ const techStack = [
     techs: ['Node.js', 'Python', 'Java', '.NET', 'Ruby on Rails', 'Go'],
   },
   {
-    name: 'Bases de Datos',
+    name: 'Databases',
     techs: [
       'PostgreSQL',
       'MongoDB',
@@ -156,26 +155,26 @@ const techStack = [
 
 const workflowSteps = [
   {
-    title: 'Consultoría Inicial',
-    description: 'Análisis de necesidades y objetivos',
+    title: 'Initial Consultation',
+    description: 'Needs and goals analysis',
     icon: ClipboardCheck,
     color: '#46ffe0',
   },
   {
-    title: 'Diseño de Solución',
-    description: 'Propuesta técnica y arquitectura',
+    title: 'Solution Design',
+    description: 'Technical proposal and architecture',
     icon: BarChart,
     color: '#ff6b6b',
   },
   {
-    title: 'Desarrollo Ágil',
-    description: 'Implementación con metodología Scrum',
+    title: 'Agile Development',
+    description: 'Implementation with Scrum methodology',
     icon: Code,
     color: '#4dabf7',
   },
   {
-    title: 'Entrega y Soporte',
-    description: 'Deploy y mantenimiento continuo',
+    title: 'Delivery and Support',
+    description: 'Deploy and continuous maintenance',
     icon: Users,
     color: '#94d82d',
   },
@@ -261,7 +260,7 @@ export default function ServicesComponent() {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="text-lg uppercase tracking-widest text-zinc-400 mb-6"
                   >
-                    Innovación Tecnológica a tu Alcance
+                    Technological Innovation at Your Reach
                   </motion.p>
 
                   <motion.h1
@@ -270,14 +269,14 @@ export default function ServicesComponent() {
                     transition={{ duration: 1, delay: 0.6, type: 'spring' }}
                     className="font-serif text-6xl md:text-8xl lg:text-9xl tracking-tight mb-8"
                   >
-                    <span>Soluciones</span>
+                    <span>Solutions</span>
                     <motion.span
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 1 }}
                       className="text-zinc-200 block mt-4"
                     >
-                      que Impulsan tu Negocio
+                      that Drive Your Business
                     </motion.span>
                   </motion.h1>
 
@@ -291,9 +290,9 @@ export default function ServicesComponent() {
                       whileHover={{ scale: 1.02 }}
                       className="text-xl text-zinc-400 leading-relaxed bg-black/30 backdrop-blur-sm p-6 rounded-xl border border-zinc-800"
                     >
-                      Desarrollamos software a medida que potencia tu negocio
-                      mediante innovación tecnológica y estrategias digitales
-                      avanzadas.
+                      We develop custom software that empowers your business
+                      through technological innovation and advanced digital
+                      strategies.
                     </motion.p>
                   </motion.div>
                 </motion.div>
@@ -308,28 +307,28 @@ export default function ServicesComponent() {
             {[
               {
                 value: 98,
-                label: 'Satisfacción',
+                label: 'Satisfaction',
                 icon: Star,
                 suffix: '%',
                 color: '#46ffe0',
               },
               {
                 value: 250,
-                label: 'Proyectos',
+                label: 'Projects',
                 icon: Trophy,
                 suffix: '+',
                 color: '#ff6b6b',
               },
               {
                 value: 24,
-                label: 'Soporte',
+                label: 'Support',
                 icon: ShieldCheck,
                 suffix: '/7',
                 color: '#4dabf7',
               },
               {
                 value: 40,
-                label: 'Tecnologías',
+                label: 'Technologies',
                 icon: Globe,
                 suffix: '+',
                 color: '#94d82d',
@@ -384,35 +383,29 @@ export default function ServicesComponent() {
           </div>
         </CustomSection>
 
-        {/* Workflow Section */}
+        {/* WORK FLOW */}
         <CustomSection>
-          <h2 className="text-4xl font-bold text-center mb-16">
-            Nuestro Proceso de Desarrollo
+          <h2 className="text-3xl font-bold text-center mb-8">
+            <span className="text-[#46ffe0]">Nuestro</span> Flujo de Trabajo
           </h2>
-          <div className="relative h-[300px]">
+          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
             {workflowSteps.map((step, index) => (
               <motion.div
-                key={step.title}
-                className="absolute w-full"
-                initial={{ opacity: 0, x: -50 }}
-                animate={{
-                  opacity: index === activeStep ? 1 : 0.03,
-                  x: index === activeStep ? 0 : 100,
-                }}
-                transition={{ duration: 0.8 }}
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="text-center"
               >
-                <div className="flex flex-col items-center text-center">
-                  <div
-                    className="w-24 h-24 rounded-full mb-6 flex items-center justify-center"
-                    style={{ backgroundColor: step.color }}
-                  >
-                    <step.icon className="w-12 h-12 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-bold mb-4">{step.title}</h3>
-                  <p className="text-xl text-zinc-400 max-w-2xl">
-                    {step.description}
-                  </p>
-                </div>
+                <step.icon
+                  size={48}
+                  color={step.color}
+                  className="mx-auto mb-6"
+                />
+                <h3 className="text-2xl text-white font-bold mb-4">
+                  {step.title}
+                </h3>
+                <p className="text-white">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -420,9 +413,9 @@ export default function ServicesComponent() {
 
         <CustomSection>
           <div className="my-20">
-            <h2 className="text-4xl font-bold text-center mb-16">
-              Tecnologías que Dominamos
-            </h2>
+            <h1 className="text-3xl font-bold text-center mb-8">
+              <span className="text-[#46ffe0]">Tecnologías</span> Dominadas
+            </h1>
 
             <motion.div
               className="relative flex flex-col gap-4 rounded-3xl overflow-hidden"
@@ -483,9 +476,10 @@ export default function ServicesComponent() {
 
         {/* Services Section */}
         <div className="mt-16">
-          <h2 className="text-4xl font-bold text-center mb-8">
-            Nuestros Servicios
-          </h2>
+          <h1 className="text-3xl font-bold text-center mb-8">
+            <span className="text-[#94d82d]">Nuestros</span> Servicios
+          </h1>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <CustomCard key={service.title} gradientColor={service.gradient}>
@@ -512,36 +506,6 @@ export default function ServicesComponent() {
             ))}
           </div>
         </div>
-
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="my-32 text-center"
-        >
-          <div className="bg-gradient-to-r from-blue-600/30 to-purple-600/30 p-1 rounded-3xl">
-            <div className="bg-black rounded-3xl p-16">
-              <h2 className="text-5xl font-bold mb-8">
-                ¿Listo para Transformar tu Negocio?
-              </h2>
-              <p className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
-                Agenda una consultoría y descubre cómo podemos llevar tu empresa
-                al siguiente nivel tecnológico.
-              </p>
-              <a href={'/pricing'}>
-                <Button
-                  size="md"
-                  className="text-xl py-8 px-16 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 
-                  sm:text-base sm:px-4 sm:py-2 md:text-lg md:px-8 md:py-4 lg:text-xl lg:px-16 lg:py-8"
-                >
-                  Comenzar Ahora
-                  <ArrowRight className="ml-4 w-6 h-6" />
-                </Button>
-              </a>
-            </div>
-          </div>
-        </motion.div>
       </main>
     </div>
   );

@@ -338,10 +338,10 @@ export default function Header() {
               Sign in
             </Link>
             <Link
-              href="#"
+              href="/contact"
               className="bg-white text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors flex items-center gap-1"
             >
-              Get Started
+              Get in Touch
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path
                   d="M6 12L10 8L6 4"
@@ -435,11 +435,11 @@ export default function Header() {
                 Sign in
               </Link>
               <Link
-                href="#"
+                href="/contact"
                 className="block px-3 py-2 bg-white text-black rounded-md text-base font-medium hover:bg-gray-100 transition-colors"
                 onClick={closeMobileMenu}
               >
-                Get Started
+                Get in Touch
               </Link>
             </div>
           </div>
