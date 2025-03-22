@@ -95,15 +95,6 @@ function Model() {
           />
         </aThree.mesh>
         <Environment preset="warehouse" />
-        <ContactShadows
-          rotation={[Math.PI / 2, 0, 0]}
-          position={[0, -1.6, 0]}
-          opacity={mode ? 0.8 : 0.4}
-          width={15}
-          height={15}
-          blur={2.5}
-          far={1.6}
-        />
       </Suspense>
     </>
   );
