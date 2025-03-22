@@ -50,63 +50,56 @@ export default function About() {
       {/* Our Story Section */}
       <CustomSection mt="mt-40">
         <section className="relative py-32">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-4xl mx-auto"
+          <div className="w-[90%] mx-auto miniEditor">
+            <div
+              className="relative mt-16 rounded-2xl border-slate-6 border h-auto pb-10"
+              style={{
+                background:
+                  'radial-gradient(41.07% 8.33% at 50% 0%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(rgb(16, 16, 16) 0%, rgba(0, 0, 0, 0.8) 100%)',
+                maskImage:
+                  'linear-gradient(rgb(0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%)',
+                maskSize: '100% 100%',
+                maskPosition: 'center bottom',
+              }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
-                Our history
-              </h2>
-              <div className="space-y-6 text-lg text-gray-400">
-                <p>
-                  We founded Vortex Pulse with a simple mission: to provide
-                  companies with the complete and specialized team they need to
-                  carry out their projects, adapting to their needs and
-                  priorities. In an ever-changing technological environment, we
-                  understand that each client requires fast, efficient and
-                  tailor-made solutions.
-                </p>
-                <p>
-                  At Vortex Pulse, we combine advanced technology with a team of
-                  experts dedicated to sourcing and coordinating the right
-                  talent for each project. We take care of every detail, from
-                  team selection to ongoing monitoring, ensuring that our
-                  clients can rely on a truly modern and comprehensive service.
-                </p>
-                <p>
-                  Today, we are proud to be the partner of companies of all
-                  sizes, helping them turn their ideas into reality. Our goal is
-                  to enable our clients to focus on what really matters:
-                  creating extraordinary products and services, while we take
-                  care of the rest.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      </CustomSection>
+              {/* Decorative lines */}
+              <div
+                aria-hidden="true"
+                className="absolute top-0 w-[300px] md:w-[600px] h-[1px] left-1/2 -translate-x-1/2 pointer-events-none blur-[3px]"
+                style={{
+                  background:
+                    'linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 100%)',
+                }}
+              />
+              <div
+                aria-hidden="true"
+                className="absolute top-0 w-[300px] md:w-[600px] h-[1px] left-1/2 -translate-x-1/2 pointer-events-none blur-[10px]"
+                style={{
+                  background:
+                    'linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 100%)',
+                }}
+              />
+              <div
+                aria-hidden="true"
+                className="absolute top-0 w-[300px] md:w-[600px] h-[1px] left-1/2 -translate-x-1/2 pointer-events-none opacity-100"
+                style={{
+                  background:
+                    'linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(155, 124, 255) 50%, rgba(255, 255, 255, 0) 100%)',
+                }}
+              />
 
-      <CustomSection mt="mt-40">
-        <section className="relative py-20">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-6xl mx-auto"
-            >
-              <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
-                Mision And Vision
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-gray-400">
+              {/* Header */}
+              <div className="text-sm relative flex items-center justify-between h-16 w-full px-6 py-4 border-b border-slate-4">
+                <div className="hidden md:block absolute left-1/2 -translate-x-1/2 opacity-60">
+                  What defines Us
+                </div>
+              </div>
+
+              {/* Mission & Vision Section */}
+              <div className="mt-10 px-8 md:w-[60%] mx-auto text-white text-sm leading-relaxed space-y-8">
                 <div>
-                  <h3 className="text-2xl font-semibold mb-4 text-white">
-                    Mission
-                  </h3>
-                  <p className="text-lg leading-relaxed">
+                  <h3 className="text-xl font-bold mb-4">Mission</h3>
+                  <p className="text-slate-4">
                     To provide companies with the complete and specialized team
                     they need to carry out their projects, adapting to their
                     needs and priorities. In an ever-changing technological
@@ -114,34 +107,64 @@ export default function About() {
                     efficient, and tailor-made solutions.
                   </p>
                 </div>
+
                 <div>
-                  <h3 className="text-2xl font-semibold mb-4 text-white">
-                    Vision
-                  </h3>
-                  <p className="text-lg leading-relaxed">
+                  <h3 className="text-xl font-bold mb-4">Vision</h3>
+                  <p className="text-slate-4">
                     To be the trusted partner of companies of all sizes, helping
                     them turn their ideas into reality. We aim to enable our
                     clients to focus on creating extraordinary products and
                     services, while we take care of the rest.
                   </p>
                 </div>
+
+                <div>
+                  <p className="text-slate-4">
+                    At Vortex Pulse, we combine advanced technology with a team
+                    of experts dedicated to sourcing and coordinating the right
+                    talent for each project. We take care of every detail, from
+                    team selection to ongoing monitoring, ensuring that our
+                    clients can rely on a truly modern and comprehensive
+                    service.
+                  </p>
+                  <p className="mt-4 text-slate-4">
+                    Today, we are proud to help companies achieve their goals
+                    and stay ahead in the competitive tech landscape. Together,
+                    we create a future where innovation and efficiency go hand
+                    in hand.
+                  </p>
+                </div>
               </div>
-              <div className="mt-12 text-lg text-gray-400 leading-relaxed space-y-6">
-                <p>
+
+              {/* Our History Section */}
+              <div className="mt-10 px-8 md:w-[60%] mx-auto text-white text-sm leading-relaxed space-y-8">
+                <h3 className="text-xl font-bold mb-4">Our History</h3>
+                <p className="text-slate-4">
+                  We founded Vortex Pulse with a simple mission: to provide
+                  companies with the complete and specialized team they need to
+                  carry out their projects, adapting to their needs and
+                  priorities. In an ever-changing technological environment, we
+                  understand that each client requires fast, efficient, and
+                  tailor-made solutions.
+                </p>
+
+                <p className="text-slate-4">
                   At Vortex Pulse, we combine advanced technology with a team of
                   experts dedicated to sourcing and coordinating the right
                   talent for each project. We take care of every detail, from
                   team selection to ongoing monitoring, ensuring that our
                   clients can rely on a truly modern and comprehensive service.
                 </p>
-                <p>
-                  Today, we are proud to help companies achieve their goals and
-                  stay ahead in the competitive tech landscape. Together, we
-                  create a future where innovation and efficiency go hand in
-                  hand.
+
+                <p className="mt-4 text-slate-4">
+                  Today, we are proud to be the partner of companies of all
+                  sizes, helping them turn their ideas into reality. Our goal is
+                  to enable our clients to focus on what really matters:
+                  creating extraordinary products and services, while we take
+                  care of the rest.
                 </p>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </CustomSection>
