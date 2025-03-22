@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import CustomSection from '../ui/Others/CustomSection';
+import Scene from '../3d/Scene';
 
 export default function About() {
   return (
@@ -20,6 +21,7 @@ export default function About() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_50%,#ffffff21,transparent)]" />
 
         {/* <Component3d></Component3d> */}
+        <Scene></Scene>
 
         {/* Hero Content */}
         <motion.div

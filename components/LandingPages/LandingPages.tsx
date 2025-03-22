@@ -13,7 +13,7 @@ export default function LandingPages() {
       color: '#ffff', // Color distintivo para SaaS
       description:
         'Step into a world of high fashion and creativity. Explore exclusive collections, groundbreaking events, and be inspired by the passion and talent of Elite.',
-      link: '/hola',
+      link: '/elite',
     },
     {
       title: 'UrbanFit Studio',

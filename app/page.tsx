@@ -20,6 +20,7 @@ import PricingHero from '@/components/Pricing/PricingHero';
 import { RiCustomerServiceFill } from 'react-icons/ri';
 import Testimonials from '@/components/ui/Testimonials/Testimonials';
 import LoadingBar from '@/components/Loadding/LoadingBar';
+import Scene from '@/components/3d/Scene';
 
 export default function Home() {
   const cardData = [

@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 
 // Función que devuelve una fecha en base a la temporada
-const getCountdownDate = (modelName) => {
+const getCountdownDate = (modelName: any) => {
   const currentYear = new Date().getFullYear();
   const lowerName = modelName.toLowerCase();
   if (lowerName.includes('summer')) {
