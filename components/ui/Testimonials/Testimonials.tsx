@@ -2,12 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 
-import AndresImg from "@/app/assets/andres.jpeg";
-import CarlosImg from "@/app/assets/carlos.jpeg";
+import AndresImg from "@/assets/andres.jpeg";
+import CarlosImg from "@/assets/carlos.jpeg";
 import Image from "next/image";
-import LauraImg from "@/app/assets/laura.jpeg";
-import MartaImg from "@/app/assets/marta.jpeg";
-import SofiaImg from "@/app/assets/sofia.jpeg";
+import LauraImg from "@/assets/laura.jpeg";
+import SofiaImg from "@/assets/sofia.jpeg";
+
+//import MartaImg from "@/app/assets/marta.jpeg";
 
 const testimonialsData = [
   {
@@ -34,12 +35,12 @@ const testimonialsData = [
     position: "CTO",
     image: AndresImg,
   },
-  {
+  /*  {
     text: "Thanks to their expertise in web design, we achieved an impressive online presence that has attracted new clients. Attention to detail and personalized service made all the difference.",
     author: "Marta S.,",
     position: "Business Owner",
     image: MartaImg,
-  },
+  }, */
 ];
 
 export default function Testimonials() {
