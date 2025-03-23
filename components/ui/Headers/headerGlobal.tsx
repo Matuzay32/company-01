@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
-import type React from 'react';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { ChevronDown } from 'lucide-react';
+import { useEffect, useState } from "react";
+
+import { ChevronDown } from "lucide-react";
+import Link from "next/link";
+import type React from "react";
 
 // Tipos para el menú
 type MenuItem = {
@@ -34,28 +35,28 @@ const menus: Record<string, DropdownMenu> = {
     sections: [
       {
         items: [
-          { label: 'Landing Pages', href: '/services/landing-pages' },
-          { label: 'Web Desing', href: '/services/web-desing' },
-          { label: 'Web Development', href: '/services/web-development' },
+          { label: "Landing Pages", href: "/services/landing-pages" },
+          { label: "Web Desing", href: "/services/web-desing" },
+          { label: "Web Development", href: "/services/web-development" },
           {
-            label: 'Software Development',
-            href: '/services/software-development',
+            label: "Software Development",
+            href: "/services/software-development",
           },
         ],
       },
     ],
     cards: [
       {
-        title: 'Transactional Emails',
-        description: 'Send with confidence',
-        href: '#',
-        icon: '',
+        title: "Transactional Emails",
+        description: "Send with confidence",
+        href: "#",
+        icon: "",
       },
       {
-        title: 'Marketing Emails',
-        description: 'Reach your audience',
-        href: '#',
-        icon: '',
+        title: "Marketing Emails",
+        description: "Reach your audience",
+        href: "#",
+        icon: "",
       },
     ],
   },
@@ -63,24 +64,23 @@ const menus: Record<string, DropdownMenu> = {
     sections: [
       {
         items: [
-          { label: 'About', href: '/about' },
-          { label: 'Staff Augmentation', href: '/services/staff-augmentation' },
-          { label: 'Contact', href: '/contact' },
+          { label: "About", href: "/about" },
+          { label: "Staff Augmentation", href: "/services/staff-augmentation" },
         ],
       },
     ],
     cards: [
       {
-        title: 'Handbook',
-        description: 'How we work',
-        href: '#',
-        icon: '',
+        title: "Handbook",
+        description: "How we work",
+        href: "#",
+        icon: "",
       },
       {
-        title: 'Philosophy',
-        description: 'What we value',
-        href: '#',
-        icon: '',
+        title: "Philosophy",
+        description: "What we value",
+        href: "#",
+        icon: "",
       },
     ],
   },
@@ -135,7 +135,7 @@ const DesktopDropdownMenuItem = ({
         <ChevronDown
           size={16}
           className={`transition-transform ${
-            activeDropdown === menuKey ? 'rotate-180' : ''
+            activeDropdown === menuKey ? "rotate-180" : ""
           }`}
         />
       </button>
@@ -203,7 +203,7 @@ const MobileDropdownMenuItem = ({
         <ChevronDown
           size={16}
           className={`transition-transform ${
-            activeDropdown === menuKey ? 'rotate-180' : ''
+            activeDropdown === menuKey ? "rotate-180" : ""
           }`}
         />
       </button>
@@ -243,7 +243,7 @@ export default function Header() {
   };
 
   const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
+    //setMobileMenuOpen(false);
     setActiveDropdown(null);
   };
 
@@ -251,12 +251,12 @@ export default function Header() {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (!target.closest('[data-dropdown]')) {
+      if (!target.closest("[data-dropdown]")) {
         closeDropdowns();
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -294,9 +294,6 @@ export default function Header() {
 
           {/* Botones de autenticación en escritorio */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="#" className="text-sm text-gray-300 hover:text-white">
-              Sign in
-            </Link>
             <Link
               href="/contact"
               className="bg-white text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors flex items-center gap-1"
@@ -387,13 +384,6 @@ export default function Header() {
             </Link>
             {/* Botones de autenticación en móvil */}
             <div className="mt-3 space-y-1">
-              <Link
-                href="#"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
-                onClick={closeMobileMenu}
-              >
-                Sign in
-              </Link>
               <Link
                 href="/contact"
                 className="block px-3 py-2 bg-white text-black rounded-md text-base font-medium hover:bg-gray-100 transition-colors"

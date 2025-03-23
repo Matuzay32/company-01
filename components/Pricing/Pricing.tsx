@@ -173,7 +173,7 @@ export default function Pricing() {
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 bg-black">
       {/* Pricing Header */}
       <motion.div
-        className="text-center mb-16"
+        className="text-center mb-16 mt-24"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

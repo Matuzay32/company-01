@@ -106,13 +106,18 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus("Sending...");
 
-    const serviceId = "service_9vh83fd";
-    const templateId = "template_qt8tc7v";
-    const publicKey = "58423gevKIJBU8vwX";
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("Faltan variables de entorno para emailjs");
+      setStatus("Error de configuración. Contacta al administrador.");
+      return;
+    }
 
     try {
       await emailjs.send(serviceId, templateId, formData, publicKey);
-      console.log("Correo enviado correctamente");
       setStatus("");
       setFormData(defaultForm);
     } catch (error) {
