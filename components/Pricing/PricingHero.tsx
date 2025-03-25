@@ -5,17 +5,18 @@ import {
   ChevronRight,
   Shield,
   Zap,
-} from "lucide-react";
+} from 'lucide-react';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 
-import { Button } from "@/components/ui/Buttons/v2/button";
-import Link from "next/link";
+import { Button } from '@/components/ui/Buttons/v2/button';
+import Link from 'next/link';
+import CreditCard3D from '../3d/CreditCard3D';
 
 export default function PricingHero() {
   return (
@@ -35,7 +36,7 @@ export default function PricingHero() {
             <div className="flex flex-col sm:flex-row gap-4 sm:justify-center">
               <Link href="/pricing" passHref>
                 <Button
-                  variant={"gradient"}
+                  variant={'gradient'}
                   className="group w-full sm:w-auto text-lg"
                   size="lg"
                 >
