@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, useGLTF } from '@react-three/drei';
+import { a as aWeb } from '@react-spring/web';
 
 // Componente Model que carga el GLB
 export function Model(props) {
@@ -45,46 +46,51 @@ const CreditCard3D = () => {
   }, []);
 
   return (
-    <Canvas
-      style={{
-        height: '33vh',
-        width: '100vw',
-        background: '#000',
-      }}
-      dpr={[1, 2]} // Mejora la calidad en pantallas retina
-      frameloop="demand" // Solo renderiza cuando hay cambios
-      camera={{
-        position: [0, 0, 3], // Posición inicial de la cámara
-        fov: 50, // Campo de visión
-        near: 0.1, // Distancia mínima de visión
-        far: 100, // Distancia máxima de visión
-      }}
-    >
-      {/* Luz ambiental que varía según el tamaño de pantalla */}
-      <ambientLight intensity={isMobile ? 0.5 : 1} />
+    <aWeb.main>
+      <Canvas
+        style={{
+          height: '80vh',
+          width: '100vw',
+        }}
+        dpr={[1, 2]} // Mejora la calidad en pantallas retina
+        frameloop="demand" // Solo renderiza cuando hay cambios
+        camera={{
+          position: [0, 0, 3], // Posición inicial de la cámara
+          fov: 50, // Campo de visión
+          near: 0.1, // Distancia mínima de visión
+          far: 100, // Distancia máxima de visión
+        }}
+        gl={{ alpha: true }} // Habilita fondo transparente
+      >
+        {/* Luz ambiental que varía según el tamaño de pantalla */}
+        <ambientLight intensity={isMobile ? 0.5 : 1} />
 
-      {/* Luz direccional que también varía según el tamaño de pantalla */}
-      <directionalLight intensity={isMobile ? 0.5 : 1} position={[0, 2, 2.5]} />
+        {/* Luz direccional que también varía según el tamaño de pantalla */}
+        <directionalLight
+          intensity={isMobile ? 0.5 : 1}
+          position={[0, 2, 2.5]}
+        />
 
-      {/* Cargar y mostrar el modelo 3D */}
-      <Model />
+        {/* Cargar y mostrar el modelo 3D */}
+        <Model />
 
-      {/* Entorno que varía según el tamaño de pantalla */}
-      <Environment preset={isMobile ? 'sunset' : 'city'} />
+        {/* Entorno que varía según el tamaño de pantalla */}
+        <Environment preset={isMobile ? 'sunset' : 'city'} />
 
-      {/* OrbitControls con restricciones modificadas para permitir rotación completa */}
-      <OrbitControls
-        enableZoom={false} // Desactiva el zoom
-        enablePan={false} // Desactiva el desplazamiento
-        maxPolarAngle={Math.PI} // Permite ver por completo el modelo (parte superior e inferior)
-        minPolarAngle={0} // Permite ver por completo el modelo (parte superior e inferior)
-        enableRotate={true} // Habilita la rotación
-        rotateSpeed={0.5} // Controla la velocidad de la rotación
-        // Permite rotar libremente alrededor del eje Y
-        minAzimuthAngle={-Math.PI} // Límite izquierdo
-        maxAzimuthAngle={Math.PI} // Límite derecho
-      />
-    </Canvas>
+        {/* OrbitControls con restricciones modificadas para permitir rotación completa */}
+        <OrbitControls
+          enableZoom={false} // Desactiva el zoom
+          enablePan={false} // Desactiva el desplazamiento
+          maxPolarAngle={Math.PI} // Permite ver por completo el modelo (parte superior e inferior)
+          minPolarAngle={0} // Permite ver por completo el modelo (parte superior e inferior)
+          enableRotate={true} // Habilita la rotación
+          rotateSpeed={0.5} // Controla la velocidad de la rotación
+          // Permite rotar libremente alrededor del eje Y
+          minAzimuthAngle={-Math.PI} // Límite izquierdo
+          maxAzimuthAngle={Math.PI} // Límite derecho
+        />
+      </Canvas>
+    </aWeb.main>
   );
 };
 

@@ -20,7 +20,6 @@ export default function About() {
         {/* este color es mas oscuro #ffffff0d */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_50%,#ffffff21,transparent)]" />
 
-        {/* <Component3d></Component3d> */}
         <Scene></Scene>
 
         {/* Hero Content */}

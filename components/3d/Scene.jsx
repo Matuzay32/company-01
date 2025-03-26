@@ -102,9 +102,7 @@ function Model() {
 
 export default function Scene() {
   return (
-    <aWeb.main
-      style={{ background: '#000000', width: '100vw', height: '100vh' }}
-    >
+    <aWeb.main style={{ background: '#000', width: '100vw', height: '100vh' }}>
       <Canvas className="canvas" dpr={[1, 2]}>
         <Model />
         <OrbitControls
