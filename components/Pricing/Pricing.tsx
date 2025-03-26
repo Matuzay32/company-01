@@ -179,9 +179,6 @@ export default function Pricing() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="relative w-full flex items-center justify-center min-h-50">
-          <CreditCard3D></CreditCard3D>
-        </div>
         <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl mb-4">
           Choose the best plan to boost your growth
         </h2>
@@ -341,6 +338,7 @@ export default function Pricing() {
 
       {/* CTA Section */}
       <CustomSection>
+        {/* <CreditCard3D></CreditCard3D> */}
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 20 }}

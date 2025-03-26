@@ -1,26 +1,18 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, useGLTF } from '@react-three/drei';
 import { a as aWeb } from '@react-spring/web';
 
-// Componente Model que carga el GLB
 export function Model(props) {
-  const { nodes, materials } = useGLTF('/metal_credit_card.glb'); // Ruta del modelo GLB
-  const modelRef = useRef(); // Referencia para controlar la rotación
-
-  // Rotación constante sobre el eje Y
-  useFrame(() => {
-    if (modelRef.current) {
-      modelRef.current.rotation.y += 0.01; // Ajusta la velocidad de la rotación aquí
-    }
-  });
+  const { nodes, materials } = useGLTF('/metal_credit_card.glb');
+  const modelRef = useRef();
 
   return (
     <group {...props} dispose={null} ref={modelRef}>
       <group
         position={[0, -0.6, 0]}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={0.235}
+        scale={props.scale}
       >
         <group rotation={[Math.PI / 2, 0, 0]}>
           <mesh
@@ -36,9 +28,8 @@ export function Model(props) {
   );
 }
 
-useGLTF.preload('/metal_credit_card.glb'); // Pre-carga el modelo
+useGLTF.preload('/metal_credit_card.glb');
 
-// Componente principal CreditCard3D que maneja el Canvas y los controles
 const CreditCard3D = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -56,45 +47,36 @@ const CreditCard3D = () => {
     <aWeb.main>
       <Canvas
         style={{
-          height: '80vh',
+          height: isMobile ? '60vh' : '80vh',
           width: '100vw',
+          backgroundColor: '#f0f0f0',
         }}
-        dpr={[1, 2]} // Mejora la calidad en pantallas retina
-        frameloop="always" // Forzar actualización continua
+        dpr={[1, 2]}
+        frameloop="demand"
         camera={{
-          position: [0, 0, 3], // Posición inicial de la cámara
-          fov: 50, // Campo de visión
-          near: 0.1, // Distancia mínima de visión
-          far: 100, // Distancia máxima de visión
+          position: [0, 0, isMobile ? 4 : 3],
+          fov: 50,
+          near: 0.1,
+          far: 100,
         }}
-        gl={{ alpha: true }} // Habilita fondo transparente
+        gl={{ alpha: true }}
       >
-        {/* Luz ambiental que varía según el tamaño de pantalla */}
         <ambientLight intensity={isMobile ? 0.5 : 1} />
-
-        {/* Luz direccional que también varía según el tamaño de pantalla */}
         <directionalLight
           intensity={isMobile ? 0.5 : 1}
           position={[0, 2, 2.5]}
         />
-
-        {/* Cargar y mostrar el modelo 3D */}
-        <Model />
-
-        {/* Entorno que varía según el tamaño de pantalla */}
+        <Model scale={isMobile ? 0.4 : 0.5} />
         <Environment preset={isMobile ? 'sunset' : 'city'} />
-
-        {/* OrbitControls con restricciones modificadas para permitir rotación completa */}
         <OrbitControls
-          enableZoom={false} // Desactiva el zoom
-          enablePan={false} // Desactiva el desplazamiento
-          maxPolarAngle={Math.PI} // Permite ver por completo el modelo (parte superior e inferior)
-          minPolarAngle={0} // Permite ver por completo el modelo (parte superior e inferior)
-          enableRotate={true} // Habilita la rotación
-          rotateSpeed={0.5} // Controla la velocidad de la rotación
-          // Permite rotar libremente alrededor del eje Y
-          minAzimuthAngle={-Math.PI} // Límite izquierdo
-          maxAzimuthAngle={Math.PI} // Límite derecho
+          enableZoom={false}
+          enablePan={false}
+          maxPolarAngle={Math.PI}
+          minPolarAngle={0}
+          enableRotate={true}
+          rotateSpeed={0.5}
+          minAzimuthAngle={-Math.PI}
+          maxAzimuthAngle={Math.PI}
         />
       </Canvas>
     </aWeb.main>
