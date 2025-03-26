@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Environment, useGLTF } from '@react-three/drei';
 import { a as aWeb } from '@react-spring/web';
 
@@ -7,6 +7,13 @@ import { a as aWeb } from '@react-spring/web';
 export function Model(props) {
   const { nodes, materials } = useGLTF('/metal_credit_card.glb'); // Ruta del modelo GLB
   const modelRef = useRef(); // Referencia para controlar la rotación
+
+  // Rotación constante sobre el eje Y
+  useFrame(() => {
+    if (modelRef.current) {
+      modelRef.current.rotation.y += 0.01; // Ajusta la velocidad de la rotación aquí
+    }
+  });
 
   return (
     <group {...props} dispose={null} ref={modelRef}>
@@ -53,7 +60,7 @@ const CreditCard3D = () => {
           width: '100vw',
         }}
         dpr={[1, 2]} // Mejora la calidad en pantallas retina
-        frameloop="demand" // Solo renderiza cuando hay cambios
+        frameloop="always" // Forzar actualización continua
         camera={{
           position: [0, 0, 3], // Posición inicial de la cámara
           fov: 50, // Campo de visión
