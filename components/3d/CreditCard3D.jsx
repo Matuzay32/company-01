@@ -44,14 +44,14 @@ const CreditCard3D = () => {
   }, []);
 
   return (
-    <aWeb.main>
+    <aWeb.main style={{ background: '#000', width: '100%', height: '100vh' }}>
       <Canvas
+        dpr={[1, 2]}
         style={{
           height: isMobile ? '60vh' : '80vh',
-          width: '100vw',
-          backgroundColor: '#f0f0f0',
+
+          background: 'white',
         }}
-        dpr={[1, 2]}
         frameloop="demand"
         camera={{
           position: [0, 0, isMobile ? 4 : 3],
