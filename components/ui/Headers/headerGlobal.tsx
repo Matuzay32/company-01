@@ -1,24 +1,16 @@
 "use client";
 
+import {
+  CardItem,
+  DesktopDropdownMenuItem,
+} from "../Dropdowns/DesktopDropdownManuItem";
 import { useEffect, useState } from "react";
 
-import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { MenuItem } from "../Dropdowns/MobileDropdownMenuItem";
 import type React from "react";
 
 // Tipos para el menú
-type MenuItem = {
-  label: string;
-  href: string;
-};
-
-type CardItem = {
-  title: string;
-  description: string;
-  href: string;
-  icon: React.ReactNode;
-};
-
 type MenuSection = {
   title?: string;
   items: MenuItem[];
@@ -84,147 +76,6 @@ const menus: Record<string, DropdownMenu> = {
       },
     ],
   },
-};
-
-// Componente para renderizar la tarjeta (card) de cada menú
-const MenuCard = ({ card }: { card: CardItem }) => {
-  return (
-    <Link
-      href={card.href}
-      className="flex items-start space-x-3 p-3 rounded-md hover:bg-gray-800/50 transition-colors"
-    >
-      <div className="flex-shrink-0 p-2 bg-gray-800 rounded-md">
-        {card.icon}
-      </div>
-      <div>
-        <h3 className="font-medium text-white">{card.title}</h3>
-        <p className="text-sm text-gray-400">{card.description}</p>
-      </div>
-    </Link>
-  );
-};
-
-// Componente genérico para el dropdown en escritorio
-type DesktopDropdownProps = {
-  label: string;
-  menuKey: string;
-  items: MenuItem[];
-  cards?: CardItem[];
-  activeDropdown: string | null;
-  toggleDropdown: (menu: string) => void;
-  closeDropdowns: () => void;
-};
-
-const DesktopDropdownMenuItem = ({
-  label,
-  menuKey,
-  items,
-  cards,
-  activeDropdown,
-  toggleDropdown,
-  closeDropdowns,
-}: DesktopDropdownProps) => {
-  return (
-    <div className="relative group" data-dropdown>
-      <button
-        className="px-3 py-2 rounded-md text-sm text-gray-300 hover:text-white flex items-center gap-1"
-        onClick={() => toggleDropdown(menuKey)}
-        onMouseEnter={() => toggleDropdown(menuKey)}
-      >
-        {label}
-        <ChevronDown
-          size={16}
-          className={`transition-transform ${
-            activeDropdown === menuKey ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-      {activeDropdown === menuKey && (
-        <div
-          className="absolute left-0 mt-2 w-[480px] rounded-md shadow-lg bg-black border border-gray-700 ring-1 ring-black ring-opacity-5 focus:outline-none overflow-hidden"
-          onMouseLeave={closeDropdowns}
-        >
-          <div className="flex">
-            <div className="w-1/2 py-4 px-4 border-r border-gray-600/50">
-              <div className="space-y-1">
-                {items.map((item, idx) => (
-                  <Link
-                    key={idx}
-                    href={item.href}
-                    className="block px-3 py-2 rounded-md text-sm text-gray-300 hover:bg-gray-800 hover:text-white"
-                    onClick={closeDropdowns}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-            {cards && (
-              <div className="w-1/2 py-4 px-4 space-y-2">
-                {cards.map((card, idx) => (
-                  <MenuCard key={idx} card={card} />
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
-
-// Componente genérico para el dropdown en móvil
-type MobileDropdownProps = {
-  label: string;
-  menuKey: string;
-  items: MenuItem[];
-  activeDropdown: string | null;
-  toggleDropdown: (menu: string) => void;
-  closeMobileMenu: () => void;
-};
-
-const MobileDropdownMenuItem = ({
-  label,
-  menuKey,
-  items,
-  activeDropdown,
-  toggleDropdown,
-  closeMobileMenu,
-}: MobileDropdownProps) => {
-  return (
-    <div>
-      <button
-        className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white flex items-center justify-between"
-        onClick={(e) => {
-          toggleDropdown(menuKey);
-        }}
-      >
-        {label}
-        <ChevronDown
-          size={16}
-          className={`transition-transform ${
-            activeDropdown === menuKey ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-      {activeDropdown === menuKey && (
-        <div className="pl-4 pr-2 py-2 space-y-1">
-          {items.map((item, idx) => (
-            <Link
-              key={idx}
-              href={item.href}
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:bg-gray-800 hover:text-white"
-              onClick={(e) => {
-                closeMobileMenu();
-              }}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      )}
-    </div>
-  );
 };
 
 // Función de utilidad para capitalizar la primera letra
@@ -364,17 +215,48 @@ export default function Header() {
           id="mobile-menu"
         >
           <div className="container mx-auto px-4 py-3 space-y-1">
-            {Object.entries(menus).map(([key, { sections }]) => (
-              <MobileDropdownMenuItem
-                key={key}
-                label={capitalize(key)}
-                menuKey={key}
-                items={sections[0].items}
-                activeDropdown={activeDropdown}
-                toggleDropdown={toggleDropdown}
-                closeMobileMenu={closeMobileMenu}
-              />
-            ))}
+            <Link
+              href="/services/landing-pages"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
+              onClick={closeMobileMenu}
+            >
+              Landing pages
+            </Link>
+            <Link
+              href="/services/web-desing"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
+              onClick={closeMobileMenu}
+            >
+              Web Design
+            </Link>
+            <Link
+              href="/services/web-development"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
+              onClick={closeMobileMenu}
+            >
+              Web Development
+            </Link>
+            <Link
+              href="/services/software-development"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
+              onClick={closeMobileMenu}
+            >
+              Software Development
+            </Link>
+            <Link
+              href="/about"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
+              onClick={closeMobileMenu}
+            >
+              About
+            </Link>
+            <Link
+              href="/services/staff-augmentation"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
+              onClick={closeMobileMenu}
+            >
+              Staff Augmentation
+            </Link>
             <Link
               href="/pricing"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
