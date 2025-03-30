@@ -6,7 +6,6 @@ import {
 } from "../Dropdowns/DesktopDropdownManuItem";
 import { useEffect, useState } from "react";
 
-import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { MenuItem } from "../Dropdowns/MobileDropdownMenuItem";
 import type React from "react";
