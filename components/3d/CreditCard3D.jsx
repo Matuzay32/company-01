@@ -1,11 +1,20 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Canvas } from '@react-three/fiber';
+import React, { useRef, useEffect, useState } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Environment, useGLTF } from '@react-three/drei';
 import { a as aWeb } from '@react-spring/web';
 
 export function Model(props) {
   const { nodes, materials } = useGLTF('/metal_credit_card.glb');
   const modelRef = useRef();
+
+  // Hacemos que el modelo gire constantemente
+  useFrame(() => {
+    if (modelRef.current) {
+      modelRef.current.rotation.y += 0.01; // Gira sobre el eje Y
+      // modelRef.current.rotation.x += 0.01; // Gira sobre el eje X
+      // modelRef.current.rotation.z += 0.01; // Gira sobre el eje Z
+    }
+  });
 
   return (
     <group {...props} dispose={null} ref={modelRef}>
@@ -49,10 +58,8 @@ const CreditCard3D = () => {
         dpr={[1, 2]}
         style={{
           height: isMobile ? '60vh' : '80vh',
-
-          background: 'white',
         }}
-        frameloop="demand"
+        frameloop="always" // Asegúrate de que la animación esté activa siempre
         camera={{
           position: [0, 0, isMobile ? 4 : 3],
           fov: 50,
