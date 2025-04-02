@@ -1,16 +1,15 @@
-"use client";
+'use client';
+import Link from 'next/link';
 
 import {
   CardItem,
   DesktopDropdownMenuItem,
-} from "../Dropdowns/DesktopDropdownManuItem";
-import { useEffect, useState } from "react";
+} from '../Dropdowns/DesktopDropdownManuItem';
+import React, { useState, useEffect } from 'react';
 
-import Link from "next/link";
-import { MenuItem } from "../Dropdowns/MobileDropdownMenuItem";
-import type React from "react";
+import { ChevronDown } from 'lucide-react';
+import { MenuItem } from '../Dropdowns/MobileDropdownMenuItem';
 
-// Tipos para el menú
 type MenuSection = {
   title?: string;
   items: MenuItem[];
@@ -21,34 +20,33 @@ type DropdownMenu = {
   cards?: CardItem[];
 };
 
-// Contenido de los menús
 const menus: Record<string, DropdownMenu> = {
   services: {
     sections: [
       {
         items: [
-          { label: "Landing Pages", href: "/services/landing-pages" },
-          { label: "Web Desing", href: "/services/web-desing" },
-          { label: "Web Development", href: "/services/web-development" },
+          { label: 'Landing Pages', href: '/services/landing-pages' },
+          { label: 'Web Desing', href: '/services/web-desing' },
+          { label: 'Web Development', href: '/services/web-development' },
           {
-            label: "Software Development",
-            href: "/services/software-development",
+            label: 'Software Development',
+            href: '/services/software-development',
           },
         ],
       },
     ],
     cards: [
       {
-        title: "Transactional Emails",
-        description: "Send with confidence",
-        href: "#",
-        icon: "",
+        title: 'Transactional Emails',
+        description: 'Send with confidence',
+        href: '#',
+        icon: '',
       },
       {
-        title: "Marketing Emails",
-        description: "Reach your audience",
-        href: "#",
-        icon: "",
+        title: 'Marketing Emails',
+        description: 'Reach your audience',
+        href: '#',
+        icon: '',
       },
     ],
   },
@@ -56,37 +54,43 @@ const menus: Record<string, DropdownMenu> = {
     sections: [
       {
         items: [
-          { label: "About", href: "/about" },
-          { label: "Staff Augmentation", href: "/services/staff-augmentation" },
+          { label: 'About', href: '/about' },
+          { label: 'Staff Augmentation', href: '/services/staff-augmentation' },
         ],
       },
     ],
     cards: [
       {
-        title: "Handbook",
-        description: "How we work",
-        href: "#",
-        icon: "",
+        title: 'Handbook',
+        description: 'How we work',
+        href: '#',
+        icon: '',
       },
       {
-        title: "Philosophy",
-        description: "What we value",
-        href: "#",
-        icon: "",
+        title: 'Philosophy',
+        description: 'What we value',
+        href: '#',
+        icon: '',
       },
     ],
   },
 };
 
-// Función de utilidad para capitalizar la primera letra
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
-export default function Header() {
+function HeaderGlobal() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState<
+    string | null
+  >(null);
 
   const toggleDropdown = (menu: string) => {
     setActiveDropdown(activeDropdown === menu ? null : menu);
+  };
+
+  const toggleMobileDropdown = (menu: string) => {
+    setActiveMobileDropdown(activeMobileDropdown === menu ? null : menu);
   };
 
   const closeDropdowns = () => {
@@ -94,20 +98,20 @@ export default function Header() {
   };
 
   const closeMobileMenu = () => {
-    //setMobileMenuOpen(false);
+    setMobileMenuOpen(false);
+    setActiveMobileDropdown(null);
     setActiveDropdown(null);
   };
 
-  // Cerrar dropdowns al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (!target.closest("[data-dropdown]")) {
+      if (!target.closest('[data-dropdown]')) {
         closeDropdowns();
       }
     };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   return (
@@ -121,7 +125,7 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Navegación de escritorio */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
             {Object.entries(menus).map(([key, { sections, cards }]) => (
               <DesktopDropdownMenuItem
@@ -135,17 +139,17 @@ export default function Header() {
                 closeDropdowns={closeDropdowns}
               />
             ))}
-            <Link
+            <a
               href="/pricing"
               className="px-3 py-2 rounded-md text-sm text-gray-300 hover:text-white"
             >
               Pricing
-            </Link>
+            </a>
           </nav>
 
-          {/* Botones de autenticación en escritorio */}
+          {/* Desktop Authentication Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link
+            <a
               href="/contact"
               className="bg-white text-black px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors flex items-center gap-1"
             >
@@ -159,10 +163,10 @@ export default function Header() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </Link>
+            </a>
           </div>
 
-          {/* Botón para menú móvil */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               type="button"
@@ -208,71 +212,59 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Menú móvil */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div
           className="md:hidden bg-black border-t border-gray-800"
           id="mobile-menu"
         >
           <div className="container mx-auto px-4 py-3 space-y-1">
-            <Link
-              href="/services/landing-pages"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
-              onClick={closeMobileMenu}
-            >
-              Landing pages
-            </Link>
-            <Link
-              href="/services/web-desing"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
-              onClick={closeMobileMenu}
-            >
-              Web Design
-            </Link>
-            <Link
-              href="/services/web-development"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
-              onClick={closeMobileMenu}
-            >
-              Web Development
-            </Link>
-            <Link
-              href="/services/software-development"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
-              onClick={closeMobileMenu}
-            >
-              Software Development
-            </Link>
-            <Link
-              href="/about"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
-              onClick={closeMobileMenu}
-            >
-              About
-            </Link>
-            <Link
-              href="/services/staff-augmentation"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
-              onClick={closeMobileMenu}
-            >
-              Staff Augmentation
-            </Link>
-            <Link
+            {Object.entries(menus).map(([key, { sections }]) => (
+              <div key={key} className="space-y-1">
+                <button
+                  onClick={() => toggleMobileDropdown(key)}
+                  className="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
+                >
+                  <span>{capitalize(key)}</span>
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform ${
+                      activeMobileDropdown === key ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                {activeMobileDropdown === key && (
+                  <div className="pl-4 space-y-1 border-l-2 border-gray-800 ml-3">
+                    {sections[0].items.map((item, idx) => (
+                      <a
+                        key={idx}
+                        href={item.href}
+                        className="block px-3 py-2 rounded-md text-sm text-gray-400 hover:bg-gray-800 hover:text-white"
+                        onClick={closeMobileMenu}
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <a
               href="/pricing"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
               onClick={closeMobileMenu}
             >
               Pricing
-            </Link>
-            {/* Botones de autenticación en móvil */}
+            </a>
+            {/* Mobile Authentication Buttons */}
             <div className="mt-3 space-y-1">
-              <Link
+              <a
                 href="/contact"
                 className="block px-3 py-2 bg-white text-black rounded-md text-base font-medium hover:bg-gray-100 transition-colors"
                 onClick={closeMobileMenu}
               >
                 Get in Touch
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -280,3 +272,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default HeaderGlobal;
