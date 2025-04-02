@@ -3,7 +3,7 @@ import './globals.css';
 import HeaderGlobal from '@/components/ui/Headers/headerGlobal';
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
-import Footer from '@/components/Footer/Footer';
+import { Footer } from '@/components/Footer/Footer';
 import LoadingBar from '@/components/Loadding/LoadingBar';
 
 const inter = Inter({ subsets: ['latin'] });

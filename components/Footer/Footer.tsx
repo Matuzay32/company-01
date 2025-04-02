@@ -1,30 +1,54 @@
 'use client';
-
+import React, { useState } from 'react';
+import { Github, Linkedin, Twitter } from 'lucide-react';
 import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiFillTwitterCircle,
-} from 'react-icons/ai';
+  FooterDropdownMenuItem,
+  type FooterMenuItem,
+} from './FooterDropdownMenuItem';
 
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+type MenuSection = {
+  title: string;
+  items: FooterMenuItem[];
+};
 
-const Footer = () => {
+const menus: Record<string, MenuSection> = {
+  services: {
+    title: 'Services',
+    items: [
+      { label: 'Landing Pages', href: '/services/landing-pages' },
+      { label: 'Web Design', href: '/services/web-design' },
+      { label: 'Web Development', href: '/services/web-development' },
+      { label: 'Software Development', href: '/services/software-development' },
+    ],
+  },
+  company: {
+    title: 'Company',
+    items: [
+      { label: 'About', href: '/about' },
+      { label: 'Staff Augmentation', href: '/services/staff-augmentation' },
+      { label: 'Contact', href: '/contact' },
+      { label: 'Pricing', href: '/pricing' },
+    ],
+  },
+};
+
+const socialLinks = [
+  { Icon: Github, href: 'https://github.com/vortexpulse' },
+  { Icon: Linkedin, href: 'https://linkedin.com/company/vortexpulse' },
+  { Icon: Twitter, href: 'https://twitter.com/vortexpulse' },
+];
+
+export const Footer = () => {
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Pricing', href: '/pricing' },
-  ];
+  const toggleDropdown = (menu: string) => {
+    setActiveDropdown(activeDropdown === menu ? null : menu);
+  };
 
-  const socialLinks = [
-    { Icon: AiFillGithub, href: 'https://github.com/vortexpulse' },
-    { Icon: AiFillLinkedin, href: 'https://linkedin.com/company/vortexpulse' },
-    { Icon: AiFillTwitterCircle, href: 'https://twitter.com/vortexpulse' },
-  ];
+  const closeDropdowns = () => {
+    setActiveDropdown(null);
+  };
 
   return (
     <footer className="w-full bg-black text-white border-t border-gray-800 relative overflow-hidden">
@@ -51,19 +75,14 @@ const Footer = () => {
         <rect width="100%" height="100%" fill="url(#grid)" />
       </svg>
 
-      {/* Contenido del footer con backdrop-filter */}
+      {/* Footer content with backdrop filter */}
       <div className="relative backdrop-blur-sm bg-black bg-opacity-70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-wrap gap-8 justify-between">
-            {/* Columnas 1 y 2 */}
+            {/* Column 1 and 2 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full md:w-3/4">
-              {/* Columna 1: Logo y descripción */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-4"
-              >
+              {/* Column 1: Logo and description */}
+              <div className="space-y-4">
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
                   VortexPulse
                 </h2>
@@ -71,78 +90,58 @@ const Footer = () => {
                   Driving digital innovation with cutting-edge solutions. We
                   transform ideas into extraordinary technological realities.
                 </p>
-              </motion.div>
+              </div>
 
-              {/* Columna 2: Enlaces rápidos */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <h3 className="text-lg font-semibold mb-4 text-cyan-300">
+              {/* Column 2: Quick Links with Dropdowns */}
+              <div className="space-y-6">
+                <h3 className="text-lg font-semibold text-cyan-300">
                   Quick Links
                 </h3>
-                <ul className="space-y-2">
-                  {footerLinks.map((link) => (
-                    <motion.li
-                      key={link.name}
-                      whileHover={{ scale: 1.05, x: 10 }}
-                      transition={{ type: 'spring', stiffness: 300 }}
-                    >
-                      <Link
-                        href={link.href}
-                        className="hover:text-cyan-300 transition-colors"
-                      >
-                        {link.name}
-                      </Link>
-                    </motion.li>
+                <div className="space-y-4">
+                  {Object.entries(menus).map(([key, { title, items }]) => (
+                    <FooterDropdownMenuItem
+                      key={key}
+                      label={title}
+                      menuKey={key}
+                      items={items}
+                      activeDropdown={activeDropdown}
+                      toggleDropdown={toggleDropdown}
+                      closeDropdowns={closeDropdowns}
+                    />
                   ))}
-                </ul>
-              </motion.div>
+                </div>
+              </div>
             </div>
 
-            {/* Columna 3: Redes sociales */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="w-full md:w-auto"
-            >
+            {/* Column 3: Social Links */}
+            <div className="w-full md:w-auto">
               <h3 className="text-lg font-semibold mb-4 text-cyan-300">
                 Connect with us
               </h3>
               <div className="flex space-x-4">
                 {socialLinks.map(({ Icon, href }, index) => (
-                  <motion.a
+                  <a
                     key={index}
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.2, rotate: 5 }}
-                    whileTap={{ scale: 0.9 }}
+                    className="transform hover:scale-110 transition-transform"
                   >
                     <Icon className="h-6 w-6 text-gray-300 hover:text-cyan-300 transition-colors" />
-                  </motion.a>
+                  </a>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Copyright */}
-          <motion.div
-            className="mt-8 pt-8 border-t border-gray-700 text-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
+          <div className="mt-8 pt-8 border-t border-gray-700 text-center">
             <p className="text-sm text-gray-400">
               © {currentYear} VortexPulse. All rights reserved.
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </footer>
   );
 };
-
-export default Footer;
