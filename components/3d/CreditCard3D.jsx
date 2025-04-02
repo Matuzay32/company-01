@@ -11,8 +11,6 @@ export function Model(props) {
   useFrame(() => {
     if (modelRef.current) {
       modelRef.current.rotation.y += 0.01; // Gira sobre el eje Y
-      // modelRef.current.rotation.x += 0.01; // Gira sobre el eje X
-      // modelRef.current.rotation.z += 0.01; // Gira sobre el eje Z
     }
   });
 
@@ -57,11 +55,11 @@ const CreditCard3D = () => {
       <Canvas
         dpr={[1, 2]}
         style={{
-          height: isMobile ? '60vh' : '80vh',
+          height: isMobile ? '60vh' : '60vh',
         }}
         frameloop="always" // Asegúrate de que la animación esté activa siempre
         camera={{
-          position: [0, 0, isMobile ? 4 : 3],
+          position: [0, 0, isMobile ? 4 : 2],
           fov: 50,
           near: 0.1,
           far: 100,
@@ -73,7 +71,7 @@ const CreditCard3D = () => {
           intensity={isMobile ? 0.5 : 1}
           position={[0, 2, 2.5]}
         />
-        <Model scale={isMobile ? 0.4 : 0.5} />
+        <Model scale={isMobile ? 0.4 : 0.4} />
         <Environment preset={isMobile ? 'sunset' : 'city'} />
         <OrbitControls
           enableZoom={false}
