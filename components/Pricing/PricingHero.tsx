@@ -20,9 +20,9 @@ import CreditCard3D from '../3d/CreditCard3D';
 
 export default function PricingHero() {
   return (
-    <section className="relative bg-black text-white overflow-hidden">
+    <section className="relative  text-white overflow-hidden">
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0" />
       <div className="container relative mx-auto px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
           <div className="flex flex-col justify-center">

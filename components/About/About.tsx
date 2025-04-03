@@ -1,5 +1,4 @@
 'use client';
-//changes
 
 import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui/Buttons/v2/button';
@@ -17,10 +16,10 @@ export default function About() {
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-        {/* este color es mas oscuro #ffffff0d */}
+        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_50%,#ffffff21,transparent)]" />
 
-        <Scene></Scene>
+        <Scene />
 
         {/* Hero Content */}
         <motion.div
@@ -30,24 +29,23 @@ export default function About() {
           className="relative text-center max-w-4xl mx-auto space-y-6"
         >
           <h1 className="text-4xl md:text-7xl font-bold tracking-tight">
-            Transform your team growth with Vortex Pulse
+            We drive your dreams, we transform projects
           </h1>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-            In a world where technology is relentlessly advancing, why is
-            recruiting still stuck in antiquated methods? At Vortex Pulse, we're
-            here to change that.
+            At Vortex Pulse, we turn every idea into a success story. From small
+            startups to large-scale developments, we work with passion and
+            excellence to bring your projects to life.
           </p>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-            We connect companies with the talent they need to scale their
-            projects, without friction, without delays. Whether for small
-            projects or large initiatives, our modern, customized approach
-            ensures you find the right expert, when and where you need them.
+            Our commitment is to support you every step of the way: selecting
+            the ideal talent, managing timelines, and optimizing processes to
+            achieve extraordinary results.
           </p>
         </motion.div>
       </section>
 
       {/* Our Story Section */}
-      <CustomSection mt="mt-40">
+      <CustomSection mt="mt-40" bgColor="bg-gray-900">
         <section className="relative py-32">
           <div className="w-[90%] mx-auto miniEditor">
             <div
@@ -56,7 +54,7 @@ export default function About() {
                 background:
                   'radial-gradient(41.07% 8.33% at 50% 0%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(rgb(16, 16, 16) 0%, rgba(0, 0, 0, 0.8) 100%)',
                 maskImage:
-                  'linear-gradient(rgb(0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%)',
+                  'linear-gradient(rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%)',
                 maskSize: '100% 100%',
                 maskPosition: 'center bottom',
               }}
@@ -90,7 +88,7 @@ export default function About() {
               {/* Header */}
               <div className="text-sm relative flex items-center justify-between h-16 w-full px-6 py-4 border-b border-slate-4">
                 <div className="hidden md:block absolute left-1/2 -translate-x-1/2 opacity-60">
-                  What defines Us
+                  Our Essence
                 </div>
               </div>
 
@@ -99,38 +97,33 @@ export default function About() {
                 <div>
                   <h3 className="text-xl font-bold mb-4">Mission</h3>
                   <p className="text-slate-4">
-                    To provide companies with the complete and specialized team
-                    they need to carry out their projects, adapting to their
-                    needs and priorities. In an ever-changing technological
-                    environment, we understand that each client requires fast,
-                    efficient, and tailor-made solutions.
+                    To inspire and empower businesses and entrepreneurs to
+                    transform their ideas into high-impact projects, combining
+                    technology, talent, and personalized strategies.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-bold mb-4">Vision</h3>
                   <p className="text-slate-4">
-                    To be the trusted partner of companies of all sizes, helping
-                    them turn their ideas into reality. We aim to enable our
-                    clients to focus on creating extraordinary products and
-                    services, while we take care of the rest.
+                    To be the benchmark in project creation and management,
+                    making a difference with innovation and commitment, and
+                    becoming the strategic partner that drives growth and
+                    transformation.
                   </p>
                 </div>
 
                 <div>
                   <p className="text-slate-4">
-                    At Vortex Pulse, we combine advanced technology with a team
-                    of experts dedicated to sourcing and coordinating the right
-                    talent for each project. We take care of every detail, from
-                    team selection to ongoing monitoring, ensuring that our
-                    clients can rely on a truly modern and comprehensive
-                    service.
+                    With a unique blend of experience, creativity, and
+                    technology, at Vortex Pulse we take care of every detail,
+                    from selecting the ideal team to implementing tailored
+                    solutions.
                   </p>
                   <p className="mt-4 text-slate-4">
-                    Today, we are proud to help companies achieve their goals
-                    and stay ahead in the competitive tech landscape. Together,
-                    we create a future where innovation and efficiency go hand
-                    in hand.
+                    Our inspiration comes from the belief that, with passion and
+                    determination, any challenge can become an opportunity for
+                    success.
                   </p>
                 </div>
               </div>
@@ -139,28 +132,22 @@ export default function About() {
               <div className="mt-10 px-8 md:w-[60%] mx-auto text-white text-sm leading-relaxed space-y-8">
                 <h3 className="text-xl font-bold mb-4">Our History</h3>
                 <p className="text-slate-4">
-                  We founded Vortex Pulse with a simple mission: to provide
-                  companies with the complete and specialized team they need to
-                  carry out their projects, adapting to their needs and
-                  priorities. In an ever-changing technological environment, we
-                  understand that each client requires fast, efficient, and
-                  tailor-made solutions.
+                  We were born with the conviction that every idea has the
+                  potential to revolutionize the market. Since our beginnings,
+                  we have worked tirelessly to forge a path of innovation and
+                  excellence.
                 </p>
 
                 <p className="text-slate-4">
-                  At Vortex Pulse, we combine advanced technology with a team of
-                  experts dedicated to sourcing and coordinating the right
-                  talent for each project. We take care of every detail, from
-                  team selection to ongoing monitoring, ensuring that our
-                  clients can rely on a truly modern and comprehensive service.
+                  Each project has allowed us to learn, grow, and perfect our
+                  approach, combining talent, technology, and a clear vision of
+                  the future.
                 </p>
 
                 <p className="mt-4 text-slate-4">
-                  Today, we are proud to be the partner of companies of all
-                  sizes, helping them turn their ideas into reality. Our goal is
-                  to enable our clients to focus on what really matters:
-                  creating extraordinary products and services, while we take
-                  care of the rest.
+                  Today, Vortex Pulse is synonymous with commitment, quality,
+                  and results that exceed expectations. We are driven by the
+                  passion to turn challenges into success stories.
                 </p>
               </div>
             </div>
@@ -168,31 +155,281 @@ export default function About() {
         </section>
       </CustomSection>
 
-      {/* Stats Section */}
-      <section className="relative py-32 border-t border-white/10">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              { number: '50+', label: 'Successful placements' },
-              { number: '100%', label: 'Client satisfaction' },
-              { number: '24/7', label: 'Support available' },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-4xl md:text-5xl font-bold mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-400">{stat.label}</div>
-              </motion.div>
-            ))}
+      {/* Our Core Values Section */}
+      <CustomSection
+        mt="mt-40"
+        bgColor="bg-gray-900"
+        gradientColor={['rgba(0, 128, 128, 0.67)', 'rgba(0, 200, 200, 0.67)']}
+        height={['h-1']}
+      >
+        <section className="relative py-32">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold">Our Values</h2>
+              <p className="text-lg text-gray-400 mt-4">
+                At Vortex Pulse, each value is the foundation of our commitment:
+                innovation, excellence, and passion in every project.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              {[
+                {
+                  title: 'Innovation',
+                  description:
+                    'We reinvent processes and explore new ideas to turn every challenge into a unique opportunity.',
+                },
+                {
+                  title: 'Excellence',
+                  description:
+                    'We strive to exceed expectations, ensuring quality and exceptional results in every project.',
+                },
+                {
+                  title: 'Passion',
+                  description:
+                    'The energy and commitment of our team drive the transformation of ideas into impactful realities.',
+                },
+              ].map((value, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6 rounded-lg border border-white/10 bg-black/20"
+                >
+                  <h3 className="text-xl font-bold">{value.title}</h3>
+                  <p className="text-gray-400 mt-2">{value.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </CustomSection>
+
+      {/* Our Expertise Section */}
+      <CustomSection mt="mt-40" bgColor="bg-gray-900">
+        <section className="relative py-32">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold">Our Specialty</h2>
+              <p className="text-lg text-gray-400 mt-4">
+                We combine experience, technology, and creativity to offer
+                comprehensive solutions that drive success.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              {[
+                {
+                  title: 'Software Development',
+                  description:
+                    'We create custom systems and applications that enhance the digital transformation of your business.',
+                },
+                {
+                  title: 'Data Analysis',
+                  description:
+                    'We turn large volumes of data into strategic insights to drive smart decisions.',
+                },
+                {
+                  title: 'UX/UI Design',
+                  description:
+                    'We design intuitive and engaging digital experiences that emotionally connect with users.',
+                },
+              ].map((expertise, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6 rounded-lg border border-white/10 bg-black/20"
+                >
+                  <h3 className="text-xl font-bold">{expertise.title}</h3>
+                  <p className="text-gray-400 mt-2">{expertise.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </CustomSection>
+
+      {/* Why Choose Us Section */}
+      <CustomSection mt="mt-40" bgColor="bg-gray-900">
+        <section className="relative py-32">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold">Why Choose Us?</h2>
+              <p className="text-lg text-gray-400 mt-4">
+                With Vortex Pulse, every challenge becomes an opportunity to
+                innovate and grow. Our experience and commitment are the keys to
+                success.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              {[
+                {
+                  title: 'Tailored Solutions',
+                  description:
+                    'We design personalized strategies that meet the unique needs of each client and project.',
+                },
+                {
+                  title: 'Elite Team',
+                  description:
+                    'Our team of highly skilled professionals is ready to tackle any challenge with creativity and precision.',
+                },
+                {
+                  title: 'Comprehensive Support',
+                  description:
+                    'We guide you every step of the way, ensuring constant follow-up and solutions that evolve alongside your business.',
+                },
+              ].map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6 rounded-lg border border-white/10 bg-black/20"
+                >
+                  <h3 className="text-xl font-bold">{benefit.title}</h3>
+                  <p className="text-gray-400 mt-2">{benefit.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </CustomSection>
+
+      {/* Client Success Stories Section */}
+      <CustomSection mt="mt-40" bgColor="bg-gray-900">
+        <section className="relative py-32">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold">
+                Success Stories
+              </h2>
+              <p className="text-lg text-gray-400 mt-4">
+                Discover how we have helped turn ideas into groundbreaking
+                projects and drive the growth of our clients.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              {[
+                {
+                  title: 'Future Innovators',
+                  description:
+                    'With our strategy and vision, this company launched a product that redefined its industry.',
+                },
+                {
+                  title: 'E-commerce Leaders',
+                  description:
+                    'We implemented digital solutions that enabled exponential growth in sales and operational efficiency.',
+                },
+                {
+                  title: 'Design Pioneers',
+                  description:
+                    'Our creative approach transformed the user experience, generating greater interaction and loyalty.',
+                },
+              ].map((story, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-6 rounded-lg border border-white/10 bg-black/20"
+                >
+                  <h3 className="text-xl font-bold">{story.title}</h3>
+                  <p className="text-gray-400 mt-2">{story.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </CustomSection>
+
+      {/* New Gallery Section */}
+      <CustomSection mt="mt-40" bgColor="bg-gray-900">
+        <section className="relative py-32">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold">Our Technology</h2>
+              <p className="text-lg text-gray-400 mt-4">
+                Technology is the pillar that supports our innovative approach.
+                With cutting-edge tools, we drive transformation and efficiency
+                in every project.
+              </p>
+            </div>
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              {[
+                {
+                  image:
+                    'https://images.unsplash.com/photo-1741879080222-b9b5f20b3333?q=80&w=2400&auto=format&fit=crop&ixlib=rb-4.0.3',
+                  title: 'Integrated Platforms',
+                  description:
+                    'Robust systems that facilitate the management and execution of complex projects.',
+                },
+                {
+                  image:
+                    'https://images.unsplash.com/photo-1741174648069-4af442ef5238?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3',
+                  title: 'Digital Infrastructure',
+                  description:
+                    'Networks and technological solutions that ensure speed and security in every operation.',
+                },
+                {
+                  image:
+                    'https://images.unsplash.com/photo-1709625862607-8df400370d17?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3',
+                  title: 'Intelligent Systems',
+                  description:
+                    'Analysis and automation tools that optimize processes and improve decision-making.',
+                },
+                {
+                  image:
+                    'https://images.unsplash.com/photo-1659531840322-836f382f2497?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3',
+                  title: 'Cutting-edge Platforms',
+                  description:
+                    'Innovative solutions that integrate the latest technological trends to empower every project.',
+                },
+                {
+                  image:
+                    'https://plus.unsplash.com/premium_photo-1671829480432-9b0f10d869ef?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3',
+                  title: 'Custom Tools',
+                  description:
+                    'Tailor-made technology, designed to overcome any challenge and adapt to your needs.',
+                },
+                {
+                  image:
+                    'https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3',
+                  title: 'Disruptive Innovation',
+                  description:
+                    'Revolutionary solutions that transform the way you work and boost your competitiveness.',
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="rounded-lg overflow-hidden shadow-md"
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={800}
+                    height={600}
+                    className="object-cover w-full h-48 rounded-t-lg"
+                  />
+
+                  <div className="p-6 rounded-lg border border-white/10 bg-black/20">
+                    <h3 className="text-xl font-semibold text-white">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-gray-400 text-sm">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </CustomSection>
 
       {/* CTA Section */}
       <section className="relative py-32 border-t border-white/10">
@@ -204,18 +441,19 @@ export default function About() {
             className="max-w-4xl mx-auto text-center space-y-8"
           >
             <h2 className="text-3xl md:text-5xl font-bold">
-              Ready to build your best project team?
+              Ready to transform your vision into reality?
             </h2>
             <p className="text-lg text-gray-400">
-              Join the companies that already rely on our customized and
-              effective approach to create teams tailored to their needs.
+              Take the leap towards innovation and growth. At Vortex Pulse, we
+              support you every step of the way, building high-performance teams
+              that take your projects to the next level.
             </p>
             <Link className="ml-2 h-4 w-4" href="/pricing">
               <Button
                 size="lg"
                 className="bg-white text-black hover:bg-gray-100"
               >
-                Start now
+                Get Started Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
