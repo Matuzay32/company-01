@@ -20,7 +20,7 @@ const Model = () => {
   });
 
   const materialProps = {
-    scale: 3.9,
+    scale: 2.5,
     thickness: 0.2,
     roughness: 0,
     transmission: 1,
