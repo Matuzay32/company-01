@@ -16,12 +16,12 @@ export default function LandingPages() {
       link: '/elite',
     },
     {
-      title: 'UrbanFit Studio',
-      image: '/vortexPulseLogo.webp',
+      title: 'KURO – Minimalist Luxury Sushi Dining Experience',
+      image: '/images/hero-bg.avif',
       color: '#33FF57',
       description:
-        'UrbanFit Studio presents a dynamic and motivating proposal, ideal for those looking to transform their lifestyle. With striking graphics and a modern design, the page highlights personalized programs and irresistible promotions. The intuitive navigation and success stories inspire confidence and motivate you to take the first step towards a more active lifestyle. UrbanFit is the perfect combination of design and energy.',
-      link: '',
+        'Indulge in KURO’s refined sushi creations, where elegance meets flavor. Explore our menu and reserve a seat for a one-of-a-kind dining experience.',
+      link: '/kuro',
     },
     {
       title: 'Luxury Interiors',
