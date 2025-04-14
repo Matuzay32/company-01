@@ -299,54 +299,6 @@ export default function About() {
         </section>
       </CustomSection>
 
-      {/* Client Success Stories Section */}
-      <CustomSection mt="mt-40" bgColor="bg-gray-900">
-        <section className="relative py-32">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl md:text-5xl font-bold">
-                Success Stories
-              </h2>
-              <p className="text-lg text-gray-400 mt-4">
-                Discover how we have helped turn ideas into groundbreaking
-                projects and drive the growth of our clients.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              {[
-                {
-                  title: 'Future Innovators',
-                  description:
-                    'With our strategy and vision, this company launched a product that redefined its industry.',
-                },
-                {
-                  title: 'E-commerce Leaders',
-                  description:
-                    'We implemented digital solutions that enabled exponential growth in sales and operational efficiency.',
-                },
-                {
-                  title: 'Design Pioneers',
-                  description:
-                    'Our creative approach transformed the user experience, generating greater interaction and loyalty.',
-                },
-              ].map((story, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="p-6 rounded-lg border border-white/10 bg-black/20"
-                >
-                  <h3 className="text-xl font-bold">{story.title}</h3>
-                  <p className="text-gray-400 mt-2">{story.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </CustomSection>
-
       {/* New Gallery Section */}
       <CustomSection mt="mt-40" bgColor="bg-gray-900">
         <section className="relative py-32">
@@ -363,45 +315,24 @@ export default function About() {
               {[
                 {
                   image:
-                    'https://images.unsplash.com/photo-1741879080222-b9b5f20b3333?q=80&w=2400&auto=format&fit=crop&ixlib=rb-4.0.3',
-                  title: 'Integrated Platforms',
-                  description:
-                    'Robust systems that facilitate the management and execution of complex projects.',
-                },
-                {
-                  image:
                     'https://images.unsplash.com/photo-1741174648069-4af442ef5238?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3',
-                  title: 'Digital Infrastructure',
+                  title: 'Cloud Infrastructure',
                   description:
-                    'Networks and technological solutions that ensure speed and security in every operation.',
+                    'Cloud-based solutions using services like AWS, ensuring stable and secure environments for your projects.',
                 },
                 {
                   image:
                     'https://images.unsplash.com/photo-1709625862607-8df400370d17?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3',
-                  title: 'Intelligent Systems',
+                  title: 'Smart Automation',
                   description:
-                    'Analysis and automation tools that optimize processes and improve decision-making.',
-                },
-                {
-                  image:
-                    'https://images.unsplash.com/photo-1659531840322-836f382f2497?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3',
-                  title: 'Cutting-edge Platforms',
-                  description:
-                    'Innovative solutions that integrate the latest technological trends to empower every project.',
+                    'We integrate tools like ChatGPT and custom scripts to automate tasks and support better decision-making.',
                 },
                 {
                   image:
                     'https://plus.unsplash.com/premium_photo-1671829480432-9b0f10d869ef?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3',
-                  title: 'Custom Tools',
+                  title: 'Custom Development',
                   description:
-                    'Tailor-made technology, designed to overcome any challenge and adapt to your needs.',
-                },
-                {
-                  image:
-                    'https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3',
-                  title: 'Disruptive Innovation',
-                  description:
-                    'Revolutionary solutions that transform the way you work and boost your competitiveness.',
+                    'Tailored tools and services built specifically to adapt to your needs and overcome technical challenges.',
                 },
               ].map((item, index) => (
                 <div
