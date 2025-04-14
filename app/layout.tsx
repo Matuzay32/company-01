@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import { Footer } from '@/components/Footer/Footer';
 import LoadingBar from '@/components/Loadding/LoadingBar';
+import { CartProvider } from './context/cart-context';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,7 +28,7 @@ export default function RootLayout({
         {/* <LoadingBar /> */}
 
         <HeaderGlobal></HeaderGlobal>
-        {children}
+        <CartProvider>{children}</CartProvider>
 
         <Footer></Footer>
       </body>
