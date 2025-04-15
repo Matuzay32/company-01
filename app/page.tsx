@@ -21,6 +21,8 @@ import { RiCustomerServiceFill } from 'react-icons/ri';
 import Testimonials from '@/components/ui/Testimonials/Testimonials';
 import LoadingBar from '@/components/Loadding/LoadingBar';
 import Scene from '@/components/3d/Scene';
+import MetalCube from '@/components/3d/MetalCube';
+import CreditCard3D from '@/components/3d/CreditCard3D';
 
 export default function Home() {
   const cardData = [
@@ -109,6 +111,7 @@ export default function Home() {
       <section className="text-center mt-24 sm:mt-16 mb-20 px-4">
         <CustomSection height="h-2" gradientColor="#D6BCFA">
           <h2 className="font-book font-display mb-8 text-[2rem] md:text-[2.5rem] tracking-tight leading-[120%] text-white">
+            <MetalCube></MetalCube>
             Our Services
           </h2>
           <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">

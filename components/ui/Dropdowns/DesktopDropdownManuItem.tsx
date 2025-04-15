@@ -1,11 +1,13 @@
-import { ChevronDown } from "lucide-react";
-import Link from "next/link";
-import { MenuItem } from "./MobileDropdownMenuItem";
+import { ChevronDown } from 'lucide-react';
+import Link from 'next/link';
+import { MenuItem } from './MobileDropdownMenuItem';
+import Abstract from '@/components/3d/Abstract';
+import CustomSection from '../Others/CustomSection';
 
 export type CardItem = {
   title: string;
   description: string;
-  href: string;
+  // href: string;
   icon: React.ReactNode;
 };
 
@@ -23,18 +25,12 @@ type DesktopDropdownProps = {
 // Componente para renderizar la tarjeta (card) de cada menú
 const MenuCard = ({ card }: { card: CardItem }) => {
   return (
-    <Link
-      href={card.href}
-      className="flex items-start space-x-3 p-3 rounded-md hover:bg-gray-800/50 transition-colors"
-    >
-      <div className="flex-shrink-0 p-2 bg-gray-800 rounded-md">
-        {card.icon}
-      </div>
+    <div className="flex items-start space-x-3 p-3 rounded-md transition-colors">
       <div>
         <h3 className="font-medium text-white">{card.title}</h3>
         <p className="text-sm text-gray-400">{card.description}</p>
       </div>
-    </Link>
+    </div>
   );
 };
 
@@ -58,7 +54,7 @@ export const DesktopDropdownMenuItem = ({
         <ChevronDown
           size={16}
           className={`transition-transform ${
-            activeDropdown === menuKey ? "rotate-180" : ""
+            activeDropdown === menuKey ? 'rotate-180' : ''
           }`}
         />
       </button>

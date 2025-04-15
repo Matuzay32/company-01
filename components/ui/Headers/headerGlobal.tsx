@@ -37,15 +37,8 @@ const menus: Record<string, DropdownMenu> = {
     ],
     cards: [
       {
-        title: 'Transactional Emails',
-        description: 'Send with confidence',
-        href: '#',
-        icon: '',
-      },
-      {
-        title: 'Marketing Emails',
-        description: 'Reach your audience',
-        href: '#',
+        title: 'Excellence in Service',
+        description: 'Delivering top-tier solutions for your business',
         icon: '',
       },
     ],
@@ -61,15 +54,13 @@ const menus: Record<string, DropdownMenu> = {
     ],
     cards: [
       {
-        title: 'Handbook',
-        description: 'How we work',
-        href: '#',
+        title: 'Learn About Us',
+        description: 'Discover who we are and our mission',
         icon: '',
       },
       {
-        title: 'Philosophy',
-        description: 'What we value',
-        href: '#',
+        title: 'Staff Augmentation',
+        description: 'Expand your team with top-tier talent',
         icon: '',
       },
     ],
