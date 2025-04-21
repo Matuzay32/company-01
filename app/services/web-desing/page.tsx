@@ -19,7 +19,7 @@ export default function Page() {
       <section className="snap-start h-screen">
         <ColorPalette />
       </section>
-      <section className="snap-start h-screen">
+      <section className="snap-start ">
         <DesignPrinciples />
       </section>
     </main>
