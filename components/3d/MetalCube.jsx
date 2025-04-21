@@ -63,8 +63,8 @@ const MetalCube = () => {
           intensity={isMobile ? 0.5 : 1}
           position={[0, 2, 2.5]}
         />
-        <Model scale={isMobile ? 0.4 : 0.4} />
-        <Environment preset={isMobile ? 'sunset' : 'city'} />
+        <Model scale={isMobile ? 0.45 : 0.4} />
+        <Environment preset={isMobile ? 'city' : 'city'} />
         <OrbitControls
           enableZoom={false}
           enablePan={false}

@@ -69,7 +69,7 @@ const Abstract = () => {
           position={[0, 2, 2.5]}
         />
         <Model scale={isMobile ? 0.4 : 1} />
-        <Environment preset={isMobile ? 'sunset' : 'city'} />
+        <Environment preset={isMobile ? 'city' : 'city'} />
         <OrbitControls
           enableZoom={false}
           enablePan={false}

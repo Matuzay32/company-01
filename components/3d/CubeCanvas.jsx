@@ -90,7 +90,7 @@ const CubeCanvas = () => {
       <ambientLight intensity={isMobile ? 0.5 : 1} />
       <directionalLight intensity={isMobile ? 0.5 : 1} position={[0, 2, 3]} />
       <Model />
-      <Environment preset={isMobile ? 'sunset' : 'city'} />{' '}
+      <Environment preset={isMobile ? 'city' : 'city'} />{' '}
       {/* Ajustar el preset del entorno según el dispositivo */}
     </Canvas>
   );
