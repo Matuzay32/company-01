@@ -1,55 +1,64 @@
-"use client"
+'use client';
 
-import { useState, useEffect } from "react"
-import { ChevronLeft, ChevronRight, Star } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import type { StaticImageData } from 'next/image';
 
-const testimonials = [
+type Testimonial = {
+  text: string;
+  author: string;
+  position: string;
+  rating: number;
+  image?: StaticImageData | string;
+};
+
+const defaultTestimonials: Testimonial[] = [
   {
-    id: 1,
-    name: "Alexandra Chen",
-    role: "Food Critic",
-    quote:
-      "Kuro redefines luxury dining with its impeccable attention to detail and extraordinary flavor combinations. Each bite is a masterpiece.",
+    text: 'Kuro redefines luxury dining with its impeccable attention to detail and extraordinary flavor combinations. Each bite is a masterpiece.',
+    author: 'Alexandra Chen',
+    position: 'Food Critic',
     rating: 5,
   },
   {
-    id: 2,
-    name: "James Wilson",
-    role: "Executive Chef",
-    quote:
-      "The artistry behind Kuro's presentation is unmatched. Their commitment to quality and innovation places them among the elite.",
+    text: "The artistry behind Kuro's presentation is unmatched. Their commitment to quality and innovation places them among the elite.",
+    author: 'James Wilson',
+    position: 'Executive Chef',
     rating: 5,
   },
   {
-    id: 3,
-    name: "Sophia Rodriguez",
-    role: "Luxury Lifestyle Blogger",
-    quote:
-      "From the moment you enter, Kuro envelops you in an atmosphere of refined elegance. The black marble aesthetic creates the perfect backdrop for their culinary masterpieces.",
+    text: 'From the moment you enter, Kuro envelops you in an atmosphere of refined elegance. The black marble aesthetic creates the perfect backdrop for their culinary masterpieces.',
+    author: 'Sophia Rodriguez',
+    position: 'Luxury Lifestyle Blogger',
     rating: 5,
   },
-]
+];
 
-export default function TestimonialCarousel() {
-  const [activeIndex, setActiveIndex] = useState(0)
+export default function TestimonialCarousel({
+  testimonials = defaultTestimonials,
+}: {
+  testimonials?: Testimonial[];
+}) {
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const nextSlide = () => {
-    setActiveIndex((current) => (current + 1) % testimonials.length)
-  }
+    setActiveIndex((current) => (current + 1) % testimonials.length);
+  };
 
   const prevSlide = () => {
-    setActiveIndex((current) => (current - 1 + testimonials.length) % testimonials.length)
-  }
+    setActiveIndex(
+      (current) => (current - 1 + testimonials.length) % testimonials.length
+    );
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide()
-    }, 8000)
+      nextSlide();
+    }, 8000);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, [testimonials]);
 
   return (
     <div className="relative max-w-4xl mx-auto">
@@ -58,24 +67,41 @@ export default function TestimonialCarousel() {
           className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="min-w-full px-4">
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="min-w-full px-4">
               <div className="bg-zinc-900/50 backdrop-blur-md border border-white/10 rounded-lg p-8 md:p-12 text-center">
-                <div className="flex justify-center mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={cn(
-                        "w-6 h-6 mx-1",
-                        i < testimonial.rating ? "fill-white text-white" : "fill-gray-600 text-gray-600",
-                      )}
+                {testimonial.rating && (
+                  <div className="flex justify-center mb-6">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={cn(
+                          'w-6 h-6 mx-1',
+                          i < testimonial.rating
+                            ? 'fill-white text-white'
+                            : 'fill-gray-600 text-gray-600'
+                        )}
+                      />
+                    ))}
+                  </div>
+                )}
+                <blockquote className="text-xl md:text-2xl font-light italic mb-8">
+                  "{testimonial.text}"
+                </blockquote>
+                <div className="flex flex-col items-center gap-2">
+                  {testimonial.image && (
+                    <img
+                      src={
+                        typeof testimonial.image === 'string'
+                          ? testimonial.image
+                          : testimonial.image.src
+                      }
+                      alt={testimonial.author}
+                      className="w-12 h-12 rounded-full object-cover mb-2"
                     />
-                  ))}
-                </div>
-                <blockquote className="text-xl md:text-2xl font-light italic mb-8">"{testimonial.quote}"</blockquote>
-                <div>
-                  <p className="text-lg font-medium">{testimonial.name}</p>
-                  <p className="text-gray-400">{testimonial.role}</p>
+                  )}
+                  <p className="text-lg font-medium">{testimonial.author}</p>
+                  <p className="text-gray-400">{testimonial.position}</p>
                 </div>
               </div>
             </div>
@@ -104,19 +130,21 @@ export default function TestimonialCarousel() {
         </Button>
       </div>
 
-      <div className="flex justify-center mt-8 space-x-2">
+      {/* <div className="flex justify-center mt-8 space-x-2">
         {testimonials.map((_, index) => (
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
             className={cn(
-              "w-3 h-3 rounded-full transition-colors",
-              activeIndex === index ? "bg-white" : "bg-white/30 hover:bg-white/50",
+              'w-3 h-3 rounded-full transition-colors',
+              activeIndex === index
+                ? 'bg-white'
+                : 'bg-white/30 hover:bg-white/50'
             )}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
-      </div>
+      </div> */}
     </div>
-  )
+  );
 }

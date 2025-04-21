@@ -1,46 +1,40 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import AndresImg from "@/assets/andres.jpeg";
-import CarlosImg from "@/assets/carlos.jpeg";
-import Image from "next/image";
-import LauraImg from "@/assets/laura.jpeg";
-import SofiaImg from "@/assets/sofia.jpeg";
+import AndresImg from '@/assets/andres.jpeg';
+import CarlosImg from '@/assets/carlos.jpeg';
+import Image from 'next/image';
+import LauraImg from '@/assets/laura.jpeg';
+import SofiaImg from '@/assets/sofia.jpeg';
 
 //import MartaImg from "@/app/assets/marta.jpeg";
 
 const testimonialsData = [
   {
     text: "Working with this agency was amazing. They developed a modern and functional website that exceeded our expectations and enhanced our clients' experience!",
-    author: "Sofía R.,",
-    position: "Marketing Manager",
+    author: 'Sofía R.,',
+    position: 'Marketing Manager',
     image: SofiaImg,
   },
   {
-    text: "We needed a customized solution, and their team really captured our vision. Thanks to them, we launched an optimized landing page that doubled our conversions in just one month.",
-    author: "Carlos M.,",
-    position: "Entrepreneur and Founder",
+    text: 'We needed a customized solution, and their team really captured our vision. Thanks to them, we launched an optimized landing page that doubled our conversions in just one month.',
+    author: 'Carlos M.,',
+    position: 'Entrepreneur and Founder',
     image: CarlosImg,
   },
   {
-    text: "From design to development, the experience was flawless. Your team not only met our deadlines, but offered ideas that improved our final product. We will definitely continue to collaborate!",
-    author: "Laura G.,",
-    position: "Product Manager",
+    text: 'From design to development, the experience was flawless. Your team not only met our deadlines, but offered ideas that improved our final product. We will definitely continue to collaborate!',
+    author: 'Laura G.,',
+    position: 'Product Manager',
     image: LauraImg,
   },
   {
-    text: "We decided to delegate software development to this agency, and it was the best decision. We got an experienced team that integrated perfectly with our business and delivered solid results.",
-    author: "Andres T.,",
-    position: "CTO",
+    text: 'We decided to delegate software development to this agency, and it was the best decision. We got an experienced team that integrated perfectly with our business and delivered solid results.',
+    author: 'Andres T.,',
+    position: 'CTO',
     image: AndresImg,
   },
-  /*  {
-    text: "Thanks to their expertise in web design, we achieved an impressive online presence that has attracted new clients. Attention to detail and personalized service made all the difference.",
-    author: "Marta S.,",
-    position: "Business Owner",
-    image: MartaImg,
-  }, */
 ];
 
 export default function Testimonials() {
@@ -63,8 +57,8 @@ export default function Testimonials() {
     };
 
     handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
@@ -98,10 +92,10 @@ export default function Testimonials() {
               key={index}
               className={`flex-shrink-0 px-2 sm:px-4 ${
                 itemsToShow === 1
-                  ? "w-full"
+                  ? 'w-full'
                   : itemsToShow === 2
-                  ? "w-1/2"
-                  : "w-1/3"
+                  ? 'w-1/2'
+                  : 'w-1/3'
               }`}
             >
               <div className="relative rounded-2xl border border-slate-5 bg-gradient-to-b from-black to-black p-4 sm:p-6 h-full max-w-md mx-auto">
@@ -131,7 +125,7 @@ export default function Testimonials() {
                       width={40}
                       height={40}
                       className="rounded-full mr-4 object-cover"
-                      style={{ maxWidth: "40px", maxHeight: "40px" }}
+                      style={{ maxWidth: '40px', maxHeight: '40px' }}
                     />
                     <div className="flex flex-col">
                       <span className="sans text-sm leading-[1.6] text-slate-12 font-normal">

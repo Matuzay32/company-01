@@ -9,6 +9,11 @@ import {
   FaUsers,
 } from 'react-icons/fa';
 
+import AndresImg from '@/assets/andres.jpeg';
+import CarlosImg from '@/assets/carlos.jpeg';
+import LauraImg from '@/assets/laura.jpeg';
+import SofiaImg from '@/assets/sofia.jpeg';
+
 import Card from '@/components/ui/Cards/Card'; // Componente de tarjeta
 import CardInfo from '@/components/ui/Cards/CardInfo'; // Componente de tarjeta con información
 import CustomSection from '@/components/ui/Others/CustomSection';
@@ -23,6 +28,9 @@ import LoadingBar from '@/components/Loadding/LoadingBar';
 import Scene from '@/components/3d/Scene';
 import MetalCube from '@/components/3d/MetalCube';
 import CreditCard3D from '@/components/3d/CreditCard3D';
+import Image from 'next/image';
+import TestimonialCarousel from '@/components/testimonial-carousel';
+import { useRef } from 'react';
 
 export default function Home() {
   const cardData = [
@@ -111,7 +119,6 @@ export default function Home() {
       <section className="text-center mt-24 sm:mt-16 mb-20 px-4">
         <CustomSection height="h-2" gradientColor="#D6BCFA">
           <h2 className="font-book font-display mb-8 text-[2rem] md:text-[2.5rem] tracking-tight leading-[120%] text-white">
-            <MetalCube></MetalCube>
             Our Services
           </h2>
           <p className="mb-12 text-lg text-gray-400 max-w-3xl mx-auto">
@@ -119,6 +126,8 @@ export default function Home() {
             featured services here, and check Services for even more tailored
             solutions!
           </p>
+          <MetalCube></MetalCube>
+
           <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-12">
             {cardData.map((card, index) => (
               <Card
@@ -142,7 +151,45 @@ export default function Home() {
       {/* Sección de Testimonios */}
       <section className="text-center mt-24 mb-20 px-4 w-scree">
         <CustomSection height="h-2" gradientColor="#86efac" mt="mt-1">
-          <Testimonials></Testimonials>
+          <h2 className="font-book font-display mb-8 text-3xl sm:text-4xl md:text-[2.5rem] tracking-tight leading-[120%] text-white text-center">
+            Testimonials
+          </h2>
+          <p className="mb-12 text-base sm:text-lg text-gray-400 max-w-3xl mx-auto text-center">
+            Our customers choose us because we exceed expectations, we help
+            build trust between our customers and us.
+          </p>
+          <TestimonialCarousel
+            testimonials={[
+              {
+                text: "Working with this agency was amazing. They developed a modern and functional website that exceeded our expectations and enhanced our clients' experience!",
+                author: 'Sofía R.',
+                position: 'Marketing Manager',
+                image: SofiaImg,
+                rating: 5,
+              },
+              {
+                text: 'We needed a customized solution, and their team really captured our vision. Thanks to them, we launched an optimized landing page that doubled our conversions in just one month.',
+                author: 'Carlos M.',
+                position: 'Entrepreneur and Founder',
+                image: CarlosImg,
+                rating: 5,
+              },
+              {
+                text: 'From design to development, the experience was flawless. Your team not only met our deadlines, but offered ideas that improved our final product. We will definitely continue to collaborate!',
+                author: 'Laura G.',
+                position: 'Product Manager',
+                image: LauraImg,
+                rating: 5,
+              },
+              {
+                text: 'We decided to delegate software development to this agency, and it was the best decision. We got an experienced team that integrated perfectly with our business and delivered solid results.',
+                author: 'Andres T.',
+                position: 'CTO',
+                image: AndresImg,
+                rating: 5,
+              },
+            ]}
+          ></TestimonialCarousel>
         </CustomSection>
       </section>
     </main>
