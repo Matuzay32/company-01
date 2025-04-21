@@ -105,12 +105,12 @@ export default function Scene() {
     <aWeb.main style={{ background: '#000', width: '100vw', height: '100vh' }}>
       <Canvas className="canvas" dpr={[1, 2]}>
         <Model />
-        <OrbitControls
+        {/* <OrbitControls
           enablePan={false}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
-        />
+        /> */}
       </Canvas>
     </aWeb.main>
   );
