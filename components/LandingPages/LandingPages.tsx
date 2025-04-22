@@ -23,14 +23,14 @@ export default function LandingPages() {
         'Indulge in KURO’s refined sushi creations, where elegance meets flavor. Explore our menu and reserve a seat for a one-of-a-kind dining experience.',
       link: '/kuro',
     },
-    {
-      title: 'Luxury Interiors',
-      image: '/vortexPulseLogo.webp',
-      color: '#3357FF',
-      description:
-        "Luxury Interiors' landing page redefines the concept of luxury in interior design. With a stunning visual display and sophisticated color palette, the site appeals to lovers of refined style and exceptional quality. Each section highlights exclusive and customizable pieces, with an attention to detail that conveys elegance. Elegance Interiors invites you to transform every space into a work of art, offering furniture that is synonymous with distinction and sophistication.",
-      link: '',
-    },
+    // {
+    //   title: 'Luxury Interiors',
+    //   image: '/vortexPulseLogo.webp',
+    //   color: '#3357FF',
+    //   description:
+    //     "Luxury Interiors' landing page redefines the concept of luxury in interior design. With a stunning visual display and sophisticated color palette, the site appeals to lovers of refined style and exceptional quality. Each section highlights exclusive and customizable pieces, with an attention to detail that conveys elegance. Elegance Interiors invites you to transform every space into a work of art, offering furniture that is synonymous with distinction and sophistication.",
+    //   link: '',
+    // },
   ];
 
   return (
