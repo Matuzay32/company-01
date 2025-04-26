@@ -397,7 +397,7 @@ export default function EnhancedStaffAugmentation() {
           <h2 className="text-4xl font-bold text-center mb-8">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <CustomCard gradientColor="#46ffe0">
+              <CustomCard gradientColor="#46ffe0" key={service.title}>
                 <motion.div
                   key={service.title}
                   initial={{ opacity: 0, y: 20 }}

@@ -114,7 +114,7 @@ export const Footer = () => {
             </div>
 
             {/* Column 3: Social Links */}
-            <div className="w-full md:w-auto">
+            {/* <div className="w-full md:w-auto">
               <h3 className="text-lg font-semibold mb-4 text-cyan-300">
                 Connect with us
               </h3>
@@ -131,7 +131,7 @@ export const Footer = () => {
                   </a>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Copyright */}
