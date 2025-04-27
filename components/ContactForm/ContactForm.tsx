@@ -10,6 +10,24 @@ import Pattern from "../ui/Patterns/Pattern";
 import { Textarea } from "@/components/ui/textarea";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+import { Spinner, Toast } from 'flowbite-react';
+import { HiCheck, HiX } from "react-icons/hi";
+
+enum ToastTypeOption {
+  SUCCESS = "success",
+  ERROR = "error",
+}
+
+const toastMessages = {
+  [ToastTypeOption.SUCCESS]: "Message sent successfully!",
+  [ToastTypeOption.ERROR]: "An error occurred. Please try again.",
+};
+
+type ToastType = {
+  type: ToastTypeOption;
+  message: string;
+  active: boolean;
+}
 
 const services = [
   {
@@ -93,8 +111,13 @@ const CustomCard = ({
 
 export default function ContactForm() {
   const [formData, setFormData] = useState(defaultForm);
-  const [status, setStatus] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
+  const [toast, setToast] = useState<ToastType>({
+    type: ToastTypeOption.SUCCESS,
+    message: "",
+    active: false,
+  });
+
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -105,7 +128,6 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("Sending...");
     setIsLoading(true);
 
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
@@ -114,20 +136,30 @@ export default function ContactForm() {
 
     if (!serviceId || !templateId || !publicKey) {
       console.error("Faltan variables de entorno para emailjs");
-      setStatus("Error de configuración. Contacta al administrador.");
       setIsLoading(false);
       return;
     }
 
     try {
       await emailjs.send(serviceId, templateId, formData, publicKey);
-      setStatus("");
       setFormData(defaultForm);
+      setToast({
+        type: ToastTypeOption.SUCCESS,
+        message: toastMessages[ToastTypeOption.SUCCESS],
+        active: true,
+      });
     } catch (error) {
       console.error("Error al enviar el correo:", error);
-      setStatus("An error occurred. Please try again.");
+      setToast({
+        type: ToastTypeOption.ERROR,
+        message: toastMessages[ToastTypeOption.ERROR],
+        active: true,
+      });
     } finally {
       setIsLoading(false);
+      setTimeout(() => {
+        setToast((prev) => ({ ...prev, active: false }));
+      }, 5000);
     }
   };
 
@@ -194,7 +226,10 @@ export default function ContactForm() {
                 <Button type="submit" className="w-full">
                   {
                     isLoading ? (
-                      <p>Loading...</p>
+                      <Spinner
+                        aria-label="Loading"
+                        size="lg"
+                        color="success" />
                     ) : (
 
                       <div className="flex">Send Message <Send className="ml-2 h-4 w-4" /></div>
@@ -206,6 +241,16 @@ export default function ContactForm() {
           </motion.div>
         </CustomSection>
       </div>
+      {toast.active && (
+        <div className="fixed bottom-4 right-4 z-50">
+          <Toast>
+            <div className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-green-100 text-green-500 dark:bg-green-800 dark:text-green-200">
+              {toast.type === ToastTypeOption.SUCCESS ? <HiCheck className="h-5 w-5" /> : <HiX className="h-5 w-5" />}
+            </div>
+            <div className="ml-3 text-sm font-normal">{toast.message}</div>
+          </Toast>
+        </div>
+      )}
     </div>
   );
 }

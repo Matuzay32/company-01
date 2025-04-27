@@ -1,3 +1,5 @@
+const withFlowbiteReact = require("flowbite-react/plugin/nextjs");
+
 /** @type {import('next').NextConfig} */
 //const nextConfig = {
   //output: 'export',
@@ -8,7 +10,7 @@
   //transpilePackages: ['three'],
 //};
 
-//module.exports = nextConfig;
+//module.exports = withFlowbiteReact(nextConfig);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -25,4 +27,4 @@ const nextConfig = {
   transpilePackages: ['three'],
 };
 
-module.exports = nextConfig;
+module.exports = withFlowbiteReact(nextConfig);

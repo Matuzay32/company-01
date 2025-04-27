@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import type { PluginAPI } from "tailwindcss/types/config";
+const flowbiteReact = require("flowbite-react/plugin/tailwindcss");
 
 const config: Config = {
   darkMode: ["class"],
@@ -7,6 +8,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    ".flowbite-react\\class-list.json"
   ],
   theme: {
     extend: {
@@ -104,22 +106,19 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    function (pluginApi: PluginAPI) {
-      const { addUtilities } = pluginApi;
+  plugins: [require("tailwindcss-animate"), function (pluginApi: PluginAPI) {
+    const { addUtilities } = pluginApi;
 
-      addUtilities({
-        ".scrollbar-hide": {
-          "scrollbar-width": "none" /* Firefox */,
-          "-ms-overflow-style": "none" /* IE 10+ */,
-        },
-        ".scrollbar-hide::-webkit-scrollbar": {
-          display: "none" /* Chrome, Safari y Opera */,
-        },
-      });
-    },
-  ],
+    addUtilities({
+      ".scrollbar-hide": {
+        "scrollbar-width": "none" /* Firefox */,
+        "-ms-overflow-style": "none" /* IE 10+ */,
+      },
+      ".scrollbar-hide::-webkit-scrollbar": {
+        display: "none" /* Chrome, Safari y Opera */,
+      },
+    });
+  }, flowbiteReact],
 };
 
 export default config;
