@@ -142,14 +142,14 @@ export default function Home() {
         </CustomSection>
       </section>
 
-      <section className="text-center mt-24 mb-20 px-4" id="pricing">
+      <section className="text-center sm:mt-24 sm:mb-20 px-4" id="pricing">
         <CustomSection height="h-2" gradientColor="#46ffe0">
           <PricingHero></PricingHero>
         </CustomSection>
       </section>
 
       {/* Sección de Testimonios */}
-      <section className="text-center mt-24 mb-20 px-4 w-scree">
+      <section className="text-center mt-24 mb-20 px-4">
         <CustomSection height="h-2" gradientColor="#86efac" mt="mt-1">
           <h2 className="font-book font-display mb-8 text-3xl sm:text-4xl md:text-[2.5rem] tracking-tight leading-[120%] text-white text-center">
             Testimonials

@@ -83,6 +83,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/tailwindcss": "^3.1.0"
+    "@types/tailwindcss": "^3.1.0",
+    "daisyui": "^5.0.28"
   }
 }

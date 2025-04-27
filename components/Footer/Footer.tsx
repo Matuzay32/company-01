@@ -80,7 +80,7 @@ export const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-wrap gap-8 justify-between">
             {/* Column 1 and 2 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full md:w-3/4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
               {/* Column 1: Logo and description */}
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">

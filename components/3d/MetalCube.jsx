@@ -47,7 +47,7 @@ const MetalCube = () => {
   return (
     <Canvas
       dpr={[1, 2]}
-      style={{ height: isMobile ? '60vh' : '60vh' }}
+      style={{ height: isMobile ? '40vh' : '60vh' }}
       frameloop="always"
       camera={{
         position: [0, 0, isMobile ? 4 : 2],
@@ -58,7 +58,7 @@ const MetalCube = () => {
     >
       <ambientLight intensity={isMobile ? 0.5 : 1} />
       <directionalLight intensity={isMobile ? 0.5 : 1} position={[0, 2, 2.5]} />
-      <Model scale={isMobile ? 0.45 : 0.4} />
+      <Model scale={isMobile ? 0.35 : 0.4} />
       <Environment preset={isMobile ? 'city' : 'city'} />
       <OrbitControls
         enableZoom={false}

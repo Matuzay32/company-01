@@ -69,7 +69,7 @@ export default function TestimonialCarousel({
         >
           {testimonials.map((testimonial, index) => (
             <div key={index} className="min-w-full px-4">
-              <div className="bg-zinc-900/50 backdrop-blur-md border border-white/10 rounded-lg p-8 md:p-12 text-center">
+              <div className="bg-zinc-900/50 backdrop-blur-md border border-white/10 rounded-lg p-8 md:p-12 text-center h-full flex flex-col justify-between items-center">
                 {testimonial.rating && (
                   <div className="flex justify-center mb-6">
                     {[...Array(5)].map((_, i) => (

@@ -79,7 +79,7 @@ export default function LandingPages() {
               key={index}
               className="w-full relative rounded-xl bg-[linear-gradient(180deg,_#FFFFFF3D_0%,_#FFFFFF00_54%)] backdrop-filter backdrop-blur-[4px] p-[.0625rem] mt-16"
             >
-              <div className="group flex flex-col md:flex-row gap-14 md:gap-24 w-full px-8 md:px-16 rounded-xl pt-8 pb-4 md:pb-6 bg-[linear-gradient(90deg,_#0000_0%,_#0000_100%),_radial-gradient(30%_36%_at_0%_60%,_#FFFFFF0D_0%,_#FFFFFF05_54%,_#FFFFFF00_100%),_linear-gradient(180deg,_#111_0%,_#00000080_100%)]">
+              <div className="group flex flex-col md:flex-row gap-14 md:gap-24 w-full px-8 md:px-16 rounded-xl pt-28 sm:pt-8 pb-4 md:pb-6 bg-[linear-gradient(90deg,_#0000_0%,_#0000_100%),_radial-gradient(30%_36%_at_0%_60%,_#FFFFFF0D_0%,_#FFFFFF05_54%,_#FFFFFF00_100%),_linear-gradient(180deg,_#111_0%,_#00000080_100%)]">
                 <div className="flex items-center justify-center md:block translate-x-2 -translate-y-16 md:translate-x-5">
                   <Link href={section.link}>
                     <div className="flex items-center justify-center [transform-style:preserve-3d] [perspective:1000px] [perspective-origin:center]">

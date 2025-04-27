@@ -94,6 +94,7 @@ const CustomCard = ({
 export default function ContactForm() {
   const [formData, setFormData] = useState(defaultForm);
   const [status, setStatus] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -105,6 +106,7 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("Sending...");
+    setIsLoading(true);
 
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -113,6 +115,7 @@ export default function ContactForm() {
     if (!serviceId || !templateId || !publicKey) {
       console.error("Faltan variables de entorno para emailjs");
       setStatus("Error de configuración. Contacta al administrador.");
+      setIsLoading(false);
       return;
     }
 
@@ -123,6 +126,8 @@ export default function ContactForm() {
     } catch (error) {
       console.error("Error al enviar el correo:", error);
       setStatus("An error occurred. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -187,7 +192,14 @@ export default function ContactForm() {
                   className="bg-zinc-800 border-zinc-700"
                 />
                 <Button type="submit" className="w-full">
-                  Send Message <Send className="ml-2 h-4 w-4" />
+                  {
+                    isLoading ? (
+                      <p>Loading...</p>
+                    ) : (
+
+                      <div className="flex">Send Message <Send className="ml-2 h-4 w-4" /></div>
+                    )
+                  }
                 </Button>
               </div>
             </form>
